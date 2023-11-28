@@ -8,7 +8,7 @@ from django.views.generic.list import BaseListView
 class AutocompleteJsonView(BaseListView):
     """Handle AutocompleteWidget's AJAX requests for data."""
 
-    paginate_by = 10
+    paginate_by = 11
     admin_site = None
 
     def get(self, request, *args, **kwargs):

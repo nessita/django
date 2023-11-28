@@ -461,8 +461,8 @@ class SeleniumTests(AdminSeleniumTestCase):
         )
         search = self.selenium.find_element(By.CSS_SELECTOR, ".select2-search__field")
         # Load next page of results by scrolling to the bottom of the list.
-        with self.select2_ajax_wait():
-            for _ in range(PAGINATOR_SIZE + 1):
+        for _ in range(PAGINATOR_SIZE + 1):
+            with self.select2_ajax_wait():
                 search.send_keys(Keys.ARROW_DOWN)
         # All objects are now loaded.
         self.assertCountSeleniumElements(

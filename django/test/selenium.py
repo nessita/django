@@ -156,6 +156,7 @@ class SeleniumTestCase(LiveServerTestCase, metaclass=SeleniumTestCaseBase):
     def setUpClass(cls):
         cls.selenium = cls.create_webdriver()
         cls.selenium.implicitly_wait(cls.implicit_wait)
+        cls.selenium.set_window_size(1280, 720)
         super().setUpClass()
         cls.addClassCleanup(cls._quit_selenium)
 

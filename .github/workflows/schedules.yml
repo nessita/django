@@ -1,4 +1,4 @@
-name: Schedule
+name: Daily Task Schedules
 
 on:
   schedule:
@@ -8,6 +8,7 @@ on:
 permissions:
   actions: write
   contents: read
+  pull-requests: write
 
 jobs:
   trigger-runs:
@@ -44,3 +45,9 @@ jobs:
             } else {
               console.log(`No commits found since ${yesterday} on branch ${{ matrix.branch }}`)
             }
+
+  check-reminders:
+    runs-on: ubuntu-latest
+    name: Check due reminders
+    steps:
+        uses: agrc/reminder-action@v1

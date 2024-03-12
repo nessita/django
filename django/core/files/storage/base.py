@@ -62,11 +62,12 @@ class Storage:
         Return a filename that's free on the target storage system and
         available for new content to be written to.
         """
+        orig = name
         name = str(name).replace("\\", "/")
         dir_name, file_name = os.path.split(name)
         if ".." in pathlib.PurePath(dir_name).parts:
             raise SuspiciousFileOperation(
-                "Detected path traversal attempt in '%s'" % dir_name
+                "Detected path traversal attempt in '%s'" % orig
             )
         validate_file_name(file_name)
         file_ext = "".join(pathlib.PurePath(file_name).suffixes)
@@ -104,12 +105,13 @@ class Storage:
         Validate the filename by calling get_valid_name() and return a filename
         to be passed to the save() method.
         """
+        name = filename
         filename = str(filename).replace("\\", "/")
         # `filename` may include a path as returned by FileField.upload_to.
         dirname, filename = os.path.split(filename)
         if ".." in pathlib.PurePath(dirname).parts:
             raise SuspiciousFileOperation(
-                "Detected path traversal attempt in '%s'" % dirname
+                "Detected path traversal attempt in '%s'" % name
             )
         return os.path.normpath(os.path.join(dirname, self.get_valid_name(filename)))
 

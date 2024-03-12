@@ -4,7 +4,7 @@ import pathlib
 from django.core.exceptions import SuspiciousFileOperation
 
 
-def validate_file_name(name, allow_relative_path=False):
+def validate_file_name(name, allow_relative_path=False, allow_absolute_path=False):
     path = str(name).replace("\\", "/")
     base_name = os.path.basename(path)
 
@@ -14,7 +14,7 @@ def validate_file_name(name, allow_relative_path=False):
 
     if allow_relative_path:
         path = pathlib.PurePath(path)
-        if path.is_absolute() or ".." in path.parts:
+        if (not allow_absolute_path and path.is_absolute()) or ".." in path.parts:
             raise SuspiciousFileOperation(
                 "Detected path traversal attempt in '%s'" % name
             )

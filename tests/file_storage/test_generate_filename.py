@@ -92,18 +92,18 @@ class AWSS3Storage(Storage):
 class GenerateFilenameStorageTests(SimpleTestCase):
     def test_storage_dangerous_paths(self):
         candidates = [
-            ("/tmp/..", ".."),
-            ("\\tmp\\..", ".."),
-            ("/tmp/.", "."),
-            ("\\tmp\\.", "."),
-            ("..", ".."),
-            (".", "."),
-            ("", ""),
+            "/tmp/..",
+            "\\tmp\\..",
+            "/tmp/.",
+            "\\tmp\\.",
+            "..",
+            ".",
+            "",
         ]
         s = FileSystemStorage()
         methods = (s.get_available_name, s.generate_filename)
-        for (file_name, base_name), method in itertools.product(candidates, methods):
-            msg = f"Could not derive file name from '{base_name}'"
+        for file_name, method in itertools.product(candidates, methods):
+            msg = f"Could not derive file name from '{file_name}'"
             with self.subTest(file_name=file_name, method=method.__func__.__name__):
                 with self.assertRaisesMessage(SuspiciousFileOperation, msg):
                     method(file_name)

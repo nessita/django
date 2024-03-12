@@ -1,10 +1,62 @@
+import itertools
 import os
 
 from django.core.exceptions import SuspiciousFileOperation
 from django.core.files.base import ContentFile
 from django.core.files.storage import FileSystemStorage, Storage
+from django.core.files.utils import validate_file_name
 from django.db.models import FileField
 from django.test import SimpleTestCase
+
+
+class ValidateFileNameTests(SimpleTestCase):
+    """A set of assertions for the methods doing file name validation."""
+
+    def test_dangerous_paths(self):
+        candidates = [
+            "/tmp/..",
+            "\\tmp\\..",
+            "/tmp/.",
+            "\\tmp\\.",
+            "..",
+            ".",
+            "",
+        ]
+        for name, allow_relative_path in itertools.product(candidates, (False, True)):
+            msg = f"Could not derive file name from '{name}'"
+            with self.subTest(name=name, allow_relative_path=allow_relative_path):
+                with self.assertRaisesMessage(SuspiciousFileOperation, msg):
+                    validate_file_name(name, allow_relative_path=allow_relative_path)
+
+    def test_dangerous_paths_dir_name_allow_relative_path(self):
+        candidates = [
+            "../path",
+            "tmp/../path",
+            "tmp\\..\\path",
+            "..\\path",
+            "/tmp/../path",
+            "\\tmp\\..\\path",
+        ]
+        for name in candidates:
+            msg = f"Detected path traversal attempt in '{name}'"
+            with self.subTest(name=name):
+                with self.assertRaisesMessage(SuspiciousFileOperation, msg):
+                    validate_file_name(name, allow_relative_path=True)
+
+    def test_dangerous_paths_dir_name_disallow_relative_path(self):
+        candidates = [
+            "../path",
+            "tmp/../path",
+            "tmp\\..\\path",
+            "..\\path",
+            "/tmp/../path",
+            "\\tmp\\..\\path",
+        ]
+        for name in candidates:
+            msg = f"File name '{name}' includes path elements"
+            with self.subTest(name=name):
+                with self.assertRaisesMessage(SuspiciousFileOperation, msg):
+                    validate_file_name(name, allow_relative_path=False)
 
 
 class AWSS3Storage(Storage):

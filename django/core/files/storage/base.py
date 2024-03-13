@@ -37,7 +37,7 @@ class Storage:
         name = self.get_available_name(name, max_length=max_length)
         name = self._save(name, content)
         # Ensure that the name returned from the storage system is still valid.
-        # validate_file_name(name, allow_relative_path=True)
+        validate_file_name(name, allow_relative_path=True)
         return name
 
     # These methods are part of the public API, with default implementations.

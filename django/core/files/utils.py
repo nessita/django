@@ -13,7 +13,9 @@ def validate_file_name(name, allow_relative_path=False, allow_absolute_path=Fals
         raise SuspiciousFileOperation("Could not derive file name from '%s'" % name)
 
     if allow_relative_path:
-        path = pathlib.PurePath(path)
+        # We ensured above that this can be treated as a pure posix path, i.e.
+        # Unix style (with forward slashes).
+        path = pathlib.PurePosixPath(path)
         if (not allow_absolute_path and path.is_absolute()) or ".." in path.parts:
             raise SuspiciousFileOperation(
                 "Detected path traversal attempt in '%s'" % name

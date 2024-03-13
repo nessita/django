@@ -1,62 +1,12 @@
-import itertools
 import os
+
+from file_utils.tests import ValidateFileNameMixin
 
 from django.core.exceptions import SuspiciousFileOperation
 from django.core.files.base import ContentFile
 from django.core.files.storage import FileSystemStorage, Storage
-from django.core.files.utils import validate_file_name
 from django.db.models import FileField
 from django.test import SimpleTestCase
-
-
-class ValidateFileNameTests(SimpleTestCase):
-    """A set of assertions for the methods doing file name validation."""
-
-    def test_dangerous_paths(self):
-        candidates = [
-            "/tmp/..",
-            "\\tmp\\..",
-            "/tmp/.",
-            "\\tmp\\.",
-            "..",
-            ".",
-            "",
-        ]
-        for name, allow_relative_path in itertools.product(candidates, (False, True)):
-            msg = f"Could not derive file name from '{name}'"
-            with self.subTest(name=name, allow_relative_path=allow_relative_path):
-                with self.assertRaisesMessage(SuspiciousFileOperation, msg):
-                    validate_file_name(name, allow_relative_path=allow_relative_path)
-
-    def test_dangerous_paths_dir_name_allow_relative_path(self):
-        candidates = [
-            "../path",
-            "tmp/../path",
-            "tmp\\..\\path",
-            "..\\path",
-            "/tmp/../path",
-            "\\tmp\\..\\path",
-        ]
-        for name in candidates:
-            msg = f"Detected path traversal attempt in '{name}'"
-            with self.subTest(name=name):
-                with self.assertRaisesMessage(SuspiciousFileOperation, msg):
-                    validate_file_name(name, allow_relative_path=True)
-
-    def test_dangerous_paths_dir_name_disallow_relative_path(self):
-        candidates = [
-            "../path",
-            "tmp/../path",
-            "tmp\\..\\path",
-            "..\\path",
-            "/tmp/../path",
-            "\\tmp\\..\\path",
-        ]
-        for name in candidates:
-            msg = f"File name '{name}' includes path elements"
-            with self.subTest(name=name):
-                with self.assertRaisesMessage(SuspiciousFileOperation, msg):
-                    validate_file_name(name, allow_relative_path=False)
 
 
 class AWSS3Storage(Storage):
@@ -89,24 +39,30 @@ class AWSS3Storage(Storage):
         return self.prefix + self.get_valid_name(filename)
 
 
-class GenerateFilenameStorageTests(SimpleTestCase):
+class FileSystemStorageGenerateFilenameTests(ValidateFileNameMixin, SimpleTestCase):
+
+    def do_call(self, name):
+        return FileSystemStorage().generate_filename(name)
+
+
+class FileSystemStorageGetAvailableNameTests(SimpleTestCase):
+
     def test_storage_dangerous_paths(self):
         candidates = [
-            "/tmp/..",
-            "\\tmp\\..",
-            "/tmp/.",
-            "\\tmp\\.",
-            "..",
-            ".",
-            "",
+            ("/tmp/..", ".."),
+            ("\\tmp\\..", ".."),
+            ("/tmp/.", "."),
+            ("\\tmp\\.", "."),
+            ("..", ".."),
+            (".", "."),
+            ("", ""),
         ]
         s = FileSystemStorage()
-        methods = (s.get_available_name, s.generate_filename)
-        for file_name, method in itertools.product(candidates, methods):
-            msg = f"Could not derive file name from '{file_name}'"
-            with self.subTest(file_name=file_name, method=method.__func__.__name__):
-                with self.assertRaisesMessage(SuspiciousFileOperation, msg):
-                    method(file_name)
+        msg = "Could not derive file name from '%s'"
+        for file_name, base_name in candidates:
+            with self.subTest(file_name=file_name):
+                with self.assertRaisesMessage(SuspiciousFileOperation, msg % base_name):
+                    s.get_available_name(file_name)
 
     def test_storage_dangerous_paths_dir_name(self):
         candidates = [
@@ -118,12 +74,14 @@ class GenerateFilenameStorageTests(SimpleTestCase):
             "\\tmp\\..\\path",
         ]
         s = FileSystemStorage()
-        methods = (s.get_available_name, s.generate_filename)
-        for file_name, method in itertools.product(candidates, methods):
+        for file_name in candidates:
             msg = f"Detected path traversal attempt in '{file_name}'"
-            with self.subTest(file_name=file_name, method=method.__func__.__name__):
+            with self.subTest(file_name=file_name):
                 with self.assertRaisesMessage(SuspiciousFileOperation, msg):
-                    method(file_name)
+                    s.get_available_name(file_name)
+
+
+class FileFieldGenerateFilenameTests(SimpleTestCase):
 
     def test_filefield_dangerous_filename(self):
         candidates = [

@@ -291,7 +291,9 @@ Signals
 Templates
 ~~~~~~~~~
 
-* ...
+* The new :meth:`~django.template.Library.simple_block_tag` method allows
+  creation of simple block tags, which support being passed a section
+  of rendered template.
 
 Tests
 ~~~~~

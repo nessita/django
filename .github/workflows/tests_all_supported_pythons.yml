@@ -26,9 +26,18 @@ jobs:
     strategy:
       matrix:
         python-version: ${{fromJson(needs.matrix_prep.outputs.python_versions_output)}}
+    name: Windows, SQLite, Python ${{ matrix.python-version }}
     steps:
-      - name: Set up Python and Build
-        uses: actions/setup-python@v5
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-      - run: echo ${{ matrix.python-version }} "${{fromJson(needs.matrix_prep.outputs.python_versions_output)}}"
+          cache: 'pip'
+          cache-dependency-path: 'tests/requirements/py3.txt'
+      - name: Install and upgrade packaging tools
+        run: python -m pip install --upgrade pip setuptools wheel
+      - run: python -m pip install -r tests/requirements/py3.txt -e .
+      - name: Run tests
+        run: python tests/runtests.py -v2

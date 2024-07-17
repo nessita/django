@@ -24,7 +24,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: matrix_prep
     strategy:
-    strategy:
       matrix:
         python-version: [10, 12, 14]
     steps:

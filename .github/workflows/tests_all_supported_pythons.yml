@@ -25,10 +25,10 @@ jobs:
     needs: matrix_prep
     strategy:
       matrix:
-        python-version: ['3.8']
+        python-version: ${{fromJson(needs.matrix_prep.outputs.python_versions_output)}}
     steps:
       - name: Set up Python and Build
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - run: echo ${{ matrix.python-version }} "[${{fromJson(needs.matrix_prep.outputs.python_versions_output)}}]"
+      - run: echo ${{ matrix.python-version }} "${{fromJson(needs.matrix_prep.outputs.python_versions_output)}}"

@@ -10,7 +10,7 @@ jobs:
   matrix_prep:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      python_versions: ${{ steps.set-matrix.outputs.python_versions }}
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -25,10 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8", "3.9"] # [${{ steps.extract-python-versions.outputs.python_versions }}]
+        python-version: ["3.8", "3.9"] # [${{ steps.set-matrix.outputs.python_versions }}]
     steps:
     - name: Set up Python and Build
       uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
-    - run: echo "Hello ${{ matrix.python-version }} ${{ steps.extract-python-versions.outputs.python_versions }}"
+    - run: echo "Hello ${{ matrix.python-version }} ${{ steps.set-matrix.outputs.python_versions }}"

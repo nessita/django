@@ -13,6 +13,8 @@ jobs:
     outputs:
       python_versions_output: ${{ steps.set-matrix.outputs.python_versions }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       - id: set-matrix
         run: |
           python_versions=$(for i in `sed -e 's/^[ \t]*//' setup.cfg | grep -E 'Programming Language :: Python :: [0-9]+\.[0-9]+' | cut -d' ' -f6 | sort -u -V`; do echo -n "\"$i\", "; done; echo \"3.12\")

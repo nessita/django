@@ -31,4 +31,4 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - run: echo ${{ matrix.python-version }}
+      - run: echo ${{ matrix.python-version }} ${{fromJson(needs.matrix_prep.outputs.python_versions_output)}}

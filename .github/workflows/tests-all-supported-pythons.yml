@@ -1,28 +1,36 @@
-name: Build Matrix based on Supported Python Versions
+name: Tests All
 
 on:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
-  build:
+  matrix_prep:
     runs-on: ubuntu-latest
-
+    name: Build Matrix based on Supported Python Versions
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - id: set-matrix
+      run: |
+        python_versions=$(sed -e 's/^[ \t]*//' setup.cfg | grep -E 'Programming Language :: Python :: [0-9]+\.[0-9]+' | cut -d' ' -f6 | sort -u)
+        echo "Supported Python versions: $python_versions"
+        echo "::set-output name=python_versions::$python_versions"
+ build-n-test:
+   needs: matrix_prep
+   runs-on: ubuntu-latest
+   name: Use the matrix
+   strategy:
+     matrix:
+       python-version: [${{ steps.extract-python-versions.outputs.python_versions }}]
+     - name: Set up Python and Build
+       uses: actions/setup-python@v4
+       with:
+         python-version: ${{ matrix.python-version }}
+    steps:    
+    - run: echo "Hello ${{ matrix.python-version }}"
 
-      - name: Extract Supported Python Versions
-        id: extract-python-versions
-        run: |
-          python_versions=$(sed -e 's/^[ \t]*//' setup.cfg | grep -E 'Programming Language :: Python :: [0-9]+\.[0-9]+' | cut -d' ' -f6 | sort -u)
-          echo "Supported Python versions: $python_versions"
-          echo "::set-output name=python_versions::$python_versions"
-
-      - name: Set up Python and Build
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-
-      strategy:
-        matrix:
-          python-version: [${{ steps.extract-python-versions.outputs.python_versions }}]

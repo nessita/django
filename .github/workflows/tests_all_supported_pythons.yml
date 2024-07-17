@@ -9,28 +9,27 @@ permissions:
 jobs:
   matrix_prep:
     runs-on: ubuntu-latest
-    name: Build Matrix based on Supported Python Versions
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - id: set-matrix
-        run: |
-          python_versions=$(sed -e 's/^[ \t]*//' setup.cfg | grep -E 'Programming Language :: Python :: [0-9]+\.[0-9]+' | cut -d' ' -f6 | sort -u -V)
-          echo "Supported Python versions: $python_versions"
-          echo "::set-output name=python_versions::$python_versions"
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - id: set-matrix
+      run: |
+        python_versions=$(sed -e 's/^[ \t]*//' setup.cfg | grep -E 'Programming Language :: Python :: [0-9]+\.[0-9]+' | cut -d' ' -f6 | sort -u -V)
+        echo "Supported Python versions: $python_versions"
+        echo "::set-output name=python_versions::$python_versions"
 
-   build-n-test:
-     needs: matrix_prep
-     runs-on: ubuntu-latest
-     name: Use the matrix
-     strategy:
-       matrix:
-         python-version: [${{ steps.extract-python-versions.outputs.python_versions }}]
-      steps:
-       - name: Set up Python and Build
-         uses: actions/setup-python@v4
-         with:
-           python-version: ${{ matrix.python-version }}
-      - run: echo "Hello ${{ matrix.python-version }}"
+  build-n-test:
+    needs: matrix_prep
+    runs-on: ubuntu-latest
+    name: Use the matrix
+    strategy:
+      matrix:
+        python-version: [${{ steps.extract-python-versions.outputs.python_versions }}]
+    steps:
+    - name: Set up Python and Build
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    - run: echo "Hello ${{ matrix.python-version }}"

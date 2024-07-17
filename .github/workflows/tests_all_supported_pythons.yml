@@ -14,7 +14,6 @@ jobs:
       python_versions_output: ${{ steps.set-matrix.outputs.python_versions }}
     steps:
       - id: set-matrix
-        run:
         run: |
           python_versions=$(for i in `sed -e 's/^[ \t]*//' setup.cfg | grep -E 'Programming Language :: Python :: [0-9]+\.[0-9]+' | cut -d' ' -f6 | sort -u -V`; do echo -n "\"$i\", "; done; echo \"3.12\")
           echo "Supported Python versions: $python_versions"

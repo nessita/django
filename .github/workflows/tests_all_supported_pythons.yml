@@ -19,6 +19,7 @@ jobs:
         run: |
           python_versions=$(for i in `sed -e 's/^[ \t]*//' setup.cfg | grep -E 'Programming Language :: Python :: [0-9]+\.[0-9]+' | cut -d' ' -f6 | sort -u -V`; do echo -n "'$i', "; done  | sed 's/, $//')
           echo "Supported Python versions: $python_versions"
+          echo "python_versions=[$python_versions]" >> "$GITHUB_OUTPUT"
   build-n-test:
     runs-on: ubuntu-latest
     needs: matrix_prep

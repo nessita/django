@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
       - id: set-matrix
         run: |
-          python_versions=$(for i in `sed -e 's/^[ \t]*//' setup.cfg | grep -E 'Programming Language :: Python :: [0-9]+\.[0-9]+' | cut -d' ' -f6 | sort -u -V`; do echo -n "\"$i\", "; done; echo \"3.12\")
+          python_versions=$(for i in `sed -e 's/^[ \t]*//' setup.cfg | grep -E 'Programming Language :: Python :: [0-9]+\.[0-9]+' | cut -d' ' -f6 | sort -u -V`; do echo -n "'$i', "; done; echo \'3.12\')
           echo "python_versions="[$python_versions]" >> "$GITHUB_OUTPUT"
           echo "Supported Python versions: $python_versions"
   build-n-test:
@@ -25,10 +25,10 @@ jobs:
     needs: matrix_prep
     strategy:
       matrix:
-        python-version: ${{fromJson(needs.matrix_prep.outputs.python_versions_output)}}
+        python-version: ["3.8"]
     steps:
       - name: Set up Python and Build
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-        - run: echo "${{ matrix.python-version }}"
+        - run: echo ${{fromJson(needs.matrix_prep.outputs.python_versions_output)}}

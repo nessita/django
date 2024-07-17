@@ -23,7 +23,6 @@ jobs:
   build-n-test:
     needs: matrix_prep
     runs-on: ubuntu-latest
-    name: Use the matrix
     strategy:
       matrix:
         python-version: [${{ steps.extract-python-versions.outputs.python_versions }}]

@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2023-12-25 06:49+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 06:49+0000\n"
 "Last-Translator: Shukrullo Turgunov <shukrullo@umail.uz>, 2023\n"
 "Language-Team: Uzbek (http://app.transifex.com/django/django/language/uz/)\n"
 "MIME-Version: 1.0\n"
@@ -346,6 +346,9 @@ msgstr "Ushbu sahifada hech qanday natija yo'q"
 msgid "Enter a valid value."
 msgstr "To'g'ri qiymatni kiriting."
 
+msgid "Enter a valid domain name."
+msgstr ""
+
 msgid "Enter a valid URL."
 msgstr "To'g'ri URL manzilini kiriting."
 
@@ -369,14 +372,18 @@ msgstr ""
 "Unicode harflari, raqamlari, pastki chiziqlari yoki chiziqlardan iborat "
 "to'g'ri \"slug\" ni kiriting."
 
-msgid "Enter a valid IPv4 address."
-msgstr "To'g'ri IPv4 manzilini kiriting."
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
 
-msgid "Enter a valid IPv6 address."
-msgstr "To'g'ri IPv6 manzilini kiriting."
+msgid "IPv4"
+msgstr ""
 
-msgid "Enter a valid IPv4 or IPv6 address."
-msgstr "To'g'ri IPv4 yoki IPv6 manzilini kiriting."
+msgid "IPv6"
+msgstr ""
+
+msgid "IPv4 or IPv6"
+msgstr ""
 
 msgid "Enter only digits separated by commas."
 msgstr "Faqat vergul bilan ajratilgan raqamlarni kiriting."

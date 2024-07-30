@@ -9,10 +9,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-17 02:13-0600\n"
-"PO-Revision-Date: 2023-04-25 07:05+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 07:05+0000\n"
 "Last-Translator: A S Alam, 2022\n"
-"Language-Team: Panjabi (Punjabi) (http://www.transifex.com/django/django/"
+"Language-Team: Panjabi (Punjabi) (http://app.transifex.com/django/django/"
 "language/pa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -177,6 +177,9 @@ msgstr "ਕੋਈ ਨਹੀਂ"
 msgid "Hold down “Control”, or “Command” on a Mac, to select more than one."
 msgstr ""
 
+msgid "Select this object for an action - {}"
+msgstr ""
+
 #, python-brace-format
 msgid "The {name} “{obj}” was added successfully."
 msgstr ""
@@ -192,10 +195,6 @@ msgstr ""
 #, python-brace-format
 msgid ""
 "The {name} “{obj}” was changed successfully. You may edit it again below."
-msgstr ""
-
-#, python-brace-format
-msgid "The {name} “{obj}” was added successfully. You may edit it again below."
 msgstr ""
 
 #, python-brace-format
@@ -327,6 +326,9 @@ msgstr "ਸਭ %(total_count)s %(module_name)s ਚੁਣੋ"
 msgid "Clear selection"
 msgstr "ਚੋਣ ਸਾਫ਼ ਕਰੋ"
 
+msgid "Breadcrumbs"
+msgstr ""
+
 #, python-format
 msgid "Models in the %(name)s application"
 msgstr ""
@@ -351,6 +353,9 @@ msgstr ""
 msgid "Change password"
 msgstr "ਪਾਸਵਰਡ ਬਦਲੋ"
 
+msgid "Set password"
+msgstr ""
+
 msgid "Please correct the error below."
 msgid_plural "Please correct the errors below."
 msgstr[0] ""
@@ -359,6 +364,17 @@ msgstr[1] ""
 #, python-format
 msgid "Enter a new password for the user <strong>%(username)s</strong>."
 msgstr "ਯੂਜ਼ਰ <strong>%(username)s</strong> ਲਈ ਨਵਾਂ ਪਾਸਵਰਡ ਦਿਓ।"
+
+msgid ""
+"This action will <strong>enable</strong> password-based authentication for "
+"this user."
+msgstr ""
+
+msgid "Disable password-based authentication"
+msgstr ""
+
+msgid "Enable password-based authentication"
+msgstr ""
 
 msgid "Skip to main content"
 msgstr ""
@@ -375,9 +391,6 @@ msgstr "ਡੌਕੂਮੈਂਟੇਸ਼ਨ"
 msgid "Log out"
 msgstr "ਲਾਗ ਆਉਟ"
 
-msgid "Breadcrumbs"
-msgstr ""
-
 #, python-format
 msgid "Add %(name)s"
 msgstr "%(name)s ਸ਼ਾਮਲ"
@@ -390,6 +403,12 @@ msgstr "ਸਾਈਟ ਉੱਤੇ ਜਾਓ"
 
 msgid "Filter"
 msgstr "ਫਿਲਟਰ"
+
+msgid "Hide counts"
+msgstr ""
+
+msgid "Show counts"
+msgstr ""
 
 msgid "Clear all filters"
 msgstr ""
@@ -484,6 +503,15 @@ msgstr ""
 
 msgid "None available"
 msgstr "ਕੋਈ ਉਪਲੱਬਧ ਨਹੀਂ"
+
+msgid "Added:"
+msgstr ""
+
+msgid "Changed:"
+msgstr ""
+
+msgid "Deleted:"
+msgstr ""
 
 msgid "Unknown content"
 msgstr "ਅਣਜਾਣ ਸਮੱਗਰੀ"
@@ -674,6 +702,9 @@ msgstr ""
 
 msgid "Reset my password"
 msgstr "ਮੇਰਾ ਪਾਸਵਰਡ ਮੁੜ-ਸੈੱਟ ਕਰੋ"
+
+msgid "Select all objects on this page for an action"
+msgstr ""
 
 msgid "All dates"
 msgstr "ਸਭ ਮਿਤੀਆਂ"

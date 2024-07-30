@@ -1,16 +1,17 @@
 # This file is distributed under the same license as the Django package.
 #
 # Translators:
-# Soyuzbek Orozbek uulu <soyuzbek196.kg@gmail.com>, 2020-2021
-# Soyuzbek Orozbek uulu <soyuzbek196.kg@gmail.com>, 2020
+# Soyuzbek orozbek uulu <soyuzbek196.kg@gmail.com>, 2020-2021
+# Soyuzbek orozbek uulu <soyuzbek196.kg@gmail.com>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 10:22+0200\n"
-"PO-Revision-Date: 2021-11-27 14:11+0000\n"
-"Last-Translator: Soyuzbek Orozbek uulu <soyuzbek196.kg@gmail.com>\n"
-"Language-Team: Kyrgyz (http://www.transifex.com/django/django/language/ky/)\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
+"Last-Translator: Soyuzbek orozbek uulu <soyuzbek196.kg@gmail.com>, "
+"2020-2021\n"
+"Language-Team: Kyrgyz (http://app.transifex.com/django/django/language/ky/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,12 +31,22 @@ msgstr "Маанилүү күндөр"
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr "ID%(key)r болгон %(name)s табылган жок."
 
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
 msgid "Password changed successfully."
 msgstr "Сырсөз ийгиликтүү өзгөрдү."
+
+msgid "Password-based authentication was disabled."
+msgstr ""
 
 #, python-format
 msgid "Change password: %s"
 msgstr "сырсөздү өзгөрт: %s"
+
+#, python-format
+msgid "Set password: %s"
+msgstr ""
 
 msgid "Authentication and Authorization"
 msgstr "Катталуу жана жетки алуу"
@@ -52,8 +63,20 @@ msgstr "сырсөз жок."
 msgid "Invalid password format or unknown hashing algorithm."
 msgstr "Туура эмес сырсөз калыбы же белгисиз бекитүү алгоритми"
 
+msgid "Reset password"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
 msgid "The two password fields didn’t match."
 msgstr "Сырсөздүн эки талаасы бири бирине окшош болбой жатат."
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
+msgstr ""
 
 msgid "Password"
 msgstr "Сырсөз"
@@ -64,13 +87,22 @@ msgstr "Сырсөз тастыктоосу"
 msgid "Enter the same password as before, for verification."
 msgstr "Тастыктоо үчүн жогоруга окшош сырсөз тер."
 
-msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+msgid "Password-based authentication"
 msgstr ""
-"Сырсөздөр кам түрүндө сакталбайт, мындан улам сиз аны эч качан көрө "
-"албайсыз. Бирок аны сиз <a href=\"{}\">бул формду</a> колдонуп өзгөртсөңүз "
-"болот."
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid ""
+"Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr ""
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -96,9 +128,6 @@ msgstr "Сиздин эски сырсөзүңүз туура эмес тери�
 
 msgid "Old password"
 msgstr "Эски сырсөз"
-
-msgid "Password (again)"
-msgstr "сырсөз (кайра)"
 
 msgid "algorithm"
 msgstr "алгоритм"
@@ -261,11 +290,9 @@ msgid "Password reset on %(site_name)s"
 msgstr "%(site_name)s дан сырсөздү жокко чыгырыңыз"
 
 msgid ""
-"Enter a valid username. This value may contain only English letters, "
-"numbers, and @/./+/-/_ characters."
+"Enter a valid username. This value may contain only unaccented lowercase a-z "
+"and uppercase A-Z letters, numbers, and @/./+/-/_ characters."
 msgstr ""
-"Туура колдонуучу атын киргизиңиз. Бул маани жалаң латын арибин, сан жана @/./"
-"+/-/_  белгилерин камтый алат."
 
 msgid ""
 "Enter a valid username. This value may contain only letters, numbers, and "

@@ -16,10 +16,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-17 03:19-0500\n"
-"PO-Revision-Date: 2023-04-25 08:09+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
 "Last-Translator: Illia Volochii <illia.volochii@gmail.com>, 2021,2023\n"
-"Language-Team: Ukrainian (http://www.transifex.com/django/django/language/"
+"Language-Team: Ukrainian (http://app.transifex.com/django/django/language/"
 "uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,12 +43,22 @@ msgstr "Важливі дати"
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr "%(name)s об'єкт з первинним ключем %(key)r не існує."
 
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
 msgid "Password changed successfully."
 msgstr "Пароль успішно змінено."
+
+msgid "Password-based authentication was disabled."
+msgstr ""
 
 #, python-format
 msgid "Change password: %s"
 msgstr "Змінити пароль: %s"
+
+#, python-format
+msgid "Set password: %s"
+msgstr ""
 
 msgid "Authentication and Authorization"
 msgstr "Аутентифікація та авторизація"
@@ -65,8 +75,20 @@ msgstr "Пароль не встановлено."
 msgid "Invalid password format or unknown hashing algorithm."
 msgstr "Невірний формат пароля або невідомий алгоритм хешування."
 
+msgid "Reset password"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
 msgid "The two password fields didn’t match."
 msgstr "Паролі не збігаються"
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
+msgstr ""
 
 msgid "Password"
 msgstr "Пароль"
@@ -77,13 +99,22 @@ msgstr "Підтвердження пароля"
 msgid "Enter the same password as before, for verification."
 msgstr "Введіть той же пароль, що і раніше, для підтвердження."
 
-msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+msgid "Password-based authentication"
 msgstr ""
-"Паролі не зберігаються у відкритому вигляді, тому немає можливості "
-"переглянути пароль цього користувача, але ви можете змінити пароль за "
-"допомогою <a href=\"{}\">цієї форми</a>."
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid ""
+"Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr ""
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -111,9 +142,6 @@ msgstr ""
 
 msgid "Old password"
 msgstr "Старий пароль"
-
-msgid "Password (again)"
-msgstr "Пароль (ще раз)"
 
 msgid "algorithm"
 msgstr "алгоритм"

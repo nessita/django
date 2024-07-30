@@ -1,24 +1,25 @@
 # This file is distributed under the same license as the Django package.
 #
 # Translators:
+# 534b44a19bf18d20b71ecc4eb77c572f_db336e9 <f8268c65f822ec11a3a2e5d482cd7ead_175>, 2011
 # Alex Gaynor <inactive+Alex@transifex.com>, 2011
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Meir Kriheli <mkriheli@gmail.com>, 2012,2014,2019
-# Uri Rodberg <uri@speedy.net>, 2021
+# אורי רודברג <uri@speedy.net>, 2021
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-07 14:40+0200\n"
-"PO-Revision-Date: 2021-09-22 07:22+0000\n"
-"Last-Translator: Uri Rodberg <uri@speedy.net>\n"
-"Language-Team: Hebrew (http://www.transifex.com/django/django/language/he/)\n"
+"POT-Creation-Date: 2023-09-18 11:41-0300\n"
+"PO-Revision-Date: 2013-04-24 18:40+0000\n"
+"Last-Translator: אורי רודברג <uri@speedy.net>, 2021\n"
+"Language-Team: Hebrew (http://app.transifex.com/django/django/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
-"1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
+"1 == 0) ? 1: 2;\n"
 
 msgid "Humanize"
 msgstr "האנשה"
@@ -43,7 +44,7 @@ msgctxt "ordinal 2"
 msgid "{}nd"
 msgstr "ה־{}"
 
-#. Translators: Ordinal format when value ends with 3, e.g. 83th, except 13.
+#. Translators: Ordinal format when value ends with 3, e.g. 83rd, except 13.
 msgctxt "ordinal 3"
 msgid "{}rd"
 msgstr "ה־{}"
@@ -84,7 +85,6 @@ msgid_plural "%(value)s million"
 msgstr[0] "מיליון"
 msgstr[1] "%(value)s מיליון"
 msgstr[2] "%(value)s מיליון"
-msgstr[3] "%(value)s מיליון"
 
 #, python-format
 msgid "%(value)s billion"
@@ -92,7 +92,6 @@ msgid_plural "%(value)s billion"
 msgstr[0] "מיליארד"
 msgstr[1] "%(value)s מיליארד"
 msgstr[2] "%(value)s מיליארד"
-msgstr[3] "%(value)s מיליארד"
 
 #, python-format
 msgid "%(value)s trillion"
@@ -100,7 +99,6 @@ msgid_plural "%(value)s trillion"
 msgstr[0] "טריליון"
 msgstr[1] "%(value)s טריליון"
 msgstr[2] "%(value)s טריליון"
-msgstr[3] "%(value)s טריליון"
 
 #, python-format
 msgid "%(value)s quadrillion"
@@ -108,7 +106,6 @@ msgid_plural "%(value)s quadrillion"
 msgstr[0] "קוודריליון"
 msgstr[1] "%(value)s קוודריליון"
 msgstr[2] "%(value)s קוודריליון"
-msgstr[3] "%(value)s קוודריליון"
 
 #, python-format
 msgid "%(value)s quintillion"
@@ -116,7 +113,6 @@ msgid_plural "%(value)s quintillion"
 msgstr[0] "קווינטיליון"
 msgstr[1] "%(value)s קווינטיליון"
 msgstr[2] "%(value)s קווינטיליון"
-msgstr[3] "%(value)s קווינטיליון"
 
 #, python-format
 msgid "%(value)s sextillion"
@@ -124,7 +120,6 @@ msgid_plural "%(value)s sextillion"
 msgstr[0] "סקסטיליון"
 msgstr[1] "%(value)s סקסטיליון"
 msgstr[2] "%(value)s סקסטיליון"
-msgstr[3] "%(value)s סקסטיליון"
 
 #, python-format
 msgid "%(value)s septillion"
@@ -132,7 +127,6 @@ msgid_plural "%(value)s septillion"
 msgstr[0] "ספטיליון"
 msgstr[1] "%(value)s ספטיליון"
 msgstr[2] "%(value)s ספטיליון"
-msgstr[3] "%(value)s ספטיליון"
 
 #, python-format
 msgid "%(value)s octillion"
@@ -140,7 +134,6 @@ msgid_plural "%(value)s octillion"
 msgstr[0] "אוקטיליון"
 msgstr[1] "%(value)s אוקטיליון"
 msgstr[2] "%(value)s אוקטיליון"
-msgstr[3] "%(value)s אוקטיליון"
 
 #, python-format
 msgid "%(value)s nonillion"
@@ -148,7 +141,6 @@ msgid_plural "%(value)s nonillion"
 msgstr[0] "נוניליון"
 msgstr[1] "%(value)s נוניליון"
 msgstr[2] "%(value)s נוניליון"
-msgstr[3] "%(value)s נוניליון"
 
 #, python-format
 msgid "%(value)s decillion"
@@ -156,7 +148,6 @@ msgid_plural "%(value)s decillion"
 msgstr[0] "דציליון"
 msgstr[1] "%(value)s דציליון"
 msgstr[2] "%(value)s דציליון"
-msgstr[3] "%(value)s דציליון"
 
 #, python-format
 msgid "%(value)s googol"
@@ -164,7 +155,6 @@ msgid_plural "%(value)s googol"
 msgstr[0] "גוגול"
 msgstr[1] "%(value)s גוגול"
 msgstr[2] "%(value)s גוגול"
-msgstr[3] "%(value)s גוגול"
 
 msgid "one"
 msgstr "אחד"
@@ -216,7 +206,6 @@ msgid_plural "%(count)s hours ago"
 msgstr[0] "לפני שעה"
 msgstr[1] "לפני שעתיים"
 msgstr[2] "לפני %(count)s שעות"
-msgstr[3] "לפני %(count)s שעות"
 
 #. Translators: please keep a non-breaking space (U+00A0) between count
 #. and time unit.
@@ -226,7 +215,6 @@ msgid_plural "%(count)s minutes ago"
 msgstr[0] "לפני דקה"
 msgstr[1] "לפני %(count)s דקות"
 msgstr[2] "לפני %(count)s דקות"
-msgstr[3] "לפני %(count)s דקות"
 
 #. Translators: please keep a non-breaking space (U+00A0) between count
 #. and time unit.
@@ -236,7 +224,6 @@ msgid_plural "%(count)s seconds ago"
 msgstr[0] "לפני שנייה"
 msgstr[1] "לפני %(count)s שניות"
 msgstr[2] "לפני %(count)s שניות"
-msgstr[3] "לפני %(count)s שניות"
 
 msgid "now"
 msgstr "עכשיו"
@@ -249,7 +236,6 @@ msgid_plural "%(count)s seconds from now"
 msgstr[0] "בעוד שנייה"
 msgstr[1] "בעוד %(count)s שניות"
 msgstr[2] "בעוד %(count)s שניות"
-msgstr[3] "בעוד %(count)s שניות"
 
 #. Translators: please keep a non-breaking space (U+00A0) between count
 #. and time unit.
@@ -259,7 +245,6 @@ msgid_plural "%(count)s minutes from now"
 msgstr[0] "בעוד דקה"
 msgstr[1] "בעוד %(count)s דקות"
 msgstr[2] "בעוד %(count)s דקות"
-msgstr[3] "בעוד %(count)s דקות"
 
 #. Translators: please keep a non-breaking space (U+00A0) between count
 #. and time unit.
@@ -269,7 +254,6 @@ msgid_plural "%(count)s hours from now"
 msgstr[0] "בעוד שעה"
 msgstr[1] "בעוד שעתיים"
 msgstr[2] "בעוד %(count)s שעות"
-msgstr[3] "בעוד %(count)s שעות"
 
 #. Translators: delta will contain a string like '2 months' or '1 month, 2
 #. weeks'
@@ -285,7 +269,6 @@ msgid_plural "%(num)d years"
 msgstr[0] "שנה"
 msgstr[1] "שנתיים"
 msgstr[2] "%(num)d שנים"
-msgstr[3] "%(num)d שנים"
 
 #, python-format
 msgctxt "naturaltime-past"
@@ -294,7 +277,6 @@ msgid_plural "%(num)d months"
 msgstr[0] "חודש"
 msgstr[1] "חודשיים"
 msgstr[2] "%(num)d חודשים"
-msgstr[3] "%(num)d חודשים"
 
 #, python-format
 msgctxt "naturaltime-past"
@@ -303,7 +285,6 @@ msgid_plural "%(num)d weeks"
 msgstr[0] "שבוע"
 msgstr[1] "שבועיים"
 msgstr[2] "%(num)d שבועות"
-msgstr[3] "%(num)d שבועות"
 
 #, python-format
 msgctxt "naturaltime-past"
@@ -312,7 +293,6 @@ msgid_plural "%(num)d days"
 msgstr[0] "יום"
 msgstr[1] "יומיים"
 msgstr[2] "%(num)d ימים"
-msgstr[3] "%(num)d ימים"
 
 #, python-format
 msgctxt "naturaltime-past"
@@ -321,7 +301,6 @@ msgid_plural "%(num)d hours"
 msgstr[0] "שעה"
 msgstr[1] "שעתיים"
 msgstr[2] "%(num)d שעות"
-msgstr[3] "%(num)d שעות"
 
 #, python-format
 msgctxt "naturaltime-past"
@@ -330,7 +309,6 @@ msgid_plural "%(num)d minutes"
 msgstr[0] "דקה"
 msgstr[1] "%(num)d דקות"
 msgstr[2] "%(num)d דקות"
-msgstr[3] "%(num)d דקות"
 
 #. Translators: 'naturaltime-future' strings will be included in '%(delta)s
 #. from now'
@@ -341,7 +319,6 @@ msgid_plural "%(num)d years"
 msgstr[0] "שנה"
 msgstr[1] "שנתיים"
 msgstr[2] "%(num)d שנים"
-msgstr[3] "%(num)d שנים"
 
 #, python-format
 msgctxt "naturaltime-future"
@@ -350,7 +327,6 @@ msgid_plural "%(num)d months"
 msgstr[0] "חודש"
 msgstr[1] "חודשיים"
 msgstr[2] "%(num)d חודשים"
-msgstr[3] "%(num)d חודשים"
 
 #, python-format
 msgctxt "naturaltime-future"
@@ -359,7 +335,6 @@ msgid_plural "%(num)d weeks"
 msgstr[0] "שבוע"
 msgstr[1] "שבועיים"
 msgstr[2] "%(num)d שבועות"
-msgstr[3] "%(num)d שבועות"
 
 #, python-format
 msgctxt "naturaltime-future"
@@ -368,7 +343,6 @@ msgid_plural "%(num)d days"
 msgstr[0] "יום"
 msgstr[1] "יומיים"
 msgstr[2] "%(num)d ימים"
-msgstr[3] "%(num)d ימים"
 
 #, python-format
 msgctxt "naturaltime-future"
@@ -377,7 +351,6 @@ msgid_plural "%(num)d hours"
 msgstr[0] "שעה"
 msgstr[1] "שעתיים"
 msgstr[2] "%(num)d שעות"
-msgstr[3] "%(num)d שעות"
 
 #, python-format
 msgctxt "naturaltime-future"
@@ -386,4 +359,3 @@ msgid_plural "%(num)d minutes"
 msgstr[0] "דקה"
 msgstr[1] "%(num)d דקות"
 msgstr[2] "%(num)d דקות"
-msgstr[3] "%(num)d דקות"

@@ -1,18 +1,18 @@
 # This file is distributed under the same license as the Django package.
 #
 # Translators:
-# NullIsNot0 <nullisnot0@inbox.lv>, 2017
+# Edgars Voroboks <edgars.voroboks@gmail.com>, 2017
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Māris Nartišs <maris.gis@gmail.com>, 2016
-# NullIsNot0 <nullisnot0@inbox.lv>, 2019,2021
+# Edgars Voroboks <edgars.voroboks@gmail.com>, 2019,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-15 09:00+0100\n"
-"PO-Revision-Date: 2021-01-25 22:44+0000\n"
-"Last-Translator: NullIsNot0 <nullisnot0@inbox.lv>\n"
-"Language-Team: Latvian (http://www.transifex.com/django/django/language/"
+"PO-Revision-Date: 2013-04-24 20:19+0000\n"
+"Last-Translator: Edgars Voroboks <edgars.voroboks@gmail.com>, 2019,2021\n"
+"Language-Team: Latvian (http://app.transifex.com/django/django/language/"
 "lv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -103,11 +103,11 @@ msgstr "Lūdzu instalējiet 'docutils'"
 
 #, python-format
 msgid ""
-"The admin documentation system requires Python’s <a href=\"%(link)s"
-"\">docutils</a> library."
+"The admin documentation system requires Python’s <a "
+"href=\"%(link)s\">docutils</a> library."
 msgstr ""
-"Administratora dokumentācijas sistēmai ir nepieciešama Python <a href="
-"\"%(link)s\">docutils</a> bibliotēka."
+"Administratora dokumentācijas sistēmai ir nepieciešama Python <a "
+"href=\"%(link)s\">docutils</a> bibliotēka."
 
 #, python-format
 msgid ""
@@ -240,8 +240,8 @@ msgid ""
 "code>.\n"
 msgstr ""
 "\n"
-"    Skata funkcija: <code>%(full_name)s</code>. Nosaukums: <code>"
-"%(url_name)s</code>.\n"
+"    Skata funkcija: <code>%(full_name)s</code>. Nosaukums: "
+"<code>%(url_name)s</code>.\n"
 
 msgid "tag:"
 msgstr "tags:"

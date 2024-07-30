@@ -40,8 +40,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2023-12-25 06:49+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 06:49+0000\n"
 "Last-Translator: jack yang, 2023\n"
 "Language-Team: Chinese (China) (http://app.transifex.com/django/django/"
 "language/zh_CN/)\n"
@@ -377,6 +377,9 @@ msgstr "本页结果为空"
 msgid "Enter a valid value."
 msgstr "输入一个有效的值。"
 
+msgid "Enter a valid domain name."
+msgstr ""
+
 msgid "Enter a valid URL."
 msgstr "输入一个有效的 URL。"
 
@@ -396,14 +399,18 @@ msgid ""
 "hyphens."
 msgstr "输入由Unicode字母，数字，下划线或连字符号组成的有效“字段”。"
 
-msgid "Enter a valid IPv4 address."
-msgstr "输入一个有效的 IPv4 地址。"
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
 
-msgid "Enter a valid IPv6 address."
-msgstr "输入一个有效的 IPv6 地址。"
+msgid "IPv4"
+msgstr ""
 
-msgid "Enter a valid IPv4 or IPv6 address."
-msgstr "输入一个有效的 IPv4 或 IPv6 地址."
+msgid "IPv6"
+msgstr ""
+
+msgid "IPv4 or IPv6"
+msgstr ""
 
 msgid "Enter only digits separated by commas."
 msgstr "只能输入用逗号分隔的数字。"

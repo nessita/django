@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-17 03:19-0500\n"
-"PO-Revision-Date: 2023-12-04 08:09+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
 "Last-Translator: Martin Tóth <ezimir@gmail.com>, 2017-2018,2023\n"
 "Language-Team: Slovak (http://app.transifex.com/django/django/language/sk/)\n"
 "MIME-Version: 1.0\n"
@@ -36,12 +36,22 @@ msgstr "Dôležité dátumy"
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr "Objekt %(name)s s primárnym kľúčom %(key)r neexistuje."
 
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
 msgid "Password changed successfully."
 msgstr "Heslo úspešne zmenené."
+
+msgid "Password-based authentication was disabled."
+msgstr ""
 
 #, python-format
 msgid "Change password: %s"
 msgstr "Zmeniť heslo: %s"
+
+#, python-format
+msgid "Set password: %s"
+msgstr ""
 
 msgid "Authentication and Authorization"
 msgstr "Autentifikácia a autorizácia"
@@ -58,8 +68,20 @@ msgstr "Žiadne heslo."
 msgid "Invalid password format or unknown hashing algorithm."
 msgstr "Neplatný formát hesla alebo neznámy hašovací algoritmus."
 
+msgid "Reset password"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
 msgid "The two password fields didn’t match."
 msgstr "Heslo a jeho potvrdenie sa nezhodujú."
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
+msgstr ""
 
 msgid "Password"
 msgstr "Heslo"
@@ -70,13 +92,22 @@ msgstr "Potvrdenie hesla"
 msgid "Enter the same password as before, for verification."
 msgstr "Kvôli overeniu, znovu zadajte rovnaké heslo."
 
-msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+msgid "Password-based authentication"
 msgstr ""
-"Heslá v pôvodnom tvare nie sú ukladané, takže neexistuje spôsob zobraziť "
-"heslo užívateľa. Môžete ho však zmeniť pomocou <a href=\"{}\">tohoto "
-"formulára</a>."
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid ""
+"Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr ""
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -103,9 +134,6 @@ msgstr "Nezadali ste správne svoje staré heslo. Napíšte ho znovu, prosím."
 
 msgid "Old password"
 msgstr "Staré heslo"
-
-msgid "Password (again)"
-msgstr "Heslo (znova)"
 
 msgid "algorithm"
 msgstr "algoritmus"

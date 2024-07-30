@@ -1,16 +1,17 @@
 # This file is distributed under the same license as the Django package.
 #
 # Translators:
-# Soyuzbek Orozbek uulu <soyuzbek196.kg@gmail.com>, 2020-2021
-# Soyuzbek Orozbek uulu <soyuzbek196.kg@gmail.com>, 2020
+# Soyuzbek orozbek uulu <soyuzbek196.kg@gmail.com>, 2020-2021
+# Soyuzbek orozbek uulu <soyuzbek196.kg@gmail.com>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-15 09:00+0100\n"
-"PO-Revision-Date: 2021-04-02 11:44+0000\n"
-"Last-Translator: Soyuzbek Orozbek uulu <soyuzbek196.kg@gmail.com>\n"
-"Language-Team: Kyrgyz (http://www.transifex.com/django/django/language/ky/)\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 07:59+0000\n"
+"Last-Translator: Soyuzbek orozbek uulu <soyuzbek196.kg@gmail.com>, "
+"2020-2021\n"
+"Language-Team: Kyrgyz (http://app.transifex.com/django/django/language/ky/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,8 +27,8 @@ msgid ""
 "This is the list of available %s. You may choose some by selecting them in "
 "the box below and then clicking the \"Choose\" arrow between the two boxes."
 msgstr ""
-"Бул жеткиликтүү тизмеси %s даана . Сиз төмөндө кутудан кээ бирлерин \"Тандоо"
-"\" баскычын басуу менен тандап алсаңыз болот."
+"Бул жеткиликтүү тизмеси %s даана . Сиз төмөндө кутудан кээ бирлерин "
+"\"Тандоо\" баскычын басуу менен тандап алсаңыз болот."
 
 #, javascript-format
 msgid "Type into this box to filter down the list of available %s."
@@ -61,12 +62,21 @@ msgstr ""
 "Бул тандалган %s даана. Сиз алардын каалаганын төмөндө кутудан \"Өчүр\" "
 "баскычын басуу менен өчүрө аласыз."
 
+#, javascript-format
+msgid "Type into this box to filter down the list of selected %s."
+msgstr ""
+
 msgid "Remove all"
 msgstr "Баарын алып ташта"
 
 #, javascript-format
 msgid "Click to remove all chosen %s at once."
 msgstr "Тандалган %s  даананын баарын өчүрүү үчүн басыңыз"
+
+#, javascript-format
+msgid "%s selected option not visible"
+msgid_plural "%s selected options not visible"
+msgstr[0] ""
 
 msgid "%(sel)s of %(cnt)s selected"
 msgid_plural "%(sel)s of %(cnt)s selected"
@@ -225,6 +235,55 @@ msgctxt "abbrev. month December"
 msgid "Dec"
 msgstr "Дек"
 
+msgid "Sunday"
+msgstr ""
+
+msgid "Monday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgctxt "abbrev. day Sunday"
+msgid "Sun"
+msgstr ""
+
+msgctxt "abbrev. day Monday"
+msgid "Mon"
+msgstr ""
+
+msgctxt "abbrev. day Tuesday"
+msgid "Tue"
+msgstr ""
+
+msgctxt "abbrev. day Wednesday"
+msgid "Wed"
+msgstr ""
+
+msgctxt "abbrev. day Thursday"
+msgid "Thur"
+msgstr ""
+
+msgctxt "abbrev. day Friday"
+msgid "Fri"
+msgstr ""
+
+msgctxt "abbrev. day Saturday"
+msgid "Sat"
+msgstr ""
+
 msgctxt "one letter Sunday"
 msgid "S"
 msgstr "Жек"
@@ -252,9 +311,3 @@ msgstr "Жума"
 msgctxt "one letter Saturday"
 msgid "S"
 msgstr "Ише"
-
-msgid "Show"
-msgstr "Көрсөт"
-
-msgid "Hide"
-msgstr "Жашыр"

@@ -12,16 +12,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 19:53+0200\n"
-"PO-Revision-Date: 2020-07-14 22:38+0000\n"
-"Last-Translator: Transifex Bot <>\n"
-"Language-Team: Malayalam (http://www.transifex.com/django/django/language/"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 07:05+0000\n"
+"Last-Translator: Hrishikesh <hrishi.kb@gmail.com>, 2019-2020\n"
+"Language-Team: Malayalam (http://app.transifex.com/django/django/language/"
 "ml/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ml\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, python-format
+msgid "Delete selected %(verbose_name_plural)s"
+msgstr "തെരഞ്ഞെടുത്ത %(verbose_name_plural)s നീക്കം ചെയ്യുക."
 
 #, python-format
 msgid "Successfully deleted %(count)d %(items)s."
@@ -33,10 +37,6 @@ msgstr "%(name)s നീക്കം ചെയ്യാന്‍ കഴിയി�
 
 msgid "Are you sure?"
 msgstr "തീര്‍ച്ചയാണോ?"
-
-#, python-format
-msgid "Delete selected %(verbose_name_plural)s"
-msgstr "തെരഞ്ഞെടുത്ത %(verbose_name_plural)s നീക്കം ചെയ്യുക."
 
 msgid "Administration"
 msgstr "കാര്യനിർവഹണം"
@@ -182,6 +182,9 @@ msgstr "ഒന്നുമില്ല"
 msgid "Hold down “Control”, or “Command” on a Mac, to select more than one."
 msgstr ""
 
+msgid "Select this object for an action - {}"
+msgstr ""
+
 #, python-brace-format
 msgid "The {name} “{obj}” was added successfully."
 msgstr ""
@@ -197,10 +200,6 @@ msgstr ""
 #, python-brace-format
 msgid ""
 "The {name} “{obj}” was changed successfully. You may edit it again below."
-msgstr ""
-
-#, python-brace-format
-msgid "The {name} “{obj}” was added successfully. You may edit it again below."
 msgstr ""
 
 #, python-brace-format
@@ -264,8 +263,9 @@ msgstr "%(cnt)s ല്‍ 0 തിരഞ്ഞെടുത്തിരിക്�
 msgid "Change history: %s"
 msgstr "%s ലെ മാറ്റങ്ങള്‍."
 
-#. Translators: Model verbose name and instance representation,
-#. suitable to be an item in a list.
+#. Translators: Model verbose name and instance
+#. representation, suitable to be an item in a
+#. list.
 #, python-format
 msgid "%(class_name)s %(instance)s"
 msgstr "%(class_name)s %(instance)s"
@@ -333,6 +333,9 @@ msgstr "മുഴുവന്‍ %(total_count)s %(module_name)s ഉം തെ�
 msgid "Clear selection"
 msgstr "തെരഞ്ഞെടുത്തത് റദ്ദാക്കുക."
 
+msgid "Breadcrumbs"
+msgstr ""
+
 #, python-format
 msgid "Models in the %(name)s application"
 msgstr "%(name)s മാതൃകയിലുള്ള"
@@ -359,15 +362,31 @@ msgstr "Enter a username and password."
 msgid "Change password"
 msgstr "പാസ് വേര്‍ഡ് മാറ്റുക."
 
-msgid "Please correct the error below."
-msgstr "താഴെ പറയുന്ന തെറ്റുകൾ തിരുത്തുക "
+msgid "Set password"
+msgstr ""
 
-msgid "Please correct the errors below."
-msgstr "ദയവായി താഴെയുള്ള തെറ്റുകള്‍ പരിഹരിക്കുക."
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
 
 #, python-format
 msgid "Enter a new password for the user <strong>%(username)s</strong>."
 msgstr "<strong>%(username)s</strong> ന് പുതിയ പാസ് വേര്‍ഡ് നല്കുക."
+
+msgid ""
+"This action will <strong>enable</strong> password-based authentication for "
+"this user."
+msgstr ""
+
+msgid "Disable password-based authentication"
+msgstr ""
+
+msgid "Enable password-based authentication"
+msgstr ""
+
+msgid "Skip to main content"
+msgstr ""
 
 msgid "Welcome,"
 msgstr "സ്വാഗതം, "
@@ -394,6 +413,12 @@ msgstr "View on site"
 msgid "Filter"
 msgstr "അരിപ്പ"
 
+msgid "Hide counts"
+msgstr ""
+
+msgid "Show counts"
+msgstr ""
+
 msgid "Clear all filters"
 msgstr "എല്ലാ ഫിൽറ്ററുകളും ഒഴിവാക്കുക"
 
@@ -406,6 +431,15 @@ msgstr "ക്രമീകരണത്തിനുള്ള മുന്‍ഗ�
 
 msgid "Toggle sorting"
 msgstr "ക്രമീകരണം വിപരീത ദിശയിലാക്കുക."
+
+msgid "Toggle theme (current theme: auto)"
+msgstr ""
+
+msgid "Toggle theme (current theme: light)"
+msgstr ""
+
+msgid "Toggle theme (current theme: dark)"
+msgstr ""
 
 msgid "Delete"
 msgstr "നീക്കം ചെയ്യുക"
@@ -492,6 +526,15 @@ msgstr "എന്റെ പ്രവർത്തനം"
 msgid "None available"
 msgstr "ഒന്നും ലഭ്യമല്ല"
 
+msgid "Added:"
+msgstr ""
+
+msgid "Changed:"
+msgstr ""
+
+msgid "Deleted:"
+msgstr ""
+
 msgid "Unknown content"
 msgstr "ഉള്ളടക്കം അറിയില്ല."
 
@@ -515,6 +558,15 @@ msgstr "രഹസ്യവാക്കോ ഉപയോക്തൃനാമമ�
 msgid "Toggle navigation"
 msgstr ""
 
+msgid "Sidebar"
+msgstr ""
+
+msgid "Start typing to filter…"
+msgstr ""
+
+msgid "Filter navigation items"
+msgstr ""
+
 msgid "Date/time"
 msgstr "തീയതി/സമയം"
 
@@ -523,6 +575,11 @@ msgstr "ഉപയോക്താവ്"
 
 msgid "Action"
 msgstr "പ്രവർത്തി"
+
+msgid "entry"
+msgid_plural "entries"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid ""
 "This object doesn’t have a change history. It probably wasn’t added via this "
@@ -578,8 +635,12 @@ msgstr ""
 msgid "Delete selected %(model)s"
 msgstr "തിരഞ്ഞെടുത്തത് ഇല്ലാതാക്കുക%(model)s"
 
-msgid "Thanks for spending some quality time with the Web site today."
-msgstr "ഈ വെബ് സൈറ്റില്‍ കുറെ നല്ല സമയം ചെലവഴിച്ചതിനു നന്ദി."
+#, python-format
+msgid "View selected %(model)s"
+msgstr ""
+
+msgid "Thanks for spending some quality time with the web site today."
+msgstr ""
 
 msgid "Log in again"
 msgstr "വീണ്ടും ലോഗ്-ഇന്‍ ചെയ്യുക."
@@ -668,6 +729,9 @@ msgstr "ഇമെയിൽ വിലാസം:"
 
 msgid "Reset my password"
 msgstr "എന്റെ പാസ് വേര്‍ഡ് പുനസ്ഥാപിക്കൂ"
+
+msgid "Select all objects on this page for an action"
+msgstr ""
 
 msgid "All dates"
 msgstr "എല്ലാ തീയതികളും"

@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2023-12-25 06:49+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 06:49+0000\n"
 "Last-Translator: Turmunkh Batkhuyag, 2023\n"
 "Language-Team: Mongolian (http://app.transifex.com/django/django/language/"
 "mn/)\n"
@@ -354,6 +354,9 @@ msgstr "Хуудас үр дүн агуулаагүй байна"
 msgid "Enter a valid value."
 msgstr "Зөв утга оруулна уу."
 
+msgid "Enter a valid domain name."
+msgstr ""
+
 msgid "Enter a valid URL."
 msgstr "Зөв, хүчинтэй хаяг (URL) оруулна уу."
 
@@ -377,14 +380,18 @@ msgstr ""
 "Юникод үсэг, тоо, доогуур зураас, зурааснаас бүрдсэн хүчинтэй \"slug\" "
 "оруулна уу."
 
-msgid "Enter a valid IPv4 address."
-msgstr "Зөв IPv4 хаяг оруулна уу. "
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
 
-msgid "Enter a valid IPv6 address."
-msgstr "Зөв IPv6  хаяг оруулна уу."
+msgid "IPv4"
+msgstr ""
 
-msgid "Enter a valid IPv4 or IPv6 address."
-msgstr "Зөв IPv4 эсвэл IPv6 хаяг оруулна уу."
+msgid "IPv6"
+msgstr ""
+
+msgid "IPv4 or IPv6"
+msgstr ""
 
 msgid "Enter only digits separated by commas."
 msgstr "Зөвхөн таслалаар тусгаарлагдсан цифр оруулна уу."

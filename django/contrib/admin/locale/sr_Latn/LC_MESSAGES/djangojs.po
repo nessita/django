@@ -1,17 +1,17 @@
 # This file is distributed under the same license as the Django package.
 #
 # Translators:
-# Igor Jerosimić, 2019,2021,2023
+# Igor Jerosimić, 2019,2021,2023-2024
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Janos Guljas <janos@resenje.org>, 2011-2012
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-17 03:19-0500\n"
-"PO-Revision-Date: 2023-04-25 07:59+0000\n"
-"Last-Translator: Igor Jerosimić, 2019,2021,2023\n"
-"Language-Team: Serbian (Latin) (http://www.transifex.com/django/django/"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 07:59+0000\n"
+"Last-Translator: Igor Jerosimić, 2019,2021,2023-2024\n"
+"Language-Team: Serbian (Latin) (http://app.transifex.com/django/django/"
 "language/sr@latin/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -245,6 +245,55 @@ msgctxt "abbrev. month December"
 msgid "Dec"
 msgstr "dec"
 
+msgid "Sunday"
+msgstr "nedelja"
+
+msgid "Monday"
+msgstr "ponedeljak"
+
+msgid "Tuesday"
+msgstr "utorak"
+
+msgid "Wednesday"
+msgstr "sreda"
+
+msgid "Thursday"
+msgstr "četvrtak"
+
+msgid "Friday"
+msgstr "petak"
+
+msgid "Saturday"
+msgstr "subota"
+
+msgctxt "abbrev. day Sunday"
+msgid "Sun"
+msgstr "ned"
+
+msgctxt "abbrev. day Monday"
+msgid "Mon"
+msgstr "pon"
+
+msgctxt "abbrev. day Tuesday"
+msgid "Tue"
+msgstr "uto"
+
+msgctxt "abbrev. day Wednesday"
+msgid "Wed"
+msgstr "sre"
+
+msgctxt "abbrev. day Thursday"
+msgid "Thur"
+msgstr "čet"
+
+msgctxt "abbrev. day Friday"
+msgid "Fri"
+msgstr "pet"
+
+msgctxt "abbrev. day Saturday"
+msgid "Sat"
+msgstr "sub"
+
 msgctxt "one letter Sunday"
 msgid "S"
 msgstr "N"
@@ -272,9 +321,3 @@ msgstr "P"
 msgctxt "one letter Saturday"
 msgid "S"
 msgstr "S"
-
-msgid "Show"
-msgstr "Pokaži"
-
-msgid "Hide"
-msgstr "Sakrij"

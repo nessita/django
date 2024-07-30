@@ -11,10 +11,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-16 20:42+0100\n"
-"PO-Revision-Date: 2019-01-18 10:32+0000\n"
-"Last-Translator: Matas Dailyda <matas@dailyda.com>\n"
-"Language-Team: Lithuanian (http://www.transifex.com/django/django/language/"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 07:05+0000\n"
+"Last-Translator: Matas Dailyda <matas@dailyda.com>, 2015-2019\n"
+"Language-Team: Lithuanian (http://app.transifex.com/django/django/language/"
 "lt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,6 +23,10 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
 "11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
 "1 : n % 1 != 0 ? 2: 3);\n"
+
+#, python-format
+msgid "Delete selected %(verbose_name_plural)s"
+msgstr "Ištrinti pasirinktus %(verbose_name_plural)s "
 
 #, python-format
 msgid "Successfully deleted %(count)d %(items)s."
@@ -34,10 +38,6 @@ msgstr "Ištrinti %(name)s negalima"
 
 msgid "Are you sure?"
 msgstr "Ar esate tikras?"
-
-#, python-format
-msgid "Delete selected %(verbose_name_plural)s"
-msgstr "Ištrinti pasirinktus %(verbose_name_plural)s "
 
 msgid "Administration"
 msgstr "Administravimas"
@@ -74,6 +74,12 @@ msgstr "Nėra datos"
 
 msgid "Has date"
 msgstr "Turi datą"
+
+msgid "Empty"
+msgstr ""
+
+msgid "Not empty"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -132,23 +138,23 @@ msgid "log entries"
 msgstr "log įrašai"
 
 #, python-format
-msgid "Added \"%(object)s\"."
-msgstr "„%(object)s“ pridėti."
+msgid "Added “%(object)s”."
+msgstr ""
 
 #, python-format
-msgid "Changed \"%(object)s\" - %(changes)s"
-msgstr "Pakeisti „%(object)s“ - %(changes)s"
+msgid "Changed “%(object)s” — %(changes)s"
+msgstr ""
 
 #, python-format
-msgid "Deleted \"%(object)s.\""
-msgstr "„%(object)s“ ištrinti."
+msgid "Deleted “%(object)s.”"
+msgstr ""
 
 msgid "LogEntry Object"
 msgstr "LogEntry objektas"
 
 #, python-brace-format
-msgid "Added {name} \"{object}\"."
-msgstr "Pridėtas {name} \"{object}\"."
+msgid "Added {name} “{object}”."
+msgstr ""
 
 msgid "Added."
 msgstr "Pridėta."
@@ -157,16 +163,16 @@ msgid "and"
 msgstr "ir"
 
 #, python-brace-format
-msgid "Changed {fields} for {name} \"{object}\"."
-msgstr "Pakeisti {fields} arba {name} \"{object}\"."
+msgid "Changed {fields} for {name} “{object}”."
+msgstr ""
 
 #, python-brace-format
 msgid "Changed {fields}."
 msgstr "Pakeisti {fields}."
 
 #, python-brace-format
-msgid "Deleted {name} \"{object}\"."
-msgstr "Pašalintas {name} \"{object}\"."
+msgid "Deleted {name} “{object}”."
+msgstr ""
 
 msgid "No fields changed."
 msgstr "Nei vienas laukas nepakeistas"
@@ -174,47 +180,38 @@ msgstr "Nei vienas laukas nepakeistas"
 msgid "None"
 msgstr "None"
 
-msgid ""
-"Hold down \"Control\", or \"Command\" on a Mac, to select more than one."
+msgid "Hold down “Control”, or “Command” on a Mac, to select more than one."
 msgstr ""
-"Nuspauskite \"Control\", arba \"Command\" Mac kompiuteriuose, kad pasirinkti "
-"daugiau nei vieną."
+
+msgid "Select this object for an action - {}"
+msgstr ""
 
 #, python-brace-format
-msgid "The {name} \"{obj}\" was added successfully."
-msgstr "{name} \"{obj}\" buvo sėkmingai pridėtas."
+msgid "The {name} “{obj}” was added successfully."
+msgstr ""
 
 msgid "You may edit it again below."
 msgstr "Galite tai dar kartą redaguoti žemiau."
 
 #, python-brace-format
 msgid ""
-"The {name} \"{obj}\" was added successfully. You may add another {name} "
+"The {name} “{obj}” was added successfully. You may add another {name} below."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"The {name} “{obj}” was changed successfully. You may edit it again below."
+msgstr ""
+
+#, python-brace-format
+msgid ""
+"The {name} “{obj}” was changed successfully. You may add another {name} "
 "below."
 msgstr ""
-"{name} \"{obj}\" buvo sėkmingai pridėtas. Galite pridėti kitą {name} žemiau."
 
 #, python-brace-format
-msgid ""
-"The {name} \"{obj}\" was changed successfully. You may edit it again below."
-msgstr "{name} \"{obj}\" buvo sėkmingai pakeistas. Galite jį koreguoti žemiau."
-
-#, python-brace-format
-msgid ""
-"The {name} \"{obj}\" was added successfully. You may edit it again below."
+msgid "The {name} “{obj}” was changed successfully."
 msgstr ""
-"{name} \"{obj}\" buvo sėkmingai pridėtas. Galite jį vėl redaguoti žemiau."
-
-#, python-brace-format
-msgid ""
-"The {name} \"{obj}\" was changed successfully. You may add another {name} "
-"below."
-msgstr ""
-"{name} \"{obj}\" buvo sėkmingai pakeistas. Galite pridėti kitą {name} žemiau."
-
-#, python-brace-format
-msgid "The {name} \"{obj}\" was changed successfully."
-msgstr "{name} \"{obj}\" buvo sėkmingai pakeistas."
 
 msgid ""
 "Items must be selected in order to perform actions on them. No items have "
@@ -227,12 +224,12 @@ msgid "No action selected."
 msgstr "Veiksmai atlikti nebuvo."
 
 #, python-format
-msgid "The %(name)s \"%(obj)s\" was deleted successfully."
-msgstr "%(name)s \"%(obj)s\" sėkmingai ištrintas."
+msgid "The %(name)s “%(obj)s” was deleted successfully."
+msgstr ""
 
 #, python-format
-msgid "%(name)s with ID \"%(key)s\" doesn't exist. Perhaps it was deleted?"
-msgstr "%(name)s su ID \"%(key)s\" neegzistuoja. Gal tai buvo ištrinta?"
+msgid "%(name)s with ID “%(key)s” doesn’t exist. Perhaps it was deleted?"
+msgstr ""
 
 #, python-format
 msgid "Add %s"
@@ -273,8 +270,9 @@ msgstr "0 iš %(cnt)s pasirinkta"
 msgid "Change history: %s"
 msgstr "Pakeitimų istorija: %s"
 
-#. Translators: Model verbose name and instance representation,
-#. suitable to be an item in a list.
+#. Translators: Model verbose name and instance
+#. representation, suitable to be an item in a
+#. list.
 #, python-format
 msgid "%(class_name)s %(instance)s"
 msgstr "%(class_name)s %(instance)s"
@@ -306,8 +304,8 @@ msgstr "%(app)s administravimas"
 msgid "Page not found"
 msgstr "Puslapis nerastas"
 
-msgid "We're sorry, but the requested page could not be found."
-msgstr "Atsiprašome, bet prašytas puslapis nerastas."
+msgid "We’re sorry, but the requested page could not be found."
+msgstr ""
 
 msgid "Home"
 msgstr "Pradinis"
@@ -322,11 +320,9 @@ msgid "Server Error <em>(500)</em>"
 msgstr "Serverio klaida <em>(500)</em>"
 
 msgid ""
-"There's been an error. It's been reported to the site administrators via "
+"There’s been an error. It’s been reported to the site administrators via "
 "email and should be fixed shortly. Thanks for your patience."
 msgstr ""
-"Netikėta klaida. Apie ją buvo pranešta administratoriams el. paštu ir ji "
-"turėtų būti greitai sutvarkyta. Dėkui už kantrybę."
 
 msgid "Run the selected action"
 msgstr "Vykdyti pasirinktus veiksmus"
@@ -344,12 +340,26 @@ msgstr "Pasirinkti visus %(total_count)s %(module_name)s"
 msgid "Clear selection"
 msgstr "Atstatyti į pradinę būseną"
 
+msgid "Breadcrumbs"
+msgstr ""
+
+#, python-format
+msgid "Models in the %(name)s application"
+msgstr "%(name)s aplikacijos modeliai"
+
+msgid "Add"
+msgstr "Pridėti"
+
+msgid "View"
+msgstr "Peržiūrėti"
+
+msgid "You don’t have permission to view or edit anything."
+msgstr ""
+
 msgid ""
-"First, enter a username and password. Then, you'll be able to edit more user "
+"First, enter a username and password. Then, you’ll be able to edit more user "
 "options."
 msgstr ""
-"Pirmiausia įveskite naudotojo vardą ir slaptažodį. Tada galėsite keisti "
-"daugiau naudotojo nustatymų."
 
 msgid "Enter a username and password."
 msgstr "Įveskite naudotojo vardą ir slaptažodį."
@@ -357,15 +367,33 @@ msgstr "Įveskite naudotojo vardą ir slaptažodį."
 msgid "Change password"
 msgstr "Keisti slaptažodį"
 
-msgid "Please correct the error below."
-msgstr "Prašome ištaisyti žemiau esančią klaidą."
+msgid "Set password"
+msgstr ""
 
-msgid "Please correct the errors below."
-msgstr "Ištaisykite žemiau esančias klaidas."
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #, python-format
 msgid "Enter a new password for the user <strong>%(username)s</strong>."
 msgstr "Įveskite naują slaptažodį naudotojui <strong>%(username)s</strong>."
+
+msgid ""
+"This action will <strong>enable</strong> password-based authentication for "
+"this user."
+msgstr ""
+
+msgid "Disable password-based authentication"
+msgstr ""
+
+msgid "Enable password-based authentication"
+msgstr ""
+
+msgid "Skip to main content"
+msgstr ""
 
 msgid "Welcome,"
 msgstr "Sveiki,"
@@ -392,6 +420,15 @@ msgstr "Matyti tinklalapyje"
 msgid "Filter"
 msgstr "Filtras"
 
+msgid "Hide counts"
+msgstr ""
+
+msgid "Show counts"
+msgstr ""
+
+msgid "Clear all filters"
+msgstr ""
+
 msgid "Remove from sorting"
 msgstr "Pašalinti iš rikiavimo"
 
@@ -401,6 +438,15 @@ msgstr "Rikiavimo prioritetas: %(priority_number)s"
 
 msgid "Toggle sorting"
 msgstr "Perjungti rikiavimą"
+
+msgid "Toggle theme (current theme: auto)"
+msgstr ""
+
+msgid "Toggle theme (current theme: light)"
+msgstr ""
+
+msgid "Toggle theme (current theme: dark)"
+msgstr ""
 
 msgid "Delete"
 msgstr "Ištrinti"
@@ -433,8 +479,8 @@ msgstr ""
 msgid "Objects"
 msgstr "Objektai"
 
-msgid "Yes, I'm sure"
-msgstr "Taip, esu tikras"
+msgid "Yes, I’m sure"
+msgstr ""
 
 msgid "No, take me back"
 msgstr "Ne, grįžti atgal"
@@ -467,9 +513,6 @@ msgstr ""
 "Ar esate tikri, kad norite ištrinti pasirinktus %(objects_name)s? Sekantys "
 "pasirinkti bei susiję objektai bus ištrinti:"
 
-msgid "View"
-msgstr "Peržiūrėti"
-
 msgid "Delete?"
 msgstr "Ištrinti?"
 
@@ -480,16 +523,6 @@ msgstr " Pagal %(filter_title)s "
 msgid "Summary"
 msgstr "Santrauka"
 
-#, python-format
-msgid "Models in the %(name)s application"
-msgstr "%(name)s aplikacijos modeliai"
-
-msgid "Add"
-msgstr "Pridėti"
-
-msgid "You don't have permission to view or edit anything."
-msgstr "Jūs neturite teisių peržiūrai ir redagavimui."
-
 msgid "Recent actions"
 msgstr "Paskutiniai veiksmai"
 
@@ -499,17 +532,23 @@ msgstr "Mano veiksmai"
 msgid "None available"
 msgstr "Nėra prieinamų"
 
+msgid "Added:"
+msgstr ""
+
+msgid "Changed:"
+msgstr ""
+
+msgid "Deleted:"
+msgstr ""
+
 msgid "Unknown content"
 msgstr "Nežinomas turinys"
 
 msgid ""
-"Something's wrong with your database installation. Make sure the appropriate "
+"Something’s wrong with your database installation. Make sure the appropriate "
 "database tables have been created, and make sure the database is readable by "
 "the appropriate user."
 msgstr ""
-"Kažkas yra negerai su jūsų duomenų bazės instaliacija. Įsitikink, kad visos "
-"reikalingos lentelės sukurtos ir vartotojas turi teises skaityti duomenų "
-"bazę."
 
 #, python-format
 msgid ""
@@ -522,6 +561,18 @@ msgstr ""
 msgid "Forgotten your password or username?"
 msgstr "Pamiršote slaptažodį ar vartotojo vardą?"
 
+msgid "Toggle navigation"
+msgstr ""
+
+msgid "Sidebar"
+msgstr ""
+
+msgid "Start typing to filter…"
+msgstr ""
+
+msgid "Filter navigation items"
+msgstr ""
+
 msgid "Date/time"
 msgstr "Data/laikas"
 
@@ -531,12 +582,17 @@ msgstr "Naudotojas"
 msgid "Action"
 msgstr "Veiksmas"
 
+msgid "entry"
+msgid_plural "entries"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
 msgid ""
-"This object doesn't have a change history. It probably wasn't added via this "
+"This object doesn’t have a change history. It probably wasn’t added via this "
 "admin site."
 msgstr ""
-"Šis objektas neturi pakeitimų istorijos. Tikriausiai jis buvo pridėtas ne "
-"per administravimo puslapį."
 
 msgid "Show all"
 msgstr "Rodyti visus"
@@ -589,8 +645,12 @@ msgstr "Pridėti dar vieną %(model)s"
 msgid "Delete selected %(model)s"
 msgstr "Pašalinti pasirinktus %(model)s"
 
-msgid "Thanks for spending some quality time with the Web site today."
-msgstr "Dėkui už šiandien tinklalapyje turiningai praleistą laiką."
+#, python-format
+msgid "View selected %(model)s"
+msgstr ""
+
+msgid "Thanks for spending some quality time with the web site today."
+msgstr ""
 
 msgid "Log in again"
 msgstr "Prisijungti dar kartą"
@@ -602,11 +662,9 @@ msgid "Your password was changed."
 msgstr "Jūsų slaptažodis buvo pakeistas."
 
 msgid ""
-"Please enter your old password, for security's sake, and then enter your new "
+"Please enter your old password, for security’s sake, and then enter your new "
 "password twice so we can verify you typed it in correctly."
 msgstr ""
-"Saugumo sumetimais įveskite seną slaptažodį ir tada du kartus naują, kad "
-"įsitikinti, jog nesuklydote rašydamas"
 
 msgid "Change my password"
 msgstr "Keisti mano slaptažodį"
@@ -641,19 +699,14 @@ msgstr ""
 "buvo panaudota. Prašykite naujo slaptažodžio pakeitimo."
 
 msgid ""
-"We've emailed you instructions for setting your password, if an account "
+"We’ve emailed you instructions for setting your password, if an account "
 "exists with the email you entered. You should receive them shortly."
 msgstr ""
-"Jei egzistuoja vartotojas su jūsų įvestu elektroninio pašto adresu, "
-"išsiųsime jums slaptažodžio nustatymo instrukcijas . Instrukcijas turėtumėte "
-"gauti netrukus."
 
 msgid ""
-"If you don't receive an email, please make sure you've entered the address "
+"If you don’t receive an email, please make sure you’ve entered the address "
 "you registered with, and check your spam folder."
 msgstr ""
-"Jei el. laiško negavote, prašome įsitikinti ar įvedėte tą el. pašto adresą "
-"kuriuo registravotės ir patikrinkite savo šlamšto aplanką."
 
 #, python-format
 msgid ""
@@ -666,8 +719,8 @@ msgstr ""
 msgid "Please go to the following page and choose a new password:"
 msgstr "Prašome eiti į šį puslapį ir pasirinkti naują slaptažodį:"
 
-msgid "Your username, in case you've forgotten:"
-msgstr "Jūsų naudotojo vardas, jei netyčia jį užmiršote:"
+msgid "Your username, in case you’ve forgotten:"
+msgstr ""
 
 msgid "Thanks for using our site!"
 msgstr "Dėkui, kad naudojatės mūsų tinklalapiu!"
@@ -677,17 +730,18 @@ msgid "The %(site_name)s team"
 msgstr "%(site_name)s komanda"
 
 msgid ""
-"Forgotten your password? Enter your email address below, and we'll email "
+"Forgotten your password? Enter your email address below, and we’ll email "
 "instructions for setting a new one."
 msgstr ""
-"Pamiršote slaptažodį? Įveskite savo el. pašto adresą ir mes išsiųsime laišką "
-"su instrukcijomis kaip nustatyti naują slaptažodį."
 
 msgid "Email address:"
 msgstr "El. pašto adresas:"
 
 msgid "Reset my password"
 msgstr "Atstatyti slaptažodį"
+
+msgid "Select all objects on this page for an action"
+msgstr ""
 
 msgid "All dates"
 msgstr "Visos datos"

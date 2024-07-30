@@ -5,7 +5,7 @@
 # Churow Park <churow@naver.com>, 2020
 # Jiyoon, Ha <cryptography@konkuk.ac.kr>, 2016
 # DaHae Sung <sdh4513136@hanmail.net>, 2016
-# 코딩 영, 2021
+# Dummy Iam, 2021
 # Geonho Kim / Leo Kim <gh.leokim@gmail.com>, 2019
 # Ian Y. Choi <ianyrchoi@gmail.com>, 2015
 # Jannis Leidel <jannis@leidel.info>, 2011
@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-17 03:19-0500\n"
-"PO-Revision-Date: 2023-12-04 08:09+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
 "Last-Translator: Seoeun(Sun☀️) Hong, 2023\n"
 "Language-Team: Korean (http://app.transifex.com/django/django/language/ko/)\n"
 "MIME-Version: 1.0\n"
@@ -44,12 +44,22 @@ msgstr "중요한 일정"
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr "Primary key %(key)r인 개체 %(name)s이/가 존재하지 않습니다."
 
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
 msgid "Password changed successfully."
 msgstr "비밀번호가 변경되었습니다."
+
+msgid "Password-based authentication was disabled."
+msgstr ""
 
 #, python-format
 msgid "Change password: %s"
 msgstr "비밀번호 변경: %s"
+
+#, python-format
+msgid "Set password: %s"
+msgstr ""
 
 msgid "Authentication and Authorization"
 msgstr "인증 및 권한"
@@ -66,8 +76,20 @@ msgstr "비밀번호가 설정되지 않습니다."
 msgid "Invalid password format or unknown hashing algorithm."
 msgstr "잘못된 비밀번호 형식이거나 알 수 없는 해싱 알고리즘 입니다."
 
+msgid "Reset password"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
 msgid "The two password fields didn’t match."
 msgstr "비밀번호가 일치하지 않습니다."
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
+msgstr ""
 
 msgid "Password"
 msgstr "비밀번호"
@@ -78,12 +100,22 @@ msgstr "비밀번호 확인"
 msgid "Enter the same password as before, for verification."
 msgstr "확인을 위해 이전과 동일한 비밀번호를 입력하세요. "
 
-msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+msgid "Password-based authentication"
 msgstr ""
-"원본 비밀번호는 저장되지 않으므로, 해당 사용자의 비밀번호를 확인할 수 없습니"
-"다. 다만 이 <a href=\"{}\">폼</a>을 사용하여 비밀번호를 변경할 수 있습니다."
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid ""
+"Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr ""
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -110,9 +142,6 @@ msgstr "기존 비밀번호를 잘못 입력하셨습니다. 다시 입력해 �
 
 msgid "Old password"
 msgstr "기존 비밀번호"
-
-msgid "Password (again)"
-msgstr "비밀번호 (확인)"
 
 msgid "algorithm"
 msgstr "알고리즘"

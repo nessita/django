@@ -11,10 +11,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-17 05:10-0500\n"
-"PO-Revision-Date: 2022-07-25 07:05+0000\n"
-"Last-Translator: Vaarun Sinha\n"
-"Language-Team: Hindi (http://www.transifex.com/django/django/language/hi/)\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 07:05+0000\n"
+"Last-Translator: Vaarun Sinha, 2022\n"
+"Language-Team: Hindi (http://app.transifex.com/django/django/language/hi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -180,6 +180,9 @@ msgstr "कोई नहीं"
 msgid "Hold down “Control”, or “Command” on a Mac, to select more than one."
 msgstr ""
 
+msgid "Select this object for an action - {}"
+msgstr ""
+
 #, python-brace-format
 msgid "The {name} “{obj}” was added successfully."
 msgstr ""
@@ -195,10 +198,6 @@ msgstr ""
 #, python-brace-format
 msgid ""
 "The {name} “{obj}” was changed successfully. You may edit it again below."
-msgstr ""
-
-#, python-brace-format
-msgid "The {name} “{obj}” was added successfully. You may edit it again below."
 msgstr ""
 
 #, python-brace-format
@@ -330,6 +329,9 @@ msgstr "तमाम %(total_count)s %(module_name)s चुनें"
 msgid "Clear selection"
 msgstr "चयन खालिज किया जाये "
 
+msgid "Breadcrumbs"
+msgstr ""
+
 #, python-format
 msgid "Models in the %(name)s application"
 msgstr "%(name)s अनुप्रयोग के प्रतिरूप"
@@ -354,15 +356,31 @@ msgstr "उपयोगकर्ता का नाम और कूटशब�
 msgid "Change password"
 msgstr "पासवर्ड बदलें"
 
-msgid "Please correct the error below."
+msgid "Set password"
 msgstr ""
 
-msgid "Please correct the errors below."
-msgstr ""
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
 
 #, python-format
 msgid "Enter a new password for the user <strong>%(username)s</strong>."
 msgstr "<strong>%(username)s</strong> प्रवोक्ता के लिए नयी कूटशब्द दर्ज करें ।"
+
+msgid ""
+"This action will <strong>enable</strong> password-based authentication for "
+"this user."
+msgstr ""
+
+msgid "Disable password-based authentication"
+msgstr ""
+
+msgid "Enable password-based authentication"
+msgstr ""
+
+msgid "Skip to main content"
+msgstr ""
 
 msgid "Welcome,"
 msgstr "आपका स्वागत है,"
@@ -389,6 +407,12 @@ msgstr "साइट पे देखें"
 msgid "Filter"
 msgstr "छन्नी"
 
+msgid "Hide counts"
+msgstr ""
+
+msgid "Show counts"
+msgstr ""
+
 msgid "Clear all filters"
 msgstr ""
 
@@ -401,6 +425,15 @@ msgstr "श्रेणीकरण प्राथमिकता : %(priority_
 
 msgid "Toggle sorting"
 msgstr "टॉगल श्रेणीकरण"
+
+msgid "Toggle theme (current theme: auto)"
+msgstr ""
+
+msgid "Toggle theme (current theme: light)"
+msgstr ""
+
+msgid "Toggle theme (current theme: dark)"
+msgstr ""
 
 msgid "Delete"
 msgstr "मिटाएँ"
@@ -486,6 +519,15 @@ msgstr ""
 msgid "None available"
 msgstr " कोई भी उपलब्ध नहीं"
 
+msgid "Added:"
+msgstr ""
+
+msgid "Changed:"
+msgstr ""
+
+msgid "Deleted:"
+msgstr ""
+
 msgid "Unknown content"
 msgstr "अज्ञात सामग्री"
 
@@ -507,6 +549,9 @@ msgstr "अपना पासवर्ड या उपयोगकर्ता
 msgid "Toggle navigation"
 msgstr ""
 
+msgid "Sidebar"
+msgstr ""
+
 msgid "Start typing to filter…"
 msgstr ""
 
@@ -523,10 +568,9 @@ msgid "Action"
 msgstr "कार्य"
 
 msgid "entry"
-msgstr ""
-
-msgid "entries"
-msgstr ""
+msgid_plural "entries"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid ""
 "This object doesn’t have a change history. It probably wasn’t added via this "
@@ -674,6 +718,9 @@ msgstr "डाक पता -"
 
 msgid "Reset my password"
 msgstr " मेरे कूटशब्द की पुनःस्थापना"
+
+msgid "Select all objects on this page for an action"
+msgstr ""
 
 msgid "All dates"
 msgstr "सभी तिथियों"

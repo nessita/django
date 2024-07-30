@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2023-12-04 06:49+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 06:49+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>, 2021,2023\n"
 "Language-Team: Finnish (http://app.transifex.com/django/django/language/"
 "fi/)\n"
@@ -349,6 +349,9 @@ msgstr "Annetulla sivulla ei ole tuloksia"
 msgid "Enter a valid value."
 msgstr "Syötä oikea arvo."
 
+msgid "Enter a valid domain name."
+msgstr ""
+
 msgid "Enter a valid URL."
 msgstr "Syötä oikea URL-osoite."
 
@@ -372,14 +375,18 @@ msgstr ""
 "Anna lyhytnimi joka koostuu vain Unicode-kirjaimista, numeroista sekä ala- "
 "ja tavuviivoista."
 
-msgid "Enter a valid IPv4 address."
-msgstr "Syötä kelvollinen IPv4-osoite."
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
 
-msgid "Enter a valid IPv6 address."
-msgstr "Syötä kelvollinen IPv6-osoite."
+msgid "IPv4"
+msgstr ""
 
-msgid "Enter a valid IPv4 or IPv6 address."
-msgstr "Syötä kelvollinen IPv4- tai IPv6-osoite."
+msgid "IPv6"
+msgstr ""
+
+msgid "IPv4 or IPv6"
+msgstr ""
 
 msgid "Enter only digits separated by commas."
 msgstr "Vain pilkulla erotetut numeromerkit kelpaavat tässä."

@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2023-12-04 06:49+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 06:49+0000\n"
 "Last-Translator: Andrej Marsetič, 2022-2023\n"
 "Language-Team: Slovenian (http://app.transifex.com/django/django/language/"
 "sl/)\n"
@@ -351,6 +351,9 @@ msgstr "Ta stran nima zadetkov"
 msgid "Enter a valid value."
 msgstr "Vnesite veljavno vrednost."
 
+msgid "Enter a valid domain name."
+msgstr ""
+
 msgid "Enter a valid URL."
 msgstr "Vnesite veljaven URL naslov."
 
@@ -370,14 +373,18 @@ msgid ""
 "hyphens."
 msgstr ""
 
-msgid "Enter a valid IPv4 address."
-msgstr "Vnesite veljaven IPv4 naslov."
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
 
-msgid "Enter a valid IPv6 address."
-msgstr "Vnesite veljaven IPv6 naslov."
+msgid "IPv4"
+msgstr ""
 
-msgid "Enter a valid IPv4 or IPv6 address."
-msgstr "Vnesite veljaven IPv4 ali IPv6 naslov."
+msgid "IPv6"
+msgstr ""
+
+msgid "IPv4 or IPv6"
+msgstr ""
 
 msgid "Enter only digits separated by commas."
 msgstr "Vnesite samo števila, ločena z vejicami."

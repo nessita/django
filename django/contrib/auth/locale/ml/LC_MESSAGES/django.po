@@ -10,10 +10,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-24 13:46+0200\n"
-"PO-Revision-Date: 2019-03-03 09:43+0000\n"
-"Last-Translator: Hrishikesh <hrishi.kb@gmail.com>\n"
-"Language-Team: Malayalam (http://www.transifex.com/django/django/language/"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
+"Last-Translator: Hrishikesh <hrishi.kb@gmail.com>, 2019\n"
+"Language-Team: Malayalam (http://app.transifex.com/django/django/language/"
 "ml/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,12 +34,22 @@ msgstr "പ്രധാന തീയതികള്‍"
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr "%(key)r പ്രൈമറി കീയായുള്ള %(name)s ന്റെ ഒബ്ജക്റ്റ് നിലവിലില്ല."
 
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
 msgid "Password changed successfully."
 msgstr "പാസ്സ്‌വേഡ് മാറ്റിയിരിക്കുന്നു."
+
+msgid "Password-based authentication was disabled."
+msgstr ""
 
 #, python-format
 msgid "Change password: %s"
 msgstr "പാസ്സ്‌വേഡ് മാറ്റുക: %s"
+
+#, python-format
+msgid "Set password: %s"
+msgstr ""
 
 msgid "Authentication and Authorization"
 msgstr "ആധികാരികതയും അധികാരപ്പെടുത്തലും"
@@ -58,8 +68,20 @@ msgstr ""
 "പാസ്സ്‌വേഡിന്റെ ഫോർമാറ്റ് ശെരിയല്ലാതിരിക്കുകയോ അറിയാത്ത ഹാഷിങ്ങ് അൽഗോരിതം ഉപയോഗിക്കുകയോ "
 "ചെയ്തിരിക്കുന്നു."
 
-msgid "The two password fields didn't match."
-msgstr "രണ്ട് പാസ്സ്‌വേഡ് ഫീൽഡുകളും തമ്മിൽ ചേരുന്നില്ല."
+msgid "Reset password"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
+msgid "The two password fields didn’t match."
+msgstr ""
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
+msgstr ""
 
 msgid "Password"
 msgstr "പാസ്സ്‌വേഡ്"
@@ -70,9 +92,21 @@ msgstr "പാസ്സ്‌വേഡ് ഉറപ്പാക്കല്‍"
 msgid "Enter the same password as before, for verification."
 msgstr "നേരത്തെ നല്കിയ രഹസ്യവാക്ക് പരിശോധിക്കനായി പിന്നെയും നല്കുക. "
 
+msgid "Password-based authentication"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
 msgid ""
-"Raw passwords are not stored, so there is no way to see this user's "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+"Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr ""
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
 msgstr ""
 
 #, python-format
@@ -100,9 +134,6 @@ msgstr "നിങ്ങളുടെ പഴയ പാസ്‌വേര്‍ഡ�
 
 msgid "Old password"
 msgstr "പഴയ പാസ്‌വേര്‍ഡ്"
-
-msgid "Password (again)"
-msgstr "പാസ്‌വേര്‍ഡ് (വീണ്ടും)"
 
 msgid "algorithm"
 msgstr "അല്‍ഗോരിതം"
@@ -136,6 +167,9 @@ msgstr "വര്‍ക്ക് ഫാക്ടര്‍"
 
 msgid "checksum"
 msgstr "ചെക്‍സം"
+
+msgid "block size"
+msgstr ""
 
 msgid "name"
 msgstr "പേര്"
@@ -244,32 +278,29 @@ msgstr[1] "താങ്കളുടെ രഹസ്യവാക്കിൽ ക�
 msgid "The password is too similar to the %(verbose_name)s."
 msgstr "ഈ രഹസ്യവാക്കിനു %(verbose_name)s ആയി  വളരെ സാമ്യം കാണുന്നു."
 
-msgid "Your password can't be too similar to your other personal information."
+msgid "Your password can’t be too similar to your other personal information."
 msgstr ""
-"താങ്കളുടെ മറ്റു വ്യക്തി വിവരുങ്ങളുമായി താങ്കളുടെ രഹസ്യവാക്കിനു ഒരുപാട് സാമ്യമുണ്ടാകാൻ പാടില്ല."
 
 msgid "This password is too common."
 msgstr "ഈ രഹസ്യവാക്ക് വളരെ സാധാരണമാണ്."
 
-msgid "Your password can't be a commonly used password."
-msgstr "താങ്കളുടെ രഹസ്യവാക്ക് വളരെ സാധാരണമായ ഒരു രഹസ്യവാക്കാകാൻ പാടില്ല."
+msgid "Your password can’t be a commonly used password."
+msgstr ""
 
 msgid "This password is entirely numeric."
 msgstr "ഈ രഹസ്യവാക്ക് മുഴുവനും അക്കങ്ങൾ മാത്രമാണ്."
 
-msgid "Your password can't be entirely numeric."
-msgstr "താങ്കളുടെ രഹസ്യവാക്ക് മുഴുവനായി അക്കങ്ങൾ മാത്രമാകാൻ പാടില്ല."
+msgid "Your password can’t be entirely numeric."
+msgstr ""
 
 #, python-format
 msgid "Password reset on %(site_name)s"
 msgstr "%(site_name)s ലെ പാസ്‌വേര്‍ഡ് മാറ്റിയിരിക്കുന്നു"
 
 msgid ""
-"Enter a valid username. This value may contain only English letters, "
-"numbers, and @/./+/-/_ characters."
+"Enter a valid username. This value may contain only unaccented lowercase a-z "
+"and uppercase A-Z letters, numbers, and @/./+/-/_ characters."
 msgstr ""
-"ശരിയായ ഉപയോക്ത്രു നാമം നല്കുക. ഇതിൽ ഇംഗ്ഗ്ലീഷ് അക്ഷരങ്ങളും അക്കങ്ങളും പിന്നെ @/./+/-/_ "
-"എന്നിവയും മാത്രമേ അനുവദനീയമായുള്ളൂ."
 
 msgid ""
 "Enter a valid username. This value may contain only letters, numbers, and "

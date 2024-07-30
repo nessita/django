@@ -5,7 +5,7 @@
 # angularcircle, 2011
 # angularcircle, 2014
 # Jannis Leidel <jannis@leidel.info>, 2011
-# m_aciek <maciej.olko@gmail.com>, 2018,2021
+# Maciej Olko <maciej.olko@gmail.com>, 2018,2021
 # Piotr Meuś <piotr.meus@gmail.com>, 2014
 # Roman Barczyński, 2012
 # Tomasz Kajtoch <tomekkaj@tomekkaj.pl>, 2016
@@ -13,17 +13,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-07 14:40+0200\n"
-"PO-Revision-Date: 2021-09-23 19:40+0000\n"
-"Last-Translator: m_aciek <maciej.olko@gmail.com>\n"
-"Language-Team: Polish (http://www.transifex.com/django/django/language/pl/)\n"
+"POT-Creation-Date: 2023-09-18 11:41-0300\n"
+"PO-Revision-Date: 2013-04-24 18:40+0000\n"
+"Last-Translator: Maciej Olko <maciej.olko@gmail.com>, 2018,2021\n"
+"Language-Team: Polish (http://app.transifex.com/django/django/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
-"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
-"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
+"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
+"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 msgid "Humanize"
 msgstr "Humanizacja"
@@ -48,7 +48,7 @@ msgctxt "ordinal 2"
 msgid "{}nd"
 msgstr "{}."
 
-#. Translators: Ordinal format when value ends with 3, e.g. 83th, except 13.
+#. Translators: Ordinal format when value ends with 3, e.g. 83rd, except 13.
 msgctxt "ordinal 3"
 msgid "{}rd"
 msgstr "{}."

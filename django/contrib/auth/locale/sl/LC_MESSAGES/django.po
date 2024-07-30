@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-17 03:19-0500\n"
-"PO-Revision-Date: 2023-12-04 08:09+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
 "Last-Translator: Andrej Marsetič, 2022-2023\n"
 "Language-Team: Slovenian (http://app.transifex.com/django/django/language/"
 "sl/)\n"
@@ -36,12 +36,22 @@ msgstr "Pomembni datumi"
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr "Objekt %(name)s z glavnim ključem %(key)r ne obstaja."
 
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
 msgid "Password changed successfully."
 msgstr "Geslo je uspešno spremenjeno."
+
+msgid "Password-based authentication was disabled."
+msgstr ""
 
 #, python-format
 msgid "Change password: %s"
 msgstr "Spremeni geslo: %s"
+
+#, python-format
+msgid "Set password: %s"
+msgstr ""
 
 msgid "Authentication and Authorization"
 msgstr "Avtentikacija in avtorizacija"
@@ -58,8 +68,20 @@ msgstr "Geslo ni nastavljeno."
 msgid "Invalid password format or unknown hashing algorithm."
 msgstr "Neveljavna oblika gesla ali neznan algoritem razpršila."
 
+msgid "Reset password"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
 msgid "The two password fields didn’t match."
 msgstr "Polji za geslo se nista ujemali."
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
+msgstr ""
 
 msgid "Password"
 msgstr "Geslo"
@@ -70,13 +92,22 @@ msgstr "Potrditev gesla"
 msgid "Enter the same password as before, for verification."
 msgstr "Vnesite isto geslo kot prej, za preverjanje."
 
-msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+msgid "Password-based authentication"
 msgstr ""
-"Neobdelana gesla niso shranjena, zato gesla tega uporabnika ni mogoče "
-"videti, vendar lahko geslo spremenite z uporabo<a href=\"{}\">tega obrazca</"
-"a>."
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid ""
+"Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr ""
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -103,9 +134,6 @@ msgstr "Vaše staro geslo ni vneseno pravilno. Poskusite znova."
 
 msgid "Old password"
 msgstr "Staro geslo"
-
-msgid "Password (again)"
-msgstr "Geslo (znova)"
 
 msgid "algorithm"
 msgstr "algoritem"

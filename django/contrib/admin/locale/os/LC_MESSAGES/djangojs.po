@@ -1,15 +1,16 @@
 # This file is distributed under the same license as the Django package.
 #
 # Translators:
-# Soslan Khubulov <inactive+soslan@transifex.com>, 2013
+# 6e88143b8c6f031cbb5b5ea22c7e0e8c_3906e26 <28bf8a0969e2877eb1f346e9213fed3d_37949>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-17 23:12+0200\n"
-"PO-Revision-Date: 2017-09-19 16:41+0000\n"
-"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
-"Language-Team: Ossetic (http://www.transifex.com/django/django/language/"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 07:59+0000\n"
+"Last-Translator: 6e88143b8c6f031cbb5b5ea22c7e0e8c_3906e26 "
+"<28bf8a0969e2877eb1f346e9213fed3d_37949>, 2013\n"
+"Language-Team: Ossetic (http://app.transifex.com/django/django/language/"
 "os/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -62,12 +63,22 @@ msgstr ""
 "Ай у ӕвзӕрст %s-ты номхыгъд. Сӕ хафынӕн сӕ дӕ бон у бындӕр къӕртты равзарын "
 "ӕмӕ дыууӕ ӕгънӕджы ӕхсӕн \"Схфын\"-ыл ныххӕцын."
 
+#, javascript-format
+msgid "Type into this box to filter down the list of selected %s."
+msgstr ""
+
 msgid "Remove all"
 msgstr "Схафын алкӕцыдӕр"
 
 #, javascript-format
 msgid "Click to remove all chosen %s at once."
 msgstr "Ныххӕц, алы ӕвзӕрст %s схафынӕн."
+
+#, javascript-format
+msgid "%s selected option not visible"
+msgid_plural "%s selected options not visible"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "%(sel)s of %(cnt)s selected"
 msgid_plural "%(sel)s of %(cnt)s selected"
@@ -82,21 +93,31 @@ msgstr ""
 "ӕнӕвӕрд ивдтытӕ фесӕфдзысты."
 
 msgid ""
-"You have selected an action, but you haven't saved your changes to "
-"individual fields yet. Please click OK to save. You'll need to re-run the "
+"You have selected an action, but you haven’t saved your changes to "
+"individual fields yet. Please click OK to save. You’ll need to re-run the "
 "action."
 msgstr ""
-"Ды равзӕрстай цыдӕр ми, фӕлӕ ивӕн бынӕтты цы фӕивтай, уыдон нӕ бавӕрдтай. Дӕ "
-"хорзӕхӕй, ныххӕц Хорзыл цӕмӕй бавӕрд уой. Стӕй дын хъӕудзӕн ацы ми ногӕй "
-"бакӕнын."
 
 msgid ""
-"You have selected an action, and you haven't made any changes on individual "
-"fields. You're probably looking for the Go button rather than the Save "
+"You have selected an action, and you haven’t made any changes on individual "
+"fields. You’re probably looking for the Go button rather than the Save "
 "button."
 msgstr ""
-"Ды равзӕртай цыдӕр ми, фӕлӕ ивӕн бынӕтты ницы баивтай. Уӕццӕгӕн дӕ Ацӕуыны "
-"ӕгънӕг хъӕуы, Бавӕрыны нӕ фӕлӕ."
+
+msgid "Now"
+msgstr "Ныр"
+
+msgid "Midnight"
+msgstr "Ӕмбисӕхсӕв"
+
+msgid "6 a.m."
+msgstr "6 ӕ.р."
+
+msgid "Noon"
+msgstr "Ӕмбисбон"
+
+msgid "6 p.m."
+msgstr ""
 
 #, javascript-format
 msgid "Note: You are %s hour ahead of server time."
@@ -110,26 +131,11 @@ msgid_plural "Note: You are %s hours behind server time."
 msgstr[0] ""
 msgstr[1] ""
 
-msgid "Now"
-msgstr "Ныр"
-
 msgid "Choose a Time"
 msgstr ""
 
 msgid "Choose a time"
 msgstr "Рӕстӕг равзарын"
-
-msgid "Midnight"
-msgstr "Ӕмбисӕхсӕв"
-
-msgid "6 a.m."
-msgstr "6 ӕ.р."
-
-msgid "Noon"
-msgstr "Ӕмбисбон"
-
-msgid "6 p.m."
-msgstr ""
 
 msgid "Cancel"
 msgstr "Раздӕхын"
@@ -182,6 +188,103 @@ msgstr ""
 msgid "December"
 msgstr ""
 
+msgctxt "abbrev. month January"
+msgid "Jan"
+msgstr ""
+
+msgctxt "abbrev. month February"
+msgid "Feb"
+msgstr ""
+
+msgctxt "abbrev. month March"
+msgid "Mar"
+msgstr ""
+
+msgctxt "abbrev. month April"
+msgid "Apr"
+msgstr ""
+
+msgctxt "abbrev. month May"
+msgid "May"
+msgstr ""
+
+msgctxt "abbrev. month June"
+msgid "Jun"
+msgstr ""
+
+msgctxt "abbrev. month July"
+msgid "Jul"
+msgstr ""
+
+msgctxt "abbrev. month August"
+msgid "Aug"
+msgstr ""
+
+msgctxt "abbrev. month September"
+msgid "Sep"
+msgstr ""
+
+msgctxt "abbrev. month October"
+msgid "Oct"
+msgstr ""
+
+msgctxt "abbrev. month November"
+msgid "Nov"
+msgstr ""
+
+msgctxt "abbrev. month December"
+msgid "Dec"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Monday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgctxt "abbrev. day Sunday"
+msgid "Sun"
+msgstr ""
+
+msgctxt "abbrev. day Monday"
+msgid "Mon"
+msgstr ""
+
+msgctxt "abbrev. day Tuesday"
+msgid "Tue"
+msgstr ""
+
+msgctxt "abbrev. day Wednesday"
+msgid "Wed"
+msgstr ""
+
+msgctxt "abbrev. day Thursday"
+msgid "Thur"
+msgstr ""
+
+msgctxt "abbrev. day Friday"
+msgid "Fri"
+msgstr ""
+
+msgctxt "abbrev. day Saturday"
+msgid "Sat"
+msgstr ""
+
 msgctxt "one letter Sunday"
 msgid "S"
 msgstr ""
@@ -209,9 +312,3 @@ msgstr ""
 msgctxt "one letter Saturday"
 msgid "S"
 msgstr ""
-
-msgid "Show"
-msgstr "Равдисын"
-
-msgid "Hide"
-msgstr "Айсын"

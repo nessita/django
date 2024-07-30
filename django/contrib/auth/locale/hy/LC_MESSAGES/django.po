@@ -6,10 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-24 13:46+0200\n"
-"PO-Revision-Date: 2018-11-11 20:11+0000\n"
-"Last-Translator: Ruben Harutyunov <rharutyunov@mail.ru>\n"
-"Language-Team: Armenian (http://www.transifex.com/django/django/language/"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
+"Last-Translator: Ruben Harutyunov <rharutyunov@mail.ru>, 2018\n"
+"Language-Team: Armenian (http://app.transifex.com/django/django/language/"
 "hy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,12 +30,22 @@ msgstr "Կարևոր ամսաթվեր"
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr "%(key)r հիմնական բանալով %(name)s օբյեկտ գոյություն չունի։"
 
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
 msgid "Password changed successfully."
 msgstr "Գաղտնաբառը հաջողությամբ փոխվեց։"
+
+msgid "Password-based authentication was disabled."
+msgstr ""
 
 #, python-format
 msgid "Change password: %s"
 msgstr "Փոխել գաղտնաբառը․ %s"
+
+#, python-format
+msgid "Set password: %s"
+msgstr ""
 
 msgid "Authentication and Authorization"
 msgstr "Նույնականացում և Լիազորում"
@@ -52,8 +62,20 @@ msgstr "Գաղտնաբառը նշված չէ։"
 msgid "Invalid password format or unknown hashing algorithm."
 msgstr "Գաղտնաբառի սխալ ֆորմատ, կամ անհայտ հեշավորման ալգորիթմ։"
 
-msgid "The two password fields didn't match."
-msgstr "Երկու գաղտնաբառերը չեն համապատասխանում իրար։"
+msgid "Reset password"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
+msgid "The two password fields didn’t match."
+msgstr ""
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
+msgstr ""
 
 msgid "Password"
 msgstr "Գաղտնաբառ"
@@ -64,9 +86,21 @@ msgstr "Գաղտնաբառը նորից"
 msgid "Enter the same password as before, for verification."
 msgstr "Մուտքագրեք հին գաղտնաբառը, ստուգման համար։"
 
+msgid "Password-based authentication"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
 msgid ""
-"Raw passwords are not stored, so there is no way to see this user's "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+"Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr ""
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
 msgstr ""
 
 #, python-format
@@ -94,9 +128,6 @@ msgstr "Հին գաղտնաբառը սխալ է։ Մուտքագրեք նորի�
 
 msgid "Old password"
 msgstr "Հին գաղտնաբառ"
-
-msgid "Password (again)"
-msgstr "Գաղտնաբառ (նորից)"
 
 msgid "algorithm"
 msgstr "ալգորիթմ"
@@ -130,6 +161,9 @@ msgstr "աշխատանքային ֆակտոր"
 
 msgid "checksum"
 msgstr "checksum"
+
+msgid "block size"
+msgstr ""
 
 msgid "name"
 msgstr "անուն"
@@ -241,28 +275,28 @@ msgstr[1] "Գաղտնաբառը  պետք է պարունակի ամենաքիչ
 msgid "The password is too similar to the %(verbose_name)s."
 msgstr "Գաղտնաբառը շատ նման է %(verbose_name)s֊ին։"
 
-msgid "Your password can't be too similar to your other personal information."
-msgstr "Գաղտնաբառը չի կարող շատ նման լինել ձեր անձնական ինֆորմացիային։"
+msgid "Your password can’t be too similar to your other personal information."
+msgstr ""
 
 msgid "This password is too common."
 msgstr "Գաղտնաբառը շատ տարածված է։"
 
-msgid "Your password can't be a commonly used password."
-msgstr "Գաղտնաբառը չպետք է լինի տարածված գաղտնաբառերից մեկը։"
+msgid "Your password can’t be a commonly used password."
+msgstr ""
 
 msgid "This password is entirely numeric."
 msgstr "Գաղտնաբառը բաղկացած է միայն թվերից։"
 
-msgid "Your password can't be entirely numeric."
-msgstr "Գաղտնաբառը չպետք է բաղկացած լինի միայն թվերից։"
+msgid "Your password can’t be entirely numeric."
+msgstr ""
 
 #, python-format
 msgid "Password reset on %(site_name)s"
 msgstr "Գաղտնաբառի փոփոխում %(site_name)s կայքում։"
 
 msgid ""
-"Enter a valid username. This value may contain only English letters, "
-"numbers, and @/./+/-/_ characters."
+"Enter a valid username. This value may contain only unaccented lowercase a-z "
+"and uppercase A-Z letters, numbers, and @/./+/-/_ characters."
 msgstr ""
 
 msgid ""

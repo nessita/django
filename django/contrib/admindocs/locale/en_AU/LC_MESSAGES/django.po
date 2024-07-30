@@ -109,8 +109,8 @@ msgstr ""
 
 #, python-format
 msgid ""
-"The admin documentation system requires Python's <a href=\"%(link)s"
-"\">docutils</a> library."
+"The admin documentation system requires Python's <a "
+"href=\"%(link)s\">docutils</a> library."
 msgstr ""
 
 #, python-format

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2024-01-20 06:49+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 06:49+0000\n"
 "Last-Translator: Omkar Parab, 2024\n"
 "Language-Team: Marathi (http://app.transifex.com/django/django/language/"
 "mr/)\n"
@@ -344,6 +344,9 @@ msgstr "त्या पानावर कोणतेही परिणाम
 msgid "Enter a valid value."
 msgstr "वैध मूल्य टाका."
 
+msgid "Enter a valid domain name."
+msgstr ""
+
 msgid "Enter a valid URL."
 msgstr "एक योग्य युआरएल टाका करा."
 
@@ -363,14 +366,18 @@ msgid ""
 "hyphens."
 msgstr "योग्य \"स्लग\" टाका ज्यामध्ये यूनिकोड अक्षरे, अंक, अंडरस्कोर किंवा हायफन असतात."
 
-msgid "Enter a valid IPv4 address."
-msgstr "योग्य IPv4 पत्ता टाका."
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
 
-msgid "Enter a valid IPv6 address."
-msgstr "योग्य IPv6 पत्ता टाका."
+msgid "IPv4"
+msgstr ""
 
-msgid "Enter a valid IPv4 or IPv6 address."
-msgstr "योग्य IPv4 किंवा IPv6 पत्ता नमूद करा."
+msgid "IPv6"
+msgstr ""
+
+msgid "IPv4 or IPv6"
+msgstr ""
 
 msgid "Enter only digits separated by commas."
 msgstr "स्वल्पविरामाने वेगळे केलेले अंकच फक्त नमूद करा."

@@ -6,11 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-17 03:19-0500\n"
-"PO-Revision-Date: 2023-04-25 08:09+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
 "Last-Translator: Michael Wolf <milupo@sorbzilla.de>, "
 "2016-2017,2020-2021,2023\n"
-"Language-Team: Lower Sorbian (http://www.transifex.com/django/django/"
+"Language-Team: Lower Sorbian (http://app.transifex.com/django/django/"
 "language/dsb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,12 +32,22 @@ msgstr "Wažne daty"
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr "Objekt %(name)s z primarnym klucom %(key)r njeeksistěrujo."
 
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
 msgid "Password changed successfully."
 msgstr "Gronidło jo se změniło."
+
+msgid "Password-based authentication was disabled."
+msgstr ""
 
 #, python-format
 msgid "Change password: %s"
 msgstr "Gronidło změniś: %s"
+
+#, python-format
+msgid "Set password: %s"
+msgstr ""
 
 msgid "Authentication and Authorization"
 msgstr "Awtentifikacija a awtorizacija"
@@ -54,8 +64,20 @@ msgstr "Žedno gronidło nastajone."
 msgid "Invalid password format or unknown hashing algorithm."
 msgstr "Njepłaśiwy gronidłowy format abo njeznaty kontrolny algoritmus."
 
+msgid "Reset password"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
 msgid "The two password fields didn’t match."
 msgstr "Dwě gronidlowej póli njejstej jadnakej."
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
+msgstr ""
 
 msgid "Password"
 msgstr "Gronidło"
@@ -66,13 +88,22 @@ msgstr "Gronidłowe wobkšuśenje"
 msgid "Enter the same password as before, for verification."
 msgstr "Zapódajśo to samske gronidło, za pśespytanje."
 
-msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+msgid "Password-based authentication"
 msgstr ""
-"Grube gronidła se njeskładuju, togodla njejo móžno, gronidło wužywarja "
-"wiźeś, ale móžośo gronidło z pomocu <a href=\"{}\">toś togo formulara</a> "
-"změniś."
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid ""
+"Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr ""
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -100,9 +131,6 @@ msgstr ""
 
 msgid "Old password"
 msgstr "Stare gronidło"
-
-msgid "Password (again)"
-msgstr "Gronidło (znowego)"
 
 msgid "algorithm"
 msgstr "algoritmus"

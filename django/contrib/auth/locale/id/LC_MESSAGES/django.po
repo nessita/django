@@ -6,13 +6,13 @@
 # oon arfiandwi (OonID) <oon.arfiandwi@gmail.com>, 2016
 # rodin <romihardiyanto@gmail.com>, 2011,2013
 # rodin <romihardiyanto@gmail.com>, 2013-2016
-# sag᠎e <laymonage@gmail.com>, 2019
+# sag​e <laymonage@gmail.com>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-17 03:19-0500\n"
-"PO-Revision-Date: 2023-12-04 08:09+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
 "Last-Translator: Fery Setiawan <gembelweb@gmail.com>, "
 "2015-2016,2018,2020-2021,2023\n"
 "Language-Team: Indonesian (http://app.transifex.com/django/django/language/"
@@ -36,12 +36,22 @@ msgstr "Tanggal penting"
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr "Objek %(name)s dengan primary key %(key)r tidak ditemukan."
 
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
 msgid "Password changed successfully."
 msgstr "Sandi berhasil diubah."
+
+msgid "Password-based authentication was disabled."
+msgstr ""
 
 #, python-format
 msgid "Change password: %s"
 msgstr "Ganti sandi: %s"
+
+#, python-format
+msgid "Set password: %s"
+msgstr ""
 
 msgid "Authentication and Authorization"
 msgstr "Autentikasi dan Otorisasi"
@@ -58,8 +68,20 @@ msgstr "Belum ada sandi yang disetel."
 msgid "Invalid password format or unknown hashing algorithm."
 msgstr "Format sandi tidak valid atau algoritma hash yang tidak dikenal."
 
+msgid "Reset password"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
 msgid "The two password fields didn’t match."
 msgstr "Dua bidang sandi tidak cocok."
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
+msgstr ""
 
 msgid "Password"
 msgstr "Sandi"
@@ -70,12 +92,22 @@ msgstr "Konfirmasi sandi"
 msgid "Enter the same password as before, for verification."
 msgstr "Masukkan sandi yang sama seperti sebelumnya, untuk verifikasi."
 
-msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+msgid "Password-based authentication"
 msgstr ""
-"Sandi mentah tidak disimpan, jadi tidak ada cara melihat sandi pengguna ini, "
-"tetapi anda dapat merubah sandi menggunakan <a href=\"{}\">formulir ini</a>."
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid ""
+"Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr ""
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -102,9 +134,6 @@ msgstr "Sandi lama Anda yang dimasukkan salah. Masukkan sekali lagi."
 
 msgid "Old password"
 msgstr "Sandi lama"
-
-msgid "Password (again)"
-msgstr "Sandi (ulangi)"
 
 msgid "algorithm"
 msgstr "algoritme"

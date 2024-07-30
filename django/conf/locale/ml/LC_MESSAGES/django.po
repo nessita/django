@@ -15,10 +15,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 10:22+0200\n"
-"PO-Revision-Date: 2021-11-24 16:29+0000\n"
-"Last-Translator: Mariusz Felisiak <felisiak.mariusz@gmail.com>\n"
-"Language-Team: Malayalam (http://www.transifex.com/django/django/language/"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 06:49+0000\n"
+"Last-Translator: Mariusz Felisiak <felisiak.mariusz@gmail.com>, 2021\n"
+"Language-Team: Malayalam (http://app.transifex.com/django/django/language/"
 "ml/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,6 +58,9 @@ msgstr "ബോസ്നിയന്‍"
 
 msgid "Catalan"
 msgstr "കാറ്റലന്‍"
+
+msgid "Central Kurdish (Sorani)"
+msgstr ""
 
 msgid "Czech"
 msgstr "ചെൿ"
@@ -299,6 +302,9 @@ msgstr "തൊതാര്‍"
 msgid "Udmurt"
 msgstr "ഉദ്മര്‍ത്"
 
+msgid "Uyghur"
+msgstr ""
+
 msgid "Ukrainian"
 msgstr "യുക്രേനിയന്‍"
 
@@ -346,6 +352,9 @@ msgstr "ആ പേജിൽ റിസൾട്ടുകൾ ഒന്നും �
 msgid "Enter a valid value."
 msgstr "ശരിയായ വാല്യു നൽകുക."
 
+msgid "Enter a valid domain name."
+msgstr ""
+
 msgid "Enter a valid URL."
 msgstr "ശരിയായ URL നല്‍കുക"
 
@@ -368,14 +377,18 @@ msgstr ""
 "യൂണികോഡ് അക്ഷരങ്ങൾ, അക്കങ്ങൾ, ഹൈഫണുകൾ, അണ്ടർസ്കോറുക‌‌ൾ എന്നിവമാത്രം അടങ്ങിയ ശെരിയായ ‌ഒരു "
 "“സ്ലഗ്” എഴുതുക ."
 
-msgid "Enter a valid IPv4 address."
-msgstr "ശരിയായ IPv4 വിലാസം നൽകുക."
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
 
-msgid "Enter a valid IPv6 address."
-msgstr "ശരിയായ ഒരു IPv6 വിലാസം നൽകുക."
+msgid "IPv4"
+msgstr ""
 
-msgid "Enter a valid IPv4 or IPv6 address."
-msgstr "ശരിയായ ഒരു IPv4 വിലാസമോ IPv6 വിലാസമോ നൽകുക."
+msgid "IPv6"
+msgstr ""
+
+msgid "IPv4 or IPv6"
+msgstr ""
 
 msgid "Enter only digits separated by commas."
 msgstr "കോമകൾ ഉപയോഗിച്ച് വേർതിരിച്ച രീതിയിലുള്ള അക്കങ്ങൾ മാത്രം നൽകുക."
@@ -391,6 +404,16 @@ msgstr "ഇത് %(limit_value)s-ഓ അതില്‍ കുറവോ ആവ�
 #, python-format
 msgid "Ensure this value is greater than or equal to %(limit_value)s."
 msgstr "ഇത് %(limit_value)s-ഓ അതില്‍ കൂടുതലോ ആവണം"
+
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -462,6 +485,10 @@ msgid "%(model_name)s with this %(field_labels)s already exists."
 msgstr "%(field_labels)sഉള്ള %(model_name)sനിലവിലുണ്ട്."
 
 #, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#, python-format
 msgid "Value %(value)r is not a valid choice."
 msgstr "%(value)r എന്ന വാല്യൂ ശെരിയായ ചോയ്സ് അല്ല. "
 
@@ -475,8 +502,8 @@ msgstr "ഈ കളം (ഫീല്‍ഡ്) ഒഴിച്ചിടരുത�
 msgid "%(model_name)s with this %(field_label)s already exists."
 msgstr "%(field_label)s-ഓടു കൂടിയ %(model_name)s നിലവിലുണ്ട്."
 
-#. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
-#. Eg: "Title must be unique for pub_date year"
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
 #, python-format
 msgid ""
 "%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
@@ -503,6 +530,9 @@ msgstr "ശരിയോ തെറ്റോ (True അഥവാ False)"
 #, python-format
 msgid "String (up to %(max_length)s)"
 msgstr "സ്ട്രിങ്ങ് (%(max_length)s വരെ നീളമുള്ളത്)"
+
+msgid "String (unlimited)"
+msgstr ""
 
 msgid "Comma-separated integers"
 msgstr "കോമയിട്ട് വേര്‍തിരിച്ച സംഖ്യകള്‍"
@@ -758,14 +788,14 @@ msgid ""
 msgstr ""
 
 #, python-format
-msgid "Please submit at most %d form."
-msgid_plural "Please submit at most %d forms."
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
 msgstr[0] ""
 msgstr[1] ""
 
 #, python-format
-msgid "Please submit at least %d form."
-msgid_plural "Please submit at least %d forms."
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
 msgstr[0] ""
 msgstr[1] ""
 
@@ -1160,8 +1190,8 @@ msgid ""
 "If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
 "including the “Referrer-Policy: no-referrer” header, please remove them. The "
 "CSRF protection requires the “Referer” header to do strict referer checking. "
-"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
-"\" …> for links to third-party sites."
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
 msgstr ""
 
 msgid ""
@@ -1250,9 +1280,9 @@ msgstr ""
 #, python-format
 msgid ""
 "You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True</a> is in your settings file and you have not configured any "
-"URLs."
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
 msgstr ""
 
 msgid "Django Documentation"

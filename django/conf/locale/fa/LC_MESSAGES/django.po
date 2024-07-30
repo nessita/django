@@ -25,8 +25,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2023-12-04 06:49+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 06:49+0000\n"
 "Last-Translator: ali salehi, 2023\n"
 "Language-Team: Persian (http://app.transifex.com/django/django/language/"
 "fa/)\n"
@@ -362,6 +362,9 @@ msgstr "این صفحه خالی از اطلاعات است"
 msgid "Enter a valid value."
 msgstr "یک مقدار معتبر وارد کنید."
 
+msgid "Enter a valid domain name."
+msgstr ""
+
 msgid "Enter a valid URL."
 msgstr "یک نشانی اینترنتی معتبر وارد کنید."
 
@@ -384,14 +387,18 @@ msgstr ""
 "یک \"اسلاگ\" معتبر وارد کنید که شامل حروف یونیکد، اعداد، خط زیر یا خط فاصله "
 "باشد."
 
-msgid "Enter a valid IPv4 address."
-msgstr "یک نشانی IPv4 معتبر وارد کنید."
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
 
-msgid "Enter a valid IPv6 address."
-msgstr "یک آدرس معتبر IPv6 وارد کنید."
+msgid "IPv4"
+msgstr ""
 
-msgid "Enter a valid IPv4 or IPv6 address."
-msgstr "IPv4 یا IPv6 آدرس معتبر وارد کنید."
+msgid "IPv6"
+msgstr ""
+
+msgid "IPv4 or IPv6"
+msgstr ""
 
 msgid "Enter only digits separated by commas."
 msgstr "فقط ارقام جدا شده با کاما وارد کنید."

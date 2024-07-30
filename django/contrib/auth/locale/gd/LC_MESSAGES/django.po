@@ -8,10 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 10:22+0200\n"
-"PO-Revision-Date: 2021-10-27 12:55+0000\n"
-"Last-Translator: GunChleoc\n"
-"Language-Team: Gaelic, Scottish (http://www.transifex.com/django/django/"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
+"Last-Translator: GunChleoc, 2015-2017,2021\n"
+"Language-Team: Gaelic, Scottish (http://app.transifex.com/django/django/"
 "language/gd/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,12 +33,22 @@ msgstr "Cinn-là chudromach"
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr "Chan eil oibseact %(name)s air a bheil prìomh-iuchair %(key)r ann."
 
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
 msgid "Password changed successfully."
 msgstr "Chaidh am facal-faire atharrachadh gu soirbheachail."
+
+msgid "Password-based authentication was disabled."
+msgstr ""
 
 #, python-format
 msgid "Change password: %s"
 msgstr "Atharraich am facal-faire: %s"
+
+#, python-format
+msgid "Set password: %s"
+msgstr ""
 
 msgid "Authentication and Authorization"
 msgstr "Dearbhadh is ùghdarrachadh"
@@ -57,8 +67,20 @@ msgstr ""
 "Tha fòrmat mì-dhligheach air an fhacal-fhaire no chan aithne dhuinn algairim "
 "a’ hais."
 
+msgid "Reset password"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
 msgid "The two password fields didn’t match."
 msgstr "Cha robh an dà fhacal-faire co-ionnann."
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
+msgstr ""
 
 msgid "Password"
 msgstr "Facal-faire"
@@ -69,13 +91,22 @@ msgstr "Dearbhadh an fhacail-fhaire"
 msgid "Enter the same password as before, for verification."
 msgstr "Cuir an t-aon fhacal-faire a-steach a-rithist gus a dhearbhadh."
 
-msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+msgid "Password-based authentication"
 msgstr ""
-"Cha dèid faclan-faire amh a shàbhaladh ’s mar sin chan eil dòigh ann gus "
-"facal-faire a’ chleachdaiche seo a shealltainn. ’S urrainn dhut am facal-"
-"faire atharrachadh co-dhiù leis <a href=\"{}\">an fhoirm seo</a>."
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid ""
+"Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr ""
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -104,9 +135,6 @@ msgstr ""
 
 msgid "Old password"
 msgstr "An seann fhacal-faire"
-
-msgid "Password (again)"
-msgstr "Facal-faire (a-rithist)"
 
 msgid "algorithm"
 msgstr "algairim"
@@ -299,11 +327,9 @@ msgid "Password reset on %(site_name)s"
 msgstr "Ath-shuidheachadh an fhacail-fhaire air %(site_name)s"
 
 msgid ""
-"Enter a valid username. This value may contain only English letters, "
-"numbers, and @/./+/-/_ characters."
+"Enter a valid username. This value may contain only unaccented lowercase a-z "
+"and uppercase A-Z letters, numbers, and @/./+/-/_ characters."
 msgstr ""
-"Cuir a-steach ainm-cleachdaiche dligheach. Chan fhaod ach litrichean gun "
-"sràcan, àireamhan is caractaran @/./+/-/_ a bhith ’na bhroinn."
 
 msgid ""
 "Enter a valid username. This value may contain only letters, numbers, and "

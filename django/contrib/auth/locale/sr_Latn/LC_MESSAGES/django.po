@@ -1,16 +1,16 @@
 # This file is distributed under the same license as the Django package.
 #
 # Translators:
-# Igor Jerosimić, 2021,2023
+# Igor Jerosimić, 2021,2023-2024
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Janos Guljas <janos@resenje.org>, 2011-2012
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-17 03:19-0500\n"
-"PO-Revision-Date: 2023-12-04 08:09+0000\n"
-"Last-Translator: Igor Jerosimić, 2021,2023\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
+"Last-Translator: Igor Jerosimić, 2021,2023-2024\n"
 "Language-Team: Serbian (Latin) (http://app.transifex.com/django/django/"
 "language/sr@latin/)\n"
 "MIME-Version: 1.0\n"
@@ -31,14 +31,24 @@ msgstr "Važni datumi"
 
 #, python-format
 msgid "%(name)s object with primary key %(key)r does not exist."
-msgstr ""
+msgstr "Objekat %(name)s sa primarnim ključem %(key)r ne postoji."
+
+msgid "Conflicting form data submitted. Please try again."
+msgstr "Poslati su konfliktni podaci iz obrasca. Molim vas, pokušajte ponovo."
 
 msgid "Password changed successfully."
 msgstr "Lozinka uspešno izmenjena."
 
+msgid "Password-based authentication was disabled."
+msgstr "Potvrda identiteta zasnovana na lozinki je onemogućena."
+
 #, python-format
 msgid "Change password: %s"
 msgstr "Izmeni lozinku: %s"
+
+#, python-format
+msgid "Set password: %s"
+msgstr "Postavi lozinku: %s"
 
 msgid "Authentication and Authorization"
 msgstr "Autentikacija i Autorizacija"
@@ -55,8 +65,23 @@ msgstr "Lozinka nije uneta."
 msgid "Invalid password format or unknown hashing algorithm."
 msgstr "Neispravan format lozinke ili nepoznat heš algoritam."
 
+msgid "Reset password"
+msgstr "Resetuj lozinku"
+
+msgid "Set password"
+msgstr "Postavi lozinku"
+
 msgid "The two password fields didn’t match."
 msgstr "Dva polja za lozinke se ne poklapaju."
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
+msgstr ""
+"Da li će korisnik moći da se autentifikuje pomoću lozinke ili ne. Ako je "
+"onemogućeno, možda će i dalje moći da se autentifikuju pomoću drugih "
+"pozadinskih delova, kao što su jednokratno prijavljivanje (SSO) ili LDAP."
 
 msgid "Password"
 msgstr "Lozinka"
@@ -67,16 +92,34 @@ msgstr "Potvrda lozinke"
 msgid "Enter the same password as before, for verification."
 msgstr "Unesite istu lozinku kao malopre radi verifikacije."
 
+msgid "Password-based authentication"
+msgstr "Potvrda identiteta zasnovana na lozinki"
+
+msgid "Enabled"
+msgstr "Omogućeno"
+
+msgid "Disabled"
+msgstr "Onemogućeno"
+
 msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+"Raw passwords are not stored, so there is no way to see the user’s password."
 msgstr ""
+"Neobrađene lozinke se ne čuvaju, tako da ne postoji način da se vidi "
+"korisnička lozinka."
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
+msgstr ""
+"Omogući autentifikaciju zasnovanu na lozinki za ovog korisnika postavljanjem "
+"lozinke."
 
 #, python-format
 msgid ""
 "Please enter a correct %(username)s and password. Note that both fields may "
 "be case-sensitive."
 msgstr ""
+"Molim vas unesite ispravno %(username)s i lozinku. Obratite pažnju da mala i "
+"velika slova predstavljaju različite karaktere."
 
 msgid "This account is inactive."
 msgstr "Ovaj nalog je neaktivan."
@@ -95,9 +138,6 @@ msgstr "Vaša stara loznka nije pravilno unesena. Unesite je ponovo."
 
 msgid "Old password"
 msgstr "Stara lozinka"
-
-msgid "Password (again)"
-msgstr "Lozinka (ponovite)"
 
 msgid "algorithm"
 msgstr "algoritam"
@@ -184,6 +224,8 @@ msgstr "korisničko ime"
 
 msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
 msgstr ""
+"Obavezan podatak. 150 karaktera ili manje. Dozvoljena su samo slova, cifre i "
+"karakteri @/./+/-/_ ."
 
 msgid "A user with that username already exists."
 msgstr "Korisnik sa tim korisničkim imenom već postoji."
@@ -231,34 +273,40 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] ""
+"Ova lozinka je previše kratka, mora sadržati najmanje %(min_length)d "
+"karakter."
 msgstr[1] ""
+"Ova lozinka je previše kratka, mora sadržati najmanje %(min_length)d "
+"karaktera."
 msgstr[2] ""
+"Ova lozinka je previše kratka, mora sadržati najmanje %(min_length)d "
+"karaktera."
 
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Vaša lozinka mora sadržati najmanje %(min_length)d karakter."
+msgstr[1] "Vaša lozinka mora sadržati najmanje %(min_length)d karaktera."
+msgstr[2] "Vaša lozinka mora sadržati najmanje %(min_length)d karaktera."
 
 #, python-format
 msgid "The password is too similar to the %(verbose_name)s."
-msgstr ""
+msgstr "Lozinka je previše slična %(verbose_name)s."
 
 msgid "Your password can’t be too similar to your other personal information."
-msgstr ""
+msgstr "Vaša lozinka ne može biti slična vašim ličnim podacima."
 
 msgid "This password is too common."
-msgstr ""
+msgstr "Ova lozinka je među najčešće korišćenim lozinkama."
 
 msgid "Your password can’t be a commonly used password."
-msgstr ""
+msgstr "Vaša lozinka ne može biti među najčešće korišćenim lozinkama."
 
 msgid "This password is entirely numeric."
-msgstr ""
+msgstr "Ova lozinka sadrži samo cifre."
 
 msgid "Your password can’t be entirely numeric."
-msgstr ""
+msgstr "Vaša lozinka ne može sadržati samo cifre."
 
 #, python-format
 msgid "Password reset on %(site_name)s"
@@ -268,32 +316,36 @@ msgid ""
 "Enter a valid username. This value may contain only unaccented lowercase a-z "
 "and uppercase A-Z letters, numbers, and @/./+/-/_ characters."
 msgstr ""
+"Unesite ispravno korisničko ime. Ono može sadržati samo neakcentovana mala "
+"slova a-z i velika slova A-Z, cifre i karaktere @/./+/-/_ ."
 
 msgid ""
 "Enter a valid username. This value may contain only letters, numbers, and "
 "@/./+/-/_ characters."
 msgstr ""
+"Unesite ispravno korisničko ime. Ono može sadržati samo slova, cifre i "
+"karaktere @/./+/-/_ ."
 
 msgid "Logged out"
 msgstr "Odjavljen"
 
 msgid "Password reset"
-msgstr ""
+msgstr "Resetovanje lozinke"
 
 msgid "Password reset sent"
-msgstr ""
+msgstr "Zahtev za reset lozinke je poslat"
 
 msgid "Enter new password"
-msgstr ""
+msgstr "Unesite novu lozinku"
 
 msgid "Password reset unsuccessful"
-msgstr ""
+msgstr "Resetovanje lozinke neuspešno"
 
 msgid "Password reset complete"
-msgstr ""
+msgstr "Resetovanje lozinke uspešno"
 
 msgid "Password change"
-msgstr ""
+msgstr "Izmena lozinke"
 
 msgid "Password change successful"
-msgstr ""
+msgstr "Lozinka uspešno izmenjena"

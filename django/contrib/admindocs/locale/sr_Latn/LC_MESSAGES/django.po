@@ -1,7 +1,7 @@
 # This file is distributed under the same license as the Django package.
 #
 # Translators:
-# Igor Jerosimić, 2023
+# Igor Jerosimić, 2023-2024
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Janos Guljas <janos@resenje.org>, 2012
 msgid ""
@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-15 09:00+0100\n"
-"PO-Revision-Date: 2023-12-04 20:19+0000\n"
-"Last-Translator: Igor Jerosimić, 2023\n"
+"PO-Revision-Date: 2013-04-24 20:19+0000\n"
+"Last-Translator: Igor Jerosimić, 2023-2024\n"
 "Language-Team: Serbian (Latin) (http://app.transifex.com/django/django/"
 "language/sr@latin/)\n"
 "MIME-Version: 1.0\n"
@@ -90,138 +90,148 @@ msgid ""
 "template is used to generate the page and which objects are available to "
 "that template."
 msgstr ""
+"Svaku stranicu na javnom sajtu generiše pogled. Pogled definiše koji šablon "
+"se koristi za generisanje stranice i koji objekti su dostupni tom šablonu."
 
 msgid "Tools for your browser to quickly access admin functionality."
-msgstr ""
+msgstr "Alatke za vaš pretraživač za brzi pristup funkcijama administratora."
 
 msgid "Please install docutils"
-msgstr ""
+msgstr "Molimo instalirajte docutils"
 
 #, python-format
 msgid ""
 "The admin documentation system requires Python’s <a "
 "href=\"%(link)s\">docutils</a> library."
 msgstr ""
+"Sistem administrativne dokumentacije zahteva Pajton <a "
+"href=\"%(link)s\">docutils</a> biblioteku."
 
 #, python-format
 msgid ""
 "Please ask your administrators to install <a href=\"%(link)s\">docutils</a>."
 msgstr ""
+"Zamolite svoje administratore da instaliraju <a href=\"%(link)s\">docutils</"
+"a>."
 
 #, python-format
 msgid "Model: %(name)s"
-msgstr ""
+msgstr "Model: %(name)s"
 
 msgid "Fields"
-msgstr ""
+msgstr "Polja"
 
 msgid "Field"
-msgstr ""
+msgstr "Polje"
 
 msgid "Type"
-msgstr ""
+msgstr "Tip"
 
 msgid "Description"
-msgstr ""
+msgstr "Opis"
 
 msgid "Methods with arguments"
-msgstr ""
+msgstr "Metoda sa argumentima"
 
 msgid "Method"
-msgstr ""
+msgstr "Metod"
 
 msgid "Arguments"
-msgstr ""
+msgstr "Argumenti"
 
 msgid "Back to Model documentation"
-msgstr ""
+msgstr "Nazad na dokumentaciju o Modelima"
 
 msgid "Model documentation"
-msgstr ""
+msgstr "Dokumentacija o Modelima"
 
 msgid "Model groups"
-msgstr ""
+msgstr "Grupe modela"
 
 msgid "Templates"
 msgstr "Šabloni"
 
 #, python-format
 msgid "Template: %(name)s"
-msgstr ""
+msgstr "Šablon: %(name)s"
 
 #, python-format
 msgid "Template: <q>%(name)s</q>"
-msgstr ""
+msgstr "Šablon: <q>%(name)s</q>"
 
 #. Translators: Search is not a verb here, it qualifies path (a search path)
 #, python-format
 msgid "Search path for template <q>%(name)s</q>:"
-msgstr ""
+msgstr "Putanja za traženje šablona <q>%(name)s</q>:"
 
 msgid "(does not exist)"
-msgstr ""
+msgstr "(ne postoji)"
 
 msgid "Back to Documentation"
-msgstr ""
+msgstr "Nazad na dokumentaciju"
 
 msgid "Template filters"
-msgstr ""
+msgstr "Filteri šablona"
 
 msgid "Template filter documentation"
-msgstr ""
+msgstr "Dokumentacija filtera šablona"
 
 msgid "Built-in filters"
-msgstr ""
+msgstr "Ugrađeni filteri"
 
 #, python-format
 msgid ""
 "To use these filters, put <code>%(code)s</code> in your template before "
 "using the filter."
 msgstr ""
+"Da biste koristili ove filtere, stavite  <code>%(code)s</code> u svoj šablon "
+"pre upotrebe filtera."
 
 msgid "Template tags"
-msgstr ""
+msgstr "Oznake šablona"
 
 msgid "Template tag documentation"
-msgstr ""
+msgstr "Dokumentacija oznake šablona"
 
 msgid "Built-in tags"
-msgstr ""
+msgstr "Ugrađene oznake"
 
 #, python-format
 msgid ""
 "To use these tags, put <code>%(code)s</code> in your template before using "
 "the tag."
 msgstr ""
+"Da biste koristili ove oznake, stavite <code>%(code)s</code> u svoj šablon "
+"pre upotrebe oznake."
 
 #, python-format
 msgid "View: %(name)s"
-msgstr ""
+msgstr "Pogled: %(name)s"
 
 msgid "Context:"
-msgstr ""
+msgstr "Kontekst:"
 
 msgid "Templates:"
-msgstr ""
+msgstr "Šabloni:"
 
 msgid "Back to View documentation"
-msgstr ""
+msgstr "Nazad na dokumentaciju o pogledima"
 
 msgid "View documentation"
-msgstr ""
+msgstr "Dokumentacija o pogledima"
 
 msgid "Jump to namespace"
-msgstr ""
+msgstr "Skoči na imenski prostor"
 
 msgid "Empty namespace"
-msgstr ""
+msgstr "Prazan imenski prostor"
 
 #, python-format
 msgid "Views by namespace %(name)s"
-msgstr ""
+msgstr "Pogledi po imenskom prostoru %(name)s"
 
 msgid "Views by empty namespace"
-msgstr ""
+msgstr "Pogledi po praznom imenskom prostoru"
 
 #, python-format
 msgid ""
@@ -229,6 +239,9 @@ msgid ""
 "    View function: <code>%(full_name)s</code>. Name: <code>%(url_name)s</"
 "code>.\n"
 msgstr ""
+"\n"
+"    Funkcija pogleda: <code>%(full_name)s</code>. Ime: <code>%(url_name)s</"
+"code>.\n"
 
 msgid "tag:"
 msgstr "tag:"
@@ -241,7 +254,7 @@ msgstr "vju:"
 
 #, python-format
 msgid "App %(app_label)r not found"
-msgstr ""
+msgstr "Aplikacija %(app_label)r nije pronađena"
 
 #, python-format
 msgid "Model %(model_name)r not found in app %(app_label)r"

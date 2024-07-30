@@ -6,10 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-08 17:27+0200\n"
-"PO-Revision-Date: 2019-12-15 05:39+0000\n"
-"Last-Translator: Sagar Chalise <chalisesagar@gmail.com>\n"
-"Language-Team: Nepali (http://www.transifex.com/django/django/language/ne/)\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
+"Last-Translator: Sagar Chalise <chalisesagar@gmail.com>, 2011\n"
+"Language-Team: Nepali (http://app.transifex.com/django/django/language/ne/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,12 +29,22 @@ msgstr "महत्वपूर्ण मितिहरु"
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr ""
 
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
 msgid "Password changed successfully."
 msgstr "पासवर्ड सफलतापूर्वक फेरिएको छ ।"
+
+msgid "Password-based authentication was disabled."
+msgstr ""
 
 #, python-format
 msgid "Change password: %s"
 msgstr "पासवर्ड फेर्नुहोस : %s"
+
+#, python-format
+msgid "Set password: %s"
+msgstr ""
 
 msgid "Authentication and Authorization"
 msgstr "प्रमाणीकरण तथा अनुमति"
@@ -51,7 +61,19 @@ msgstr "पासवर्ड राखिएको छैन ।"
 msgid "Invalid password format or unknown hashing algorithm."
 msgstr "अमान्य पासवर्ड स्वरूप वा अज्ञात ह्यासिङ अलगोरिदम ।"
 
+msgid "Reset password"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
 msgid "The two password fields didn’t match."
+msgstr ""
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
 msgstr ""
 
 msgid "Password"
@@ -63,12 +85,22 @@ msgstr "पासवर्ड पुष्टि"
 msgid "Enter the same password as before, for verification."
 msgstr "प्रमाणित गर्न पुन: उही पासवर्ड राख्नु होस ।"
 
-msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+msgid "Password-based authentication"
 msgstr ""
-"पासवर्ड जस्ताको त्यस्तै राखेको हुँदैन, त्यसैले हेर्न मिल्दैन । पासवर्ड परिवर्तन गर्न <a href="
-"\"{}\">यो फारम</a> भर्नु होस ।"
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid ""
+"Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr ""
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -93,9 +125,6 @@ msgstr "तपाईको पुरानो पासवर्ड गलत �
 
 msgid "Old password"
 msgstr "पुरानो पासवर्ड"
-
-msgid "Password (again)"
-msgstr "पासवर्ड (पुन:)"
 
 msgid "algorithm"
 msgstr "अल्गोरिदम"
@@ -129,6 +158,9 @@ msgstr "वर्क फ्याक्टर"
 
 msgid "checksum"
 msgstr "चेकसम"
+
+msgid "block size"
+msgstr ""
 
 msgid "name"
 msgstr "नाम"
@@ -251,10 +283,9 @@ msgid "Password reset on %(site_name)s"
 msgstr "%(site_name)s को पासवर्ड पून: राख्नु "
 
 msgid ""
-"Enter a valid username. This value may contain only English letters, "
-"numbers, and @/./+/-/_ characters."
+"Enter a valid username. This value may contain only unaccented lowercase a-z "
+"and uppercase A-Z letters, numbers, and @/./+/-/_ characters."
 msgstr ""
-"उपयुक्त प्रयोगकर्ता नाम राख्नु होस । अङ्ग्रेजी अक्षर, अङ्क र @/./+/-/_ मात्र मान्य छन् ।"
 
 msgid ""
 "Enter a valid username. This value may contain only letters, numbers, and "

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-17 03:19-0500\n"
-"PO-Revision-Date: 2023-12-04 08:09+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
 "Last-Translator: Azat, 2023\n"
 "Language-Team: Uyghur (http://app.transifex.com/django/django/language/ug/)\n"
 "MIME-Version: 1.0\n"
@@ -31,12 +31,22 @@ msgstr "مۇھىم چېسلا"
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr "%(key)r ئاساسىي ئاچقۇچى بار %(name)s ئوبيېكت مەۋجۇت ئەمەس."
 
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
 msgid "Password changed successfully."
 msgstr "پارول مۇۋەپپەقىيەتلىك ئۆزگەرتىلدى."
+
+msgid "Password-based authentication was disabled."
+msgstr ""
 
 #, python-format
 msgid "Change password: %s"
 msgstr "پارول ئۆزگەرتىش: %s"
+
+#, python-format
+msgid "Set password: %s"
+msgstr ""
 
 msgid "Authentication and Authorization"
 msgstr "دەلىللەش ۋە ھوقۇق بېرىش"
@@ -54,8 +64,20 @@ msgid "Invalid password format or unknown hashing algorithm."
 msgstr ""
 "ئىناۋەتسىز پارول پىچىمى ياكى يوچۇن مۇكەممەللىكىنى تەكشۈرۈش ھېسابلاش ئۇسۇلى."
 
+msgid "Reset password"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
 msgid "The two password fields didn’t match."
 msgstr "ئىككى پارول بۆلىكى ماس كەلمىدى."
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
+msgstr ""
 
 msgid "Password"
 msgstr "پارول"
@@ -66,13 +88,22 @@ msgstr "پارول جەزملەش"
 msgid "Enter the same password as before, for verification."
 msgstr "دەلىللەش ئۈچۈن، ئىلگىرىكى ئوخشاش ئىمنى قايتا كىرگۈزۈڭ."
 
-msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+msgid "Password-based authentication"
 msgstr ""
-"ئەسلى پارول سىستېمىغا ساقلانمايدۇ، شۇڭلاشقا بۇ ئىشلەتكۈچى ئىشلەتكەن پارولىنى "
-"كۆرگىلى بولمايدۇ، ئەمما <a href=\"{}\">بۇ جەدۋەل</a> نى ئىشلىتىپ پارولنى "
-"ئۆزگەرتەلەيسىز."
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid ""
+"Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr ""
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -99,9 +130,6 @@ msgstr "كونا پارولنى توغرا كىرگۈزمىدىڭىز. قايت�
 
 msgid "Old password"
 msgstr "كونا پارول"
-
-msgid "Password (again)"
-msgstr "پارول (قايتا)"
 
 msgid "algorithm"
 msgstr "ئالگورىزىم"

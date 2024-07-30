@@ -6,10 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 10:22+0200\n"
-"PO-Revision-Date: 2021-11-16 14:43+0000\n"
-"Last-Translator: Jafry Hisham\n"
-"Language-Team: Malay (http://www.transifex.com/django/django/language/ms/)\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
+"Last-Translator: Jafry Hisham, 2021\n"
+"Language-Team: Malay (http://app.transifex.com/django/django/language/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,12 +29,22 @@ msgstr "Tarikh-tarikh penting"
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr "Objek %(name)s dengan kunci utama %(key)r tidak wujud."
 
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
 msgid "Password changed successfully."
 msgstr "Kata laluan berjaya ditukar."
+
+msgid "Password-based authentication was disabled."
+msgstr ""
 
 #, python-format
 msgid "Change password: %s"
 msgstr "Tukar kata laluan: %s"
+
+#, python-format
+msgid "Set password: %s"
+msgstr ""
 
 msgid "Authentication and Authorization"
 msgstr "Pengesahan dan Kebenaran"
@@ -52,8 +62,20 @@ msgid "Invalid password format or unknown hashing algorithm."
 msgstr ""
 "Format kata laluan tidak sah atau algoritma hash yang tidak dapat dipastikan."
 
+msgid "Reset password"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
 msgid "The two password fields didn’t match."
 msgstr "Medan kedua-dua kata laluan tidak sepadan."
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
+msgstr ""
 
 msgid "Password"
 msgstr "Kata laluan"
@@ -65,13 +87,22 @@ msgid "Enter the same password as before, for verification."
 msgstr ""
 "Masukkan kata laluan yang sama seperti sebelumnya, bagi tujuan pengesahan."
 
-msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+msgid "Password-based authentication"
 msgstr ""
-"Kata laluan mentah tidak disimpan, maka tiada cara untuk melihat kata laluan "
-"pengguna, tetapi anda boleh menukar kata laluan menggunakan <a href="
-"\"{}\">borang ini</a>."
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid ""
+"Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr ""
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -100,9 +131,6 @@ msgstr ""
 
 msgid "Old password"
 msgstr "Kata laluan lama"
-
-msgid "Password (again)"
-msgstr "Kata laluan (sekali lagi)"
 
 msgid "algorithm"
 msgstr "algortima"
@@ -275,11 +303,9 @@ msgid "Password reset on %(site_name)s"
 msgstr "Penetapan semula kata laluan di %(site_name)s"
 
 msgid ""
-"Enter a valid username. This value may contain only English letters, "
-"numbers, and @/./+/-/_ characters."
+"Enter a valid username. This value may contain only unaccented lowercase a-z "
+"and uppercase A-Z letters, numbers, and @/./+/-/_ characters."
 msgstr ""
-"Masukkan nama pengguna yang sah. Nilai ini hanya boleh mengandungi huruf "
-"bahasa Inggeris, nombor, dan karakter-karakter @/./+/-/_ ."
 
 msgid ""
 "Enter a valid username. This value may contain only letters, numbers, and "

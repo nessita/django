@@ -12,10 +12,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-17 05:10-0500\n"
-"PO-Revision-Date: 2022-05-25 07:05+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 07:05+0000\n"
 "Last-Translator: Martino Nikolovski, 2022\n"
-"Language-Team: Macedonian (http://www.transifex.com/django/django/language/"
+"Language-Team: Macedonian (http://app.transifex.com/django/django/language/"
 "mk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -182,6 +182,9 @@ msgstr "Ништо"
 msgid "Hold down “Control”, or “Command” on a Mac, to select more than one."
 msgstr "Држете “Control” или “Command” на Mac за да изберете повеќе."
 
+msgid "Select this object for an action - {}"
+msgstr ""
+
 #, python-brace-format
 msgid "The {name} “{obj}” was added successfully."
 msgstr "Успешно беше додадено {name} “{obj}”."
@@ -197,10 +200,6 @@ msgstr ""
 #, python-brace-format
 msgid ""
 "The {name} “{obj}” was changed successfully. You may edit it again below."
-msgstr ""
-
-#, python-brace-format
-msgid "The {name} “{obj}” was added successfully. You may edit it again below."
 msgstr ""
 
 #, python-brace-format
@@ -338,6 +337,9 @@ msgstr "Избери ги сите %(total_count)s %(module_name)s"
 msgid "Clear selection"
 msgstr "Откажи го изборот"
 
+msgid "Breadcrumbs"
+msgstr ""
+
 #, python-format
 msgid "Models in the %(name)s application"
 msgstr "Модели во %(name)s апликација"
@@ -364,15 +366,31 @@ msgstr "Внесете корисничко име и лозинка."
 msgid "Change password"
 msgstr "Промени лозинка"
 
-msgid "Please correct the error below."
-msgstr "Ве молиме поправете ја грешката подолу."
+msgid "Set password"
+msgstr ""
 
-msgid "Please correct the errors below."
-msgstr "Ве молам поправете ги грешките подолу."
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
 
 #, python-format
 msgid "Enter a new password for the user <strong>%(username)s</strong>."
 msgstr "Внесете нова лозинка за корисникот <strong>%(username)s</strong>."
+
+msgid ""
+"This action will <strong>enable</strong> password-based authentication for "
+"this user."
+msgstr ""
+
+msgid "Disable password-based authentication"
+msgstr ""
+
+msgid "Enable password-based authentication"
+msgstr ""
+
+msgid "Skip to main content"
+msgstr ""
 
 msgid "Welcome,"
 msgstr "Добредојдовте,"
@@ -399,6 +417,12 @@ msgstr "Погледни на сајтот"
 msgid "Filter"
 msgstr "Филтер"
 
+msgid "Hide counts"
+msgstr ""
+
+msgid "Show counts"
+msgstr ""
+
 msgid "Clear all filters"
 msgstr "Ресетирај ги сите филтри"
 
@@ -411,6 +435,15 @@ msgstr "Приоритет на сортирање: %(priority_number)s"
 
 msgid "Toggle sorting"
 msgstr "Вклучи/исклучи сортирање"
+
+msgid "Toggle theme (current theme: auto)"
+msgstr ""
+
+msgid "Toggle theme (current theme: light)"
+msgstr ""
+
+msgid "Toggle theme (current theme: dark)"
+msgstr ""
 
 msgid "Delete"
 msgstr "Избриши"
@@ -497,6 +530,15 @@ msgstr "Мои акции"
 msgid "None available"
 msgstr "Ништо не е достапно"
 
+msgid "Added:"
+msgstr ""
+
+msgid "Changed:"
+msgstr ""
+
+msgid "Deleted:"
+msgstr ""
+
 msgid "Unknown content"
 msgstr "Непозната содржина"
 
@@ -523,6 +565,9 @@ msgstr "Ја заборавивте вашата лозинка или кори�
 msgid "Toggle navigation"
 msgstr ""
 
+msgid "Sidebar"
+msgstr ""
+
 msgid "Start typing to filter…"
 msgstr "Започнете со пишување за да филтрирате..."
 
@@ -539,10 +584,9 @@ msgid "Action"
 msgstr "Акција"
 
 msgid "entry"
-msgstr ""
-
-msgid "entries"
-msgstr ""
+msgid_plural "entries"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid ""
 "This object doesn’t have a change history. It probably wasn’t added via this "
@@ -694,6 +738,9 @@ msgstr "Email адреса:"
 
 msgid "Reset my password"
 msgstr "Ресетирај ја мојата лозинка"
+
+msgid "Select all objects on this page for an action"
+msgstr ""
 
 msgid "All dates"
 msgstr "Сите датуми"

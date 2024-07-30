@@ -14,10 +14,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-17 05:10-0500\n"
-"PO-Revision-Date: 2022-05-25 07:05+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 07:05+0000\n"
 "Last-Translator: Meiyer <interdist+translations@gmail.com>, 2022\n"
-"Language-Team: Esperanto (http://www.transifex.com/django/django/language/"
+"Language-Team: Esperanto (http://app.transifex.com/django/django/language/"
 "eo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -184,6 +184,9 @@ msgstr "Neniu"
 msgid "Hold down “Control”, or “Command” on a Mac, to select more than one."
 msgstr ""
 
+msgid "Select this object for an action - {}"
+msgstr ""
+
 #, python-brace-format
 msgid "The {name} “{obj}” was added successfully."
 msgstr "La {name} “{obj}” estis sukcese aldonita(j)."
@@ -199,10 +202,6 @@ msgstr ""
 #, python-brace-format
 msgid ""
 "The {name} “{obj}” was changed successfully. You may edit it again below."
-msgstr ""
-
-#, python-brace-format
-msgid "The {name} “{obj}” was added successfully. You may edit it again below."
 msgstr ""
 
 #, python-brace-format
@@ -337,6 +336,9 @@ msgstr "Elekti ĉiuj %(total_count)s %(module_name)s"
 msgid "Clear selection"
 msgstr "Viŝi elekton"
 
+msgid "Breadcrumbs"
+msgstr ""
+
 #, python-format
 msgid "Models in the %(name)s application"
 msgstr "Modeloj en la aplikaĵo “%(name)s”"
@@ -361,15 +363,31 @@ msgstr "Enigu salutnomon kaj pasvorton."
 msgid "Change password"
 msgstr "Ŝanĝi pasvorton"
 
-msgid "Please correct the error below."
-msgstr "Bonvolu ĝustigi la eraron sube."
+msgid "Set password"
+msgstr ""
 
-msgid "Please correct the errors below."
-msgstr "Bonvolu ĝustigi la erarojn sube."
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
 
 #, python-format
 msgid "Enter a new password for the user <strong>%(username)s</strong>."
 msgstr "Enigu novan pasvorton por la uzanto <strong>%(username)s</strong>."
+
+msgid ""
+"This action will <strong>enable</strong> password-based authentication for "
+"this user."
+msgstr ""
+
+msgid "Disable password-based authentication"
+msgstr ""
+
+msgid "Enable password-based authentication"
+msgstr ""
+
+msgid "Skip to main content"
+msgstr ""
 
 msgid "Welcome,"
 msgstr "Bonvenon,"
@@ -396,6 +414,12 @@ msgstr "Vidi sur retejo"
 msgid "Filter"
 msgstr "Filtri"
 
+msgid "Hide counts"
+msgstr ""
+
+msgid "Show counts"
+msgstr ""
+
 msgid "Clear all filters"
 msgstr ""
 
@@ -408,6 +432,15 @@ msgstr "Ordiga prioritato: %(priority_number)s"
 
 msgid "Toggle sorting"
 msgstr "Ŝalti ordigadon"
+
+msgid "Toggle theme (current theme: auto)"
+msgstr ""
+
+msgid "Toggle theme (current theme: light)"
+msgstr ""
+
+msgid "Toggle theme (current theme: dark)"
+msgstr ""
 
 msgid "Delete"
 msgstr "Forigi"
@@ -494,6 +527,15 @@ msgstr "Miaj agoj"
 msgid "None available"
 msgstr "Neniu disponebla"
 
+msgid "Added:"
+msgstr ""
+
+msgid "Changed:"
+msgstr ""
+
+msgid "Deleted:"
+msgstr ""
+
 msgid "Unknown content"
 msgstr "Nekonata enhavo"
 
@@ -517,6 +559,9 @@ msgstr "Ĉu vi forgesis vian pasvorton aŭ vian salutnomon?"
 msgid "Toggle navigation"
 msgstr "Ŝalti navigadon"
 
+msgid "Sidebar"
+msgstr ""
+
 msgid "Start typing to filter…"
 msgstr ""
 
@@ -533,10 +578,9 @@ msgid "Action"
 msgstr "Ago"
 
 msgid "entry"
-msgstr ""
-
-msgid "entries"
-msgstr ""
+msgid_plural "entries"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid ""
 "This object doesn’t have a change history. It probably wasn’t added via this "
@@ -696,6 +740,9 @@ msgstr "Retpoŝto:"
 
 msgid "Reset my password"
 msgstr "Rekomencigi mian pasvorton"
+
+msgid "Select all objects on this page for an action"
+msgstr ""
 
 msgid "All dates"
 msgstr "Ĉiuj datoj"

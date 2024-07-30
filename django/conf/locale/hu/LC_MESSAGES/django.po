@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2024-01-12 06:49+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 06:49+0000\n"
 "Last-Translator: Balázs Meskó <meskobalazs@mailbox.org>, 2024\n"
 "Language-Team: Hungarian (http://app.transifex.com/django/django/language/"
 "hu/)\n"
@@ -354,6 +354,9 @@ msgstr "Az oldal nem tartalmaz találatokat"
 msgid "Enter a valid value."
 msgstr "Adjon meg egy érvényes értéket."
 
+msgid "Enter a valid domain name."
+msgstr ""
+
 msgid "Enter a valid URL."
 msgstr "Adjon meg egy érvényes URL-t."
 
@@ -377,14 +380,18 @@ msgstr ""
 "Kérjük adjon meg egy érvényes \"domain-darabkát\", amely csak betűkből, "
 "számokból, aláhúzásból és kötőjelből áll."
 
-msgid "Enter a valid IPv4 address."
-msgstr "Írjon be egy érvényes IPv4 címet."
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
 
-msgid "Enter a valid IPv6 address."
-msgstr "Írjon be egy érvényes IPv6 címet."
+msgid "IPv4"
+msgstr ""
 
-msgid "Enter a valid IPv4 or IPv6 address."
-msgstr "Írjon be egy érvényes IPv4 vagy IPv6 címet."
+msgid "IPv6"
+msgstr ""
+
+msgid "IPv4 or IPv6"
+msgstr ""
 
 msgid "Enter only digits separated by commas."
 msgstr "Csak számokat adjon meg, vesszővel elválasztva."

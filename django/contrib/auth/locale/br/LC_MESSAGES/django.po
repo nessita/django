@@ -6,19 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-24 13:46+0200\n"
-"PO-Revision-Date: 2017-09-24 14:24+0000\n"
-"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
-"Language-Team: Breton (http://www.transifex.com/django/django/language/br/)\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 08:09+0000\n"
+"Last-Translator: Fulup <fulup.jakez@gmail.com>, 2012\n"
+"Language-Team: Breton (http://app.transifex.com/django/django/language/br/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: br\n"
 "Plural-Forms: nplurals=5; plural=((n%10 == 1) && (n%100 != 11) && (n%100 !"
-"=71) && (n%100 !=91) ? 0 :(n%10 == 2) && (n%100 != 12) && (n%100 !=72) && (n"
-"%100 !=92) ? 1 :(n%10 ==3 || n%10==4 || n%10==9) && (n%100 < 10 || n% 100 > "
-"19) && (n%100 < 70 || n%100 > 79) && (n%100 < 90 || n%100 > 99) ? 2 :(n != 0 "
-"&& n % 1000000 == 0) ? 3 : 4);\n"
+"=71) && (n%100 !=91) ? 0 :(n%10 == 2) && (n%100 != 12) && (n%100 !=72) && "
+"(n%100 !=92) ? 1 :(n%10 ==3 || n%10==4 || n%10==9) && (n%100 < 10 || n% 100 "
+"> 19) && (n%100 < 70 || n%100 > 79) && (n%100 < 90 || n%100 > 99) ? 2 :(n != "
+"0 && n % 1000000 == 0) ? 3 : 4);\n"
 
 msgid "Personal info"
 msgstr ""
@@ -33,11 +33,21 @@ msgstr ""
 msgid "%(name)s object with primary key %(key)r does not exist."
 msgstr ""
 
+msgid "Conflicting form data submitted. Please try again."
+msgstr ""
+
 msgid "Password changed successfully."
+msgstr ""
+
+msgid "Password-based authentication was disabled."
 msgstr ""
 
 #, python-format
 msgid "Change password: %s"
+msgstr ""
+
+#, python-format
+msgid "Set password: %s"
 msgstr ""
 
 msgid "Authentication and Authorization"
@@ -55,7 +65,19 @@ msgstr ""
 msgid "Invalid password format or unknown hashing algorithm."
 msgstr ""
 
-msgid "The two password fields didn't match."
+msgid "Reset password"
+msgstr ""
+
+msgid "Set password"
+msgstr ""
+
+msgid "The two password fields didn’t match."
+msgstr ""
+
+msgid ""
+"Whether the user will be able to authenticate using a password or not. If "
+"disabled, they may still be able to authenticate using other backends, such "
+"as Single Sign-On or LDAP."
 msgstr ""
 
 msgid "Password"
@@ -67,9 +89,21 @@ msgstr ""
 msgid "Enter the same password as before, for verification."
 msgstr ""
 
+msgid "Password-based authentication"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
 msgid ""
-"Raw passwords are not stored, so there is no way to see this user's "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
+"Raw passwords are not stored, so there is no way to see the user’s password."
+msgstr ""
+
+msgid ""
+"Enable password-based authentication for this user by setting a password."
 msgstr ""
 
 #, python-format
@@ -95,9 +129,6 @@ msgstr ""
 
 msgid "Old password"
 msgstr "Ger-tremen kozh"
-
-msgid "Password (again)"
-msgstr "Ger-tremen (adarre)"
 
 msgid "algorithm"
 msgstr ""
@@ -130,6 +161,9 @@ msgid "work factor"
 msgstr ""
 
 msgid "checksum"
+msgstr ""
+
+msgid "block size"
 msgstr ""
 
 msgid "name"
@@ -239,19 +273,19 @@ msgstr[4] ""
 msgid "The password is too similar to the %(verbose_name)s."
 msgstr ""
 
-msgid "Your password can't be too similar to your other personal information."
+msgid "Your password can’t be too similar to your other personal information."
 msgstr ""
 
 msgid "This password is too common."
 msgstr ""
 
-msgid "Your password can't be a commonly used password."
+msgid "Your password can’t be a commonly used password."
 msgstr ""
 
 msgid "This password is entirely numeric."
 msgstr ""
 
-msgid "Your password can't be entirely numeric."
+msgid "Your password can’t be entirely numeric."
 msgstr ""
 
 #, python-format
@@ -259,8 +293,8 @@ msgid "Password reset on %(site_name)s"
 msgstr ""
 
 msgid ""
-"Enter a valid username. This value may contain only English letters, "
-"numbers, and @/./+/-/_ characters."
+"Enter a valid username. This value may contain only unaccented lowercase a-z "
+"and uppercase A-Z letters, numbers, and @/./+/-/_ characters."
 msgstr ""
 
 msgid ""

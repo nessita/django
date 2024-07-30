@@ -1,14 +1,14 @@
 # This file is distributed under the same license as the Django package.
 #
 # Translators:
-# Igor Jerosimić, 2021,2023
+# Igor Jerosimić, 2021,2023-2024
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2023-12-04 18:40+0000\n"
-"Last-Translator: Igor Jerosimić, 2021,2023\n"
+"PO-Revision-Date: 2013-04-24 18:40+0000\n"
+"Last-Translator: Igor Jerosimić, 2021,2023-2024\n"
 "Language-Team: Serbian (Latin) (http://app.transifex.com/django/django/"
 "language/sr@latin/)\n"
 "MIME-Version: 1.0\n"
@@ -79,16 +79,16 @@ msgstr ""
 #, python-format
 msgid "%(value)s million"
 msgid_plural "%(value)s million"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(value)s milion"
+msgstr[1] "%(value)s miliona"
+msgstr[2] "%(value)s miliona"
 
 #, python-format
 msgid "%(value)s billion"
 msgid_plural "%(value)s billion"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(value)s milijarda"
+msgstr[1] "%(value)s milijarde"
+msgstr[2] "%(value)s milijardi"
 
 #, python-format
 msgid "%(value)s trillion"
@@ -263,49 +263,49 @@ msgstr ""
 msgctxt "naturaltime-past"
 msgid "%(num)d year"
 msgid_plural "%(num)d years"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num)d godina"
+msgstr[1] "%(num)d godine"
+msgstr[2] "%(num)d godina"
 
 #, python-format
 msgctxt "naturaltime-past"
 msgid "%(num)d month"
 msgid_plural "%(num)d months"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num)d mesec"
+msgstr[1] "%(num)d meseca"
+msgstr[2] "%(num)d meseci"
 
 #, python-format
 msgctxt "naturaltime-past"
 msgid "%(num)d week"
 msgid_plural "%(num)d weeks"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num)d nedelja"
+msgstr[1] "%(num)d nedelje"
+msgstr[2] "%(num)d nedelja"
 
 #, python-format
 msgctxt "naturaltime-past"
 msgid "%(num)d day"
 msgid_plural "%(num)d days"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num)d dan"
+msgstr[1] "%(num)d dana"
+msgstr[2] "%(num)d dana"
 
 #, python-format
 msgctxt "naturaltime-past"
 msgid "%(num)d hour"
 msgid_plural "%(num)d hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num)d sat"
+msgstr[1] "%(num)d sata"
+msgstr[2] "%(num)d sati"
 
 #, python-format
 msgctxt "naturaltime-past"
 msgid "%(num)d minute"
 msgid_plural "%(num)d minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num)d minut"
+msgstr[1] "%(num)d minuta"
+msgstr[2] "%(num)d minuta"
 
 #. Translators: 'naturaltime-future' strings will be included in '%(delta)s
 #. from now'
@@ -313,46 +313,46 @@ msgstr[2] ""
 msgctxt "naturaltime-future"
 msgid "%(num)d year"
 msgid_plural "%(num)d years"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num)d godina"
+msgstr[1] "%(num)d godine"
+msgstr[2] "%(num)d godina"
 
 #, python-format
 msgctxt "naturaltime-future"
 msgid "%(num)d month"
 msgid_plural "%(num)d months"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num)d mesec"
+msgstr[1] "%(num)d meseca"
+msgstr[2] "%(num)d meseci"
 
 #, python-format
 msgctxt "naturaltime-future"
 msgid "%(num)d week"
 msgid_plural "%(num)d weeks"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num)d nedelja"
+msgstr[1] "%(num)d nedelje"
+msgstr[2] "%(num)d nedelja"
 
 #, python-format
 msgctxt "naturaltime-future"
 msgid "%(num)d day"
 msgid_plural "%(num)d days"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num)d dan"
+msgstr[1] "%(num)d dana"
+msgstr[2] "%(num)d dana"
 
 #, python-format
 msgctxt "naturaltime-future"
 msgid "%(num)d hour"
 msgid_plural "%(num)d hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num)d sat"
+msgstr[1] "%(num)d sata"
+msgstr[2] "%(num)d sati"
 
 #, python-format
 msgctxt "naturaltime-future"
 msgid "%(num)d minute"
 msgid_plural "%(num)d minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(num)d minut"
+msgstr[1] "%(num)d minuta"
+msgstr[2] "%(num)d minuta"

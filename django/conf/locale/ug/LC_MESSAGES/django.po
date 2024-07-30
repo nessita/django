@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-18 11:41-0300\n"
-"PO-Revision-Date: 2023-12-04 06:49+0000\n"
+"POT-Creation-Date: 2024-05-22 11:46-0300\n"
+"PO-Revision-Date: 2013-04-25 06:49+0000\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>, 2023\n"
 "Language-Team: Uyghur (http://app.transifex.com/django/django/language/ug/)\n"
 "MIME-Version: 1.0\n"
@@ -348,6 +348,9 @@ msgstr "ئۇ بەتتە ھېچقانداق نەتىجە يوق"
 msgid "Enter a valid value."
 msgstr "بىر ئىناۋەتلىك قىممەتنى تولدۇرۇڭ"
 
+msgid "Enter a valid domain name."
+msgstr ""
+
 msgid "Enter a valid URL."
 msgstr "ئىناۋەتلىك URL نى تولدۇرۇڭ"
 
@@ -371,14 +374,18 @@ msgstr ""
 "يۇنىكودلۇق ھەرپ، سان، ئاستى سىزىق ياكى سىزىقچىلاردىن تەركىب تاپقان ئۈنۈملۈك "
 "«slug» نى كىرگۈزۈڭ."
 
-msgid "Enter a valid IPv4 address."
-msgstr "ئىناۋەتلىك IPv4 ئادرېسىنى كىرگۈزۈڭ."
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
 
-msgid "Enter a valid IPv6 address."
-msgstr "ئىناۋەتلىك IPv6 ئادرېسىنى كىرگۈزۈڭ."
+msgid "IPv4"
+msgstr ""
 
-msgid "Enter a valid IPv4 or IPv6 address."
-msgstr "ئىناۋەتلىك IPv4 ياكى IPv6 ئادرېسىنى كىرگۈزۈڭ."
+msgid "IPv6"
+msgstr ""
+
+msgid "IPv4 or IPv6"
+msgstr ""
 
 msgid "Enter only digits separated by commas."
 msgstr "پەش ئارقىلىق ئايرىلغان رەقەملەرنىلا كىرگۈزۈڭ."

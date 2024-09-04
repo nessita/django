@@ -122,6 +122,9 @@ class Library:
 
             @wraps(func)
             def compile_func(parser, token):
+                print(
+                    f"\n\n\n\n====================== {function_name=} {params=} {func=}"
+                )
                 bits = token.split_contents()[1:]
                 target_var = None
                 if len(bits) >= 2 and bits[-2] == "as":
@@ -141,7 +144,12 @@ class Library:
                 )
                 return SimpleNode(func, takes_context, args, kwargs, target_var)
 
+            if function_name == "explicit_no_content":
+                import pdb
+
+                pdb.set_trace()
             self.tag(function_name, compile_func)
+            print(f"\n\n\n\n====================== {self.tags=}")
             return func
 
         if func is None:

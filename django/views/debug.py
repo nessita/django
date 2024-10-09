@@ -654,12 +654,16 @@ def technical_404_response(request, exception):
 
 def default_urlconf(request):
     """Create an empty URLconf 404 error response."""
-    with builtin_template_path("default_urlconf.html").open(encoding="utf-8") as fh:
-        t = DEBUG_ENGINE.from_string(fh.read())
-    c = Context(
-        {
-            "version": get_docs_version(),
-        }
-    )
+    context = {"version": get_docs_version()}
+    template_name = "default_urlconf.html"
+    try:
+        from django.shortcuts import render
 
+        return render(request, template_name, context)
+    except Exception:
+        pass
+
+    with builtin_template_path(template_name).open(encoding="utf-8") as fh:
+        t = DEBUG_ENGINE.from_string(fh.read())
+    c = Context(context)
     return HttpResponse(t.render(c))

@@ -4,7 +4,6 @@ HTML Widget classes
 
 import copy
 import datetime
-import warnings
 from collections import defaultdict
 from graphlib import CycleError, TopologicalSorter
 from itertools import chain
@@ -14,6 +13,7 @@ from django.templatetags.static import static
 from django.utils import formats
 from django.utils.choices import normalize_choices
 from django.utils.dates import MONTHS
+from django.utils.deprecation import emit_warning
 from django.utils.formats import get_format
 from django.utils.html import format_html, html_safe
 from django.utils.regex_helper import _lazy_re_compile
@@ -168,7 +168,7 @@ class Media:
         try:
             return list(ts.static_order())
         except CycleError:
-            warnings.warn(
+            emit_warning(
                 "Detected duplicate Media files in an opposite order: {}".format(
                     ", ".join(repr(list_) for list_ in lists)
                 ),

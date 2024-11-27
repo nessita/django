@@ -1,10 +1,10 @@
 "Base Cache class."
 import time
-import warnings
 
 from asgiref.sync import sync_to_async
 
 from django.core.exceptions import ImproperlyConfigured
+from django.utils.deprecation import emit_warning
 from django.utils.module_loading import import_string
 from django.utils.regex_helper import _lazy_re_compile
 
@@ -115,7 +115,7 @@ class BaseCache:
         cache code.
         """
         for warning in memcache_key_warnings(key):
-            warnings.warn(warning, CacheKeyWarning)
+            emit_warning(warning, CacheKeyWarning)
 
     def make_and_validate_key(self, key, version=None):
         """Helper to make and validate keys."""

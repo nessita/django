@@ -3,11 +3,9 @@ Useful auxiliary data structures for query construction. Not useful outside
 the SQL domain.
 """
 
-import warnings
-
 from django.core.exceptions import FullResultSet
 from django.db.models.sql.constants import INNER, LOUTER
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 
 
 class MultiJoin(Exception):
@@ -72,7 +70,7 @@ class Join:
                 for lhs_field, rhs_field in self.join_fields
             )
         else:
-            warnings.warn(
+            emit_warning(
                 "The usage of get_joining_columns() in Join is deprecated. Implement "
                 "get_joining_fields() instead.",
                 RemovedInDjango60Warning,

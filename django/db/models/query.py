@@ -4,7 +4,6 @@ The main QuerySet implementation. This provides the public API for the ORM.
 
 import copy
 import operator
-import warnings
 from itertools import chain, islice
 
 from asgiref.sync import sync_to_async
@@ -33,7 +32,7 @@ from django.db.models.utils import (
     resolve_callables,
 )
 from django.utils import timezone
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 from django.utils.functional import cached_property, partition
 
 # The maximum number of results to fetch in a get() query.
@@ -341,7 +340,7 @@ class QuerySet(AltersData):
         pickled_version = state.get(DJANGO_VERSION_PICKLE_KEY)
         if pickled_version:
             if pickled_version != django.__version__:
-                warnings.warn(
+                emit_warning(
                     "Pickled queryset instance's Django version %s does not "
                     "match the current version %s."
                     % (pickled_version, django.__version__),
@@ -349,7 +348,7 @@ class QuerySet(AltersData):
                     stacklevel=2,
                 )
         else:
-            warnings.warn(
+            emit_warning(
                 "Pickled queryset instance's Django version is not specified.",
                 RuntimeWarning,
                 stacklevel=2,
@@ -2240,7 +2239,7 @@ class Prefetch:
         return to_attr, as_attr
 
     def get_current_queryset(self, level):
-        warnings.warn(
+        emit_warning(
             "Prefetch.get_current_queryset() is deprecated. Use "
             "get_current_querysets() instead.",
             RemovedInDjango60Warning,
@@ -2547,7 +2546,7 @@ def prefetch_one_level(instances, prefetcher, lookup, level):
             instances, lookup.get_current_querysets(level)
         )
     else:
-        warnings.warn(
+        emit_warning(
             "The usage of get_prefetch_queryset() in prefetch_related_objects() is "
             "deprecated. Implement get_prefetch_querysets() instead.",
             RemovedInDjango60Warning,

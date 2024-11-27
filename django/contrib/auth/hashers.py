@@ -4,7 +4,6 @@ import functools
 import hashlib
 import importlib
 import math
-import warnings
 
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
@@ -16,6 +15,7 @@ from django.utils.crypto import (
     get_random_string,
     pbkdf2,
 )
+from django.utils.deprecation import emit_warning
 from django.utils.module_loading import import_string
 from django.utils.translation import gettext_noop as _
 
@@ -303,7 +303,7 @@ class BasePasswordHasher:
         for any hasher that has a work factor. If not, this method should be
         defined as a no-op to silence the warning.
         """
-        warnings.warn(
+        emit_warning(
             "subclasses of BasePasswordHasher should provide a harden_runtime() method"
         )
 

@@ -3,7 +3,6 @@ import datetime
 import decimal
 import operator
 import uuid
-import warnings
 from base64 import b64decode, b64encode
 from collections.abc import Iterable
 from functools import partialmethod, total_ordering
@@ -30,6 +29,7 @@ from django.utils.dateparse import (
     parse_duration,
     parse_time,
 )
+from django.utils.deprecation import emit_warning
 from django.utils.duration import duration_microseconds, duration_string
 from django.utils.functional import Promise, cached_property
 from django.utils.ipv6 import clean_ipv6_address
@@ -1608,7 +1608,7 @@ class DateTimeField(DateField):
                     name = f"{self.model.__name__}.{self.name}"
                 except AttributeError:
                     name = "(unbound)"
-                warnings.warn(
+                emit_warning(
                     f"DateTimeField {name} received a naive datetime ({value}) while "
                     "time zone support is active.",
                     RuntimeWarning,
@@ -1667,7 +1667,7 @@ class DateTimeField(DateField):
                 name = "%s.%s" % (self.model.__name__, self.name)
             except AttributeError:
                 name = "(unbound)"
-            warnings.warn(
+            emit_warning(
                 "DateTimeField %s received a naive datetime (%s)"
                 " while time zone support is active." % (name, value),
                 RuntimeWarning,

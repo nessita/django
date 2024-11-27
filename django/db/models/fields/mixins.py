@@ -1,7 +1,5 @@
-import warnings
-
 from django.core import checks
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 from django.utils.functional import cached_property
 
 NOT_PROVIDED = object()
@@ -24,7 +22,7 @@ class FieldCacheMixin:
         # RemovedInDjango60Warning: when the deprecation ends, replace with:
         # raise NotImplementedError
         cache_name = self.get_cache_name()
-        warnings.warn(
+        emit_warning(
             f"Override {self.__class__.__qualname__}.cache_name instead of "
             "get_cache_name().",
             RemovedInDjango60Warning,

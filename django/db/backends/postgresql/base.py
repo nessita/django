@@ -6,7 +6,6 @@ Requires psycopg2 >= 2.8.4 or psycopg >= 3.1.8
 
 import asyncio
 import threading
-import warnings
 from contextlib import contextmanager
 
 from django.conf import settings
@@ -16,6 +15,7 @@ from django.db import connections
 from django.db.backends.base.base import NO_DB_ALIAS, BaseDatabaseWrapper
 from django.db.backends.utils import CursorDebugWrapper as BaseCursorDebugWrapper
 from django.utils.asyncio import async_unsafe
+from django.utils.deprecation import emit_warning
 from django.utils.functional import cached_property
 from django.utils.safestring import SafeString
 from django.utils.version import get_version_tuple
@@ -509,7 +509,7 @@ class DatabaseWrapper(BaseDatabaseWrapper):
         except (Database.DatabaseError, WrappedDatabaseError):
             if cursor is not None:
                 raise
-            warnings.warn(
+            emit_warning(
                 "Normally Django will use a connection to the 'postgres' database "
                 "to avoid running initialization queries against the production "
                 "database when it's not needed (for example, when running tests). "

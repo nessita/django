@@ -190,17 +190,16 @@ class AdjustStacklevelForWarningTests(SimpleTestCase):
         self.temp_file_path = self.django_path / "temp_adjust_stacklevel_for_warning.py"
 
         file_content = """
-import warnings
-from django.utils.deprecation import adjust_stacklevel_for_warning
+from django.utils.deprecation import emit_warning
 
 def django_function():
-    warnings.warn(
+    emit_warning(
         "This is a test warning from Django code.",
         DeprecationWarning,
-        **adjust_stacklevel_for_warning(__file__),
     )
         """
         self.temp_file_path.write_text(file_content)
+        self.addCleanup(self.temp_file_path.unlink)
 
         module_name = "temp_adjust_stacklevel_for_warning"
         spec = importlib.util.spec_from_file_location(
@@ -214,5 +213,3 @@ def django_function():
             module.django_function()
 
         self.assertEqual(ctx.filename, __file__)
-
-        self.temp_file_path.unlink()

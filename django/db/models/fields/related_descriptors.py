@@ -63,8 +63,6 @@ and two directions (forward and reverse) for a total of six combinations.
    ``ReverseManyToManyDescriptor``, use ``ManyToManyDescriptor`` instead.
 """
 
-import warnings
-
 from asgiref.sync import sync_to_async
 
 from django.core.exceptions import FieldError
@@ -81,7 +79,7 @@ from django.db.models.lookups import GreaterThan, LessThanOrEqual
 from django.db.models.query import QuerySet
 from django.db.models.query_utils import DeferredAttribute
 from django.db.models.utils import AltersData, resolve_callables
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 from django.utils.functional import cached_property
 
 
@@ -156,7 +154,7 @@ class ForwardManyToOneDescriptor:
         return self.field.remote_field.model._base_manager.db_manager(hints=hints).all()
 
     def get_prefetch_queryset(self, instances, queryset=None):
-        warnings.warn(
+        emit_warning(
             "get_prefetch_queryset() is deprecated. Use get_prefetch_querysets() "
             "instead.",
             RemovedInDjango60Warning,
@@ -448,7 +446,7 @@ class ReverseOneToOneDescriptor:
         return self.related.related_model._base_manager.db_manager(hints=hints).all()
 
     def get_prefetch_queryset(self, instances, queryset=None):
-        warnings.warn(
+        emit_warning(
             "get_prefetch_queryset() is deprecated. Use get_prefetch_querysets() "
             "instead.",
             RemovedInDjango60Warning,
@@ -766,7 +764,7 @@ def create_reverse_many_to_one_manager(superclass, rel):
                 return self._apply_rel_filters(queryset)
 
         def get_prefetch_queryset(self, instances, queryset=None):
-            warnings.warn(
+            emit_warning(
                 "get_prefetch_queryset() is deprecated. Use get_prefetch_querysets() "
                 "instead.",
                 RemovedInDjango60Warning,
@@ -1146,7 +1144,7 @@ def create_forward_many_to_many_manager(superclass, rel, reverse):
                 return self._apply_rel_filters(queryset)
 
         def get_prefetch_queryset(self, instances, queryset=None):
-            warnings.warn(
+            emit_warning(
                 "get_prefetch_queryset() is deprecated. Use get_prefetch_querysets() "
                 "instead.",
                 RemovedInDjango60Warning,

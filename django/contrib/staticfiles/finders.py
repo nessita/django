@@ -1,6 +1,5 @@
 import functools
 import os
-import warnings
 
 from django.apps import apps
 from django.conf import settings
@@ -9,7 +8,7 @@ from django.core.checks import Error, Warning
 from django.core.exceptions import ImproperlyConfigured
 from django.core.files.storage import FileSystemStorage, Storage, default_storage
 from django.utils._os import safe_join
-from django.utils.deprecation import RemovedInDjango61Warning
+from django.utils.deprecation import RemovedInDjango61Warning, emit_warning
 from django.utils.functional import LazyObject, empty
 from django.utils.module_loading import import_string
 
@@ -26,7 +25,7 @@ def _check_deprecated_find_param(class_name="", find_all=False, stacklevel=3, **
             "Passing the `all` argument to find() is deprecated. Use `find_all` "
             "instead."
         )
-        warnings.warn(msg, RemovedInDjango61Warning, stacklevel=stacklevel)
+        emit_warning(msg, RemovedInDjango61Warning, stacklevel=stacklevel)
 
         # If both `find_all` and `all` were given, raise TypeError.
         if find_all is not False:

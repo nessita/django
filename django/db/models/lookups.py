@@ -1,6 +1,5 @@
 import itertools
 import math
-import warnings
 
 from django.core.exceptions import EmptyResultSet, FullResultSet
 from django.db.backends.base.operations import BaseDatabaseOperations
@@ -15,7 +14,7 @@ from django.db.models.fields import (
 )
 from django.db.models.query_utils import RegisterLookupMixin
 from django.utils.datastructures import OrderedSet
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 from django.utils.functional import cached_property
 from django.utils.hashable import make_hashable
 
@@ -225,7 +224,7 @@ class BuiltinLookup(Lookup):
             and connection.ops.__class__.field_cast_sql
             is not BaseDatabaseOperations.field_cast_sql
         ):
-            warnings.warn(
+            emit_warning(
                 (
                     "The usage of DatabaseOperations.field_cast_sql() is deprecated. "
                     "Implement DatabaseOperations.lookup_cast() instead."

@@ -10,13 +10,12 @@ import importlib
 import os
 import time
 import traceback
-import warnings
 from pathlib import Path
 
 import django
 from django.conf import global_settings
 from django.core.exceptions import ImproperlyConfigured
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 from django.utils.functional import LazyObject, empty
 
 ENVIRONMENT_VARIABLE = "DJANGO_SETTINGS_MODULE"
@@ -150,7 +149,7 @@ class LazySettings(LazyObject):
         # LazyObject __getattribute__(), -4 the caller.
         filename, _, _, _ = stack[-4]
         if not filename.startswith(os.path.dirname(django.__file__)):
-            warnings.warn(message, category, stacklevel=2)
+            emit_warning(message, category, stacklevel=2)
 
 
 class Settings:
@@ -187,7 +186,7 @@ class Settings:
                 self._explicit_settings.add(setting)
 
         if self.is_overridden("FORMS_URLFIELD_ASSUME_HTTPS"):
-            warnings.warn(
+            emit_warning(
                 FORMS_URLFIELD_ASSUME_HTTPS_DEPRECATED_MSG,
                 RemovedInDjango60Warning,
             )
@@ -237,7 +236,7 @@ class UserSettingsHolder:
     def __setattr__(self, name, value):
         self._deleted.discard(name)
         if name == "FORMS_URLFIELD_ASSUME_HTTPS":
-            warnings.warn(
+            emit_warning(
                 FORMS_URLFIELD_ASSUME_HTTPS_DEPRECATED_MSG,
                 RemovedInDjango60Warning,
             )

@@ -14,13 +14,12 @@ directory corresponding to settings.GEOIP_PATH.
 
 import ipaddress
 import socket
-import warnings
 
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_ipv46_address
 from django.utils._os import to_path
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 from django.utils.functional import cached_property
 
 __all__ = ["HAS_GEOIP2"]
@@ -214,7 +213,7 @@ class GeoIP2:
         }
 
     def coords(self, query, ordering=("longitude", "latitude")):
-        warnings.warn(
+        emit_warning(
             "GeoIP2.coords() is deprecated. Use GeoIP2.lon_lat() instead.",
             RemovedInDjango60Warning,
             stacklevel=2,
@@ -241,7 +240,7 @@ class GeoIP2:
 
     @classmethod
     def open(cls, full_path, cache):
-        warnings.warn(
+        emit_warning(
             "GeoIP2.open() is deprecated. Use GeoIP2() instead.",
             RemovedInDjango60Warning,
             stacklevel=2,

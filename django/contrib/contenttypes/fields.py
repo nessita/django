@@ -1,6 +1,5 @@
 import functools
 import itertools
-import warnings
 from collections import defaultdict
 
 from asgiref.sync import sync_to_async
@@ -21,7 +20,7 @@ from django.db.models.query_utils import PathInfo
 from django.db.models.sql import AND
 from django.db.models.sql.where import WhereNode
 from django.db.models.utils import AltersData
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 from django.utils.functional import cached_property
 
 
@@ -160,7 +159,7 @@ class GenericForeignKey(FieldCacheMixin, Field):
             raise Exception("Impossible arguments to GFK.get_content_type!")
 
     def get_prefetch_queryset(self, instances, queryset=None):
-        warnings.warn(
+        emit_warning(
             "get_prefetch_queryset() is deprecated. Use get_prefetch_querysets() "
             "instead.",
             RemovedInDjango60Warning,
@@ -627,7 +626,7 @@ def create_generic_related_manager(superclass, rel):
                 return self._apply_rel_filters(queryset)
 
         def get_prefetch_queryset(self, instances, queryset=None):
-            warnings.warn(
+            emit_warning(
                 "get_prefetch_queryset() is deprecated. Use get_prefetch_querysets() "
                 "instead.",
                 RemovedInDjango60Warning,

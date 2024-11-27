@@ -1,4 +1,3 @@
-import warnings
 from datetime import datetime, timedelta
 
 from django import forms
@@ -33,7 +32,7 @@ from django.db.models import F, Field, ManyToOneRel, OrderBy
 from django.db.models.constants import LOOKUP_SEP
 from django.db.models.expressions import Combinable
 from django.urls import reverse
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 from django.utils.http import urlencode
 from django.utils.inspect import func_supports_parameter
 from django.utils.timezone import make_aware
@@ -182,7 +181,7 @@ class ChangeList:
             self.model_admin.lookup_allowed, "request"
         )
         if not supports_request:
-            warnings.warn(
+            emit_warning(
                 f"`request` must be added to the signature of "
                 f"{self.model_admin.__class__.__qualname__}.lookup_allowed().",
                 RemovedInDjango60Warning,

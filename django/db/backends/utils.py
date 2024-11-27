@@ -3,13 +3,13 @@ import decimal
 import functools
 import logging
 import time
-import warnings
 from contextlib import contextmanager
 from hashlib import md5
 
 from django.apps import apps
 from django.db import NotSupportedError
 from django.utils.dateparse import parse_time
+from django.utils.deprecation import emit_warning
 
 logger = logging.getLogger("django.db.backends")
 
@@ -64,7 +64,7 @@ class CursorWrapper:
         # Raise a warning during app initialization (stored_app_configs is only
         # ever set during testing).
         if not apps.ready and not apps.stored_app_configs:
-            warnings.warn(self.APPS_NOT_READY_WARNING_MSG, category=RuntimeWarning)
+            emit_warning(self.APPS_NOT_READY_WARNING_MSG, category=RuntimeWarning)
         self.db.validate_no_broken_transaction()
         with self.db.wrap_database_errors:
             if params is None and kparams is None:
@@ -95,7 +95,7 @@ class CursorWrapper:
         # Raise a warning during app initialization (stored_app_configs is only
         # ever set during testing).
         if not apps.ready and not apps.stored_app_configs:
-            warnings.warn(self.APPS_NOT_READY_WARNING_MSG, category=RuntimeWarning)
+            emit_warning(self.APPS_NOT_READY_WARNING_MSG, category=RuntimeWarning)
         self.db.validate_no_broken_transaction()
         with self.db.wrap_database_errors:
             if params is None:
@@ -108,7 +108,7 @@ class CursorWrapper:
         # Raise a warning during app initialization (stored_app_configs is only
         # ever set during testing).
         if not apps.ready and not apps.stored_app_configs:
-            warnings.warn(self.APPS_NOT_READY_WARNING_MSG, category=RuntimeWarning)
+            emit_warning(self.APPS_NOT_READY_WARNING_MSG, category=RuntimeWarning)
         self.db.validate_no_broken_transaction()
         with self.db.wrap_database_errors:
             return self.cursor.executemany(sql, param_list)

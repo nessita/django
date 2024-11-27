@@ -4,7 +4,6 @@ SQLite backend for the sqlite3 module in the standard library.
 
 import datetime
 import decimal
-import warnings
 from collections.abc import Mapping
 from itertools import chain, tee
 from sqlite3 import dbapi2 as Database
@@ -14,6 +13,7 @@ from django.db import IntegrityError
 from django.db.backends.base.base import BaseDatabaseWrapper
 from django.utils.asyncio import async_unsafe
 from django.utils.dateparse import parse_date, parse_datetime, parse_time
+from django.utils.deprecation import emit_warning
 from django.utils.regex_helper import _lazy_re_compile
 
 from ._functions import register as register_functions
@@ -171,7 +171,7 @@ class DatabaseWrapper(BaseDatabaseWrapper):
         # default in sqlite3 and it cannot be changed once a connection is
         # opened.
         if "check_same_thread" in kwargs and kwargs["check_same_thread"]:
-            warnings.warn(
+            emit_warning(
                 "The `check_same_thread` option was provided and set to "
                 "True. It will be overridden with False. Use the "
                 "`DatabaseWrapper.allow_thread_sharing` property instead "

@@ -1,6 +1,5 @@
 import os
 import sys
-import warnings
 from itertools import takewhile
 
 from django.apps import apps
@@ -21,6 +20,7 @@ from django.db.migrations.questioner import (
 from django.db.migrations.state import ProjectState
 from django.db.migrations.utils import get_migration_name_timestamp
 from django.db.migrations.writer import MigrationWriter
+from django.utils.deprecation import emit_warning
 
 
 class Command(BaseCommand):
@@ -158,7 +158,7 @@ class Command(BaseCommand):
                 try:
                     loader.check_consistent_history(connection)
                 except OperationalError as error:
-                    warnings.warn(
+                    emit_warning(
                         "Got an error checking a consistent migration history "
                         "performed for database connection '%s': %s" % (alias, error),
                         RuntimeWarning,

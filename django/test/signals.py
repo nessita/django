@@ -1,6 +1,5 @@
 import os
 import time
-import warnings
 
 from asgiref.local import Local
 
@@ -11,6 +10,7 @@ from django.db import connections, router
 from django.db.utils import ConnectionRouter
 from django.dispatch import Signal, receiver
 from django.utils import timezone
+from django.utils.deprecation import emit_warning
 from django.utils.formats import FORMAT_SETTINGS, reset_format_cache
 from django.utils.functional import empty
 
@@ -165,7 +165,7 @@ def complex_setting_changed(*, enter, setting, **kwargs):
     if enter and setting in COMPLEX_OVERRIDE_SETTINGS:
         # Considering the current implementation of the signals framework,
         # this stacklevel shows the line containing the override_settings call.
-        warnings.warn(
+        emit_warning(
             f"Overriding setting {setting} can lead to unexpected behavior.",
             stacklevel=5,
         )

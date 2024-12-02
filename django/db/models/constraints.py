@@ -1,4 +1,3 @@
-import warnings
 from enum import Enum
 from types import NoneType
 
@@ -12,7 +11,7 @@ from django.db.models.lookups import Exact, IsNull
 from django.db.models.query_utils import Q
 from django.db.models.sql.query import Query
 from django.db.utils import DEFAULT_DB_ALIAS
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 from django.utils.translation import gettext_lazy as _
 
 __all__ = ["BaseConstraint", "CheckConstraint", "Deferrable", "UniqueConstraint"]
@@ -47,7 +46,7 @@ class BaseConstraint:
             self.violation_error_message = self.default_violation_error_message
         # RemovedInDjango60Warning.
         if args:
-            warnings.warn(
+            emit_warning(
                 f"Passing positional arguments to {self.__class__.__name__} is "
                 f"deprecated.",
                 RemovedInDjango60Warning,
@@ -163,7 +162,7 @@ class CheckConstraint(BaseConstraint):
         violation_error_message=None,
     ):
         if check is not None:
-            warnings.warn(
+            emit_warning(
                 "CheckConstraint.check is deprecated in favor of `.condition`.",
                 RemovedInDjango60Warning,
                 stacklevel=2,
@@ -181,7 +180,7 @@ class CheckConstraint(BaseConstraint):
         )
 
     def _get_check(self):
-        warnings.warn(
+        emit_warning(
             "CheckConstraint.check is deprecated in favor of `.condition`.",
             RemovedInDjango60Warning,
             stacklevel=2,
@@ -189,7 +188,7 @@ class CheckConstraint(BaseConstraint):
         return self.condition
 
     def _set_check(self, value):
-        warnings.warn(
+        emit_warning(
             "CheckConstraint.check is deprecated in favor of `.condition`.",
             RemovedInDjango60Warning,
             stacklevel=2,

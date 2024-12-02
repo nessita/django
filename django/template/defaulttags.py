@@ -2,7 +2,6 @@
 
 import re
 import sys
-import warnings
 from collections import namedtuple
 from collections.abc import Iterable
 from datetime import datetime
@@ -11,6 +10,7 @@ from itertools import groupby
 
 from django.conf import settings
 from django.utils import timezone
+from django.utils.deprecation import emit_warning
 from django.utils.html import conditional_escape, escape, format_html
 from django.utils.lorem_ipsum import paragraphs, words
 from django.utils.safestring import mark_safe
@@ -84,7 +84,7 @@ class CsrfTokenNode(Node):
             # It's very probable that the token is missing because of
             # misconfiguration, so we raise a warning
             if settings.DEBUG:
-                warnings.warn(
+                emit_warning(
                     "A {% csrf_token %} was used in a template, but the context "
                     "did not provide the value.  This is usually caused by not "
                     "using RequestContext."

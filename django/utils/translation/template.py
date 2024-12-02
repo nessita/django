@@ -1,7 +1,7 @@
-import warnings
 from io import StringIO
 
 from django.template.base import Lexer, TokenType
+from django.utils.deprecation import emit_warning
 from django.utils.regex_helper import _lazy_re_compile
 
 from . import TranslatorCommentWarning, trim_whitespace
@@ -169,7 +169,7 @@ def templatize(src, origin=None):
                                 "(%sline %d) was ignored, because it wasn't "
                                 "the last item on the line."
                             ) % (c, filemsg, comment_lineno_cache)
-                            warnings.warn(warn_msg, TranslatorCommentWarning)
+                            emit_warning(warn_msg, TranslatorCommentWarning)
                         lineno_comment_map[comment_lineno_cache] = []
                 else:
                     out.write(

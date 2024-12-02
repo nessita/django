@@ -1,11 +1,11 @@
 import functools
 import sys
 import threading
-import warnings
 from collections import Counter, defaultdict
 from functools import partial
 
 from django.core.exceptions import AppRegistryNotReady, ImproperlyConfigured
+from django.utils.deprecation import emit_warning
 
 from .config import AppConfig
 
@@ -223,7 +223,7 @@ class Apps:
                 model.__name__ == app_models[model_name].__name__
                 and model.__module__ == app_models[model_name].__module__
             ):
-                warnings.warn(
+                emit_warning(
                     "Model '%s.%s' was already registered. Reloading models is not "
                     "advised as it can lead to inconsistencies, most notably with "
                     "related models." % (app_label, model_name),

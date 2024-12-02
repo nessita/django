@@ -1,7 +1,6 @@
 import enum
-import warnings
 
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 from django.utils.functional import Promise
 from django.utils.version import PY311, PY312
 
@@ -114,7 +113,7 @@ class TextChoices(Choices, StrEnum):
 
 def __getattr__(name):
     if name == "ChoicesMeta":
-        warnings.warn(
+        emit_warning(
             "ChoicesMeta is deprecated in favor of ChoicesType.",
             RemovedInDjango60Warning,
             stacklevel=2,

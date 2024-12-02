@@ -2,7 +2,6 @@ import copy
 import enum
 import json
 import re
-import warnings
 from functools import partial, update_wrapper
 from urllib.parse import parse_qsl
 from urllib.parse import quote as urlquote
@@ -56,7 +55,7 @@ from django.http.response import HttpResponseBase
 from django.template.response import SimpleTemplateResponse, TemplateResponse
 from django.urls import reverse
 from django.utils.decorators import method_decorator
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 from django.utils.html import format_html
 from django.utils.http import urlencode
 from django.utils.safestring import mark_safe
@@ -981,7 +980,7 @@ class ModelAdmin(BaseModelAdmin):
 
         The default implementation creates an admin LogEntry object.
         """
-        warnings.warn(
+        emit_warning(
             "ModelAdmin.log_deletion() is deprecated. Use log_deletions() instead.",
             RemovedInDjango60Warning,
             stacklevel=2,
@@ -1007,7 +1006,7 @@ class ModelAdmin(BaseModelAdmin):
 
         # RemovedInDjango60Warning.
         if type(self).log_deletion != ModelAdmin.log_deletion:
-            warnings.warn(
+            emit_warning(
                 "The usage of log_deletion() is deprecated. Implement log_deletions() "
                 "instead.",
                 RemovedInDjango60Warning,

@@ -5,7 +5,6 @@ import gettext as gettext_module
 import os
 import re
 import sys
-import warnings
 
 from asgiref.local import Local
 
@@ -15,6 +14,7 @@ from django.conf.locale import LANG_INFO
 from django.core.exceptions import AppRegistryNotReady
 from django.core.signals import setting_changed
 from django.dispatch import receiver
+from django.utils.deprecation import emit_warning
 from django.utils.regex_helper import _lazy_re_compile
 from django.utils.safestring import SafeData, mark_safe
 
@@ -155,7 +155,7 @@ class DjangoTranslation(gettext_module.GNUTranslations):
         if self.domain == "django":
             if localedirs is not None:
                 # A module-level cache is used for caching 'django' translations
-                warnings.warn(
+                emit_warning(
                     "localedirs is ignored when domain is 'django'.", RuntimeWarning
                 )
                 localedirs = None

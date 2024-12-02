@@ -1,5 +1,4 @@
 import json
-import warnings
 
 from django.conf import settings
 from django.contrib.admin.utils import quote
@@ -7,7 +6,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.urls import NoReverseMatch, reverse
 from django.utils import timezone
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 from django.utils.text import get_text_list
 from django.utils.translation import gettext
 from django.utils.translation import gettext_lazy as _
@@ -35,7 +34,7 @@ class LogEntryManager(models.Manager):
         action_flag,
         change_message="",
     ):
-        warnings.warn(
+        emit_warning(
             "LogEntryManager.log_action() is deprecated. Use log_actions() instead.",
             RemovedInDjango60Warning,
             stacklevel=2,
@@ -56,7 +55,7 @@ class LogEntryManager(models.Manager):
     ):
         # RemovedInDjango60Warning.
         if type(self).log_action != LogEntryManager.log_action:
-            warnings.warn(
+            emit_warning(
                 "The usage of log_action() is deprecated. Implement log_actions() "
                 "instead.",
                 RemovedInDjango60Warning,

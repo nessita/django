@@ -6,7 +6,6 @@ import os
 import re
 import sys
 import time
-import warnings
 from email.header import Header
 from http.client import responses
 from urllib.parse import urlsplit
@@ -20,6 +19,7 @@ from django.core.serializers.json import DjangoJSONEncoder
 from django.http.cookie import SimpleCookie
 from django.utils import timezone
 from django.utils.datastructures import CaseInsensitiveMapping
+from django.utils.deprecation import emit_warning
 from django.utils.encoding import iri_to_uri
 from django.utils.functional import cached_property
 from django.utils.http import content_disposition_header, http_date
@@ -506,7 +506,7 @@ class StreamingHttpResponse(HttpResponseBase):
         try:
             return iter(self.streaming_content)
         except TypeError:
-            warnings.warn(
+            emit_warning(
                 "StreamingHttpResponse must consume asynchronous iterators in order to "
                 "serve them synchronously. Use a synchronous iterator instead.",
                 Warning,
@@ -527,7 +527,7 @@ class StreamingHttpResponse(HttpResponseBase):
             async for part in self.streaming_content:
                 yield part
         except TypeError:
-            warnings.warn(
+            emit_warning(
                 "StreamingHttpResponse must consume synchronous iterators in order to "
                 "serve them asynchronously. Use an asynchronous iterator instead.",
                 Warning,

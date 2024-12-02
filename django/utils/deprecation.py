@@ -1,7 +1,10 @@
 import inspect
+import os
 import warnings
 
 from asgiref.sync import iscoroutinefunction, markcoroutinefunction, sync_to_async
+
+from django.utils.version import PY312
 
 
 class RemovedInDjango60Warning(DeprecationWarning):
@@ -16,6 +19,20 @@ RemovedInNextVersionWarning = RemovedInDjango60Warning
 RemovedAfterNextVersionWarning = RemovedInDjango61Warning
 
 
+def emit_warning(msg, category=None, stacklevel=2):
+    # TODO: Remove stacklevel when dropping support for PY311.
+    if PY312:
+        caller_frame = inspect.stack()[1]
+        caller_file = caller_frame.frame.f_globals.get("__file__", None)
+        kwargs = {"skip_file_prefixes": (os.path.dirname(caller_file),)}
+    elif stacklevel is not None:
+        kwargs = {"stacklevel": stacklevel + 1}
+    else:
+        kwargs = {}
+
+    warnings.warn(msg, category, **kwargs)
+
+
 class warn_about_renamed_method:
     def __init__(
         self, class_name, old_method_name, new_method_name, deprecation_warning
@@ -27,7 +44,7 @@ class warn_about_renamed_method:
 
     def __call__(self, f):
         def wrapper(*args, **kwargs):
-            warnings.warn(
+            emit_warning(
                 "`%s.%s` is deprecated, use `%s` instead."
                 % (self.class_name, self.old_method_name, self.new_method_name),
                 self.deprecation_warning,
@@ -67,7 +84,7 @@ class RenameMethodsBase(type):
 
                 # Define the new method if missing and complain about it
                 if not new_method and old_method:
-                    warnings.warn(
+                    emit_warning(
                         "`%s.%s` method should be renamed `%s`."
                         % (class_name, old_method_name, new_method_name),
                         deprecation_warning,

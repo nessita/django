@@ -4,7 +4,6 @@ import datetime
 import logging
 import threading
 import time
-import warnings
 import zoneinfo
 from collections import deque
 from contextlib import contextmanager
@@ -19,6 +18,7 @@ from django.db.backends.utils import debug_transaction
 from django.db.transaction import TransactionManagementError
 from django.db.utils import DatabaseErrorWrapper, ProgrammingError
 from django.utils.asyncio import async_unsafe
+from django.utils.deprecation import emit_warning
 from django.utils.functional import cached_property
 
 NO_DB_ALIAS = "__no_db__"
@@ -173,7 +173,7 @@ class BaseDatabaseWrapper:
     @property
     def queries(self):
         if len(self.queries_log) == self.queries_log.maxlen:
-            warnings.warn(
+            emit_warning(
                 "Limit for query logging exceeded, only the last {} queries "
                 "will be returned.".format(self.queries_log.maxlen),
                 stacklevel=2,

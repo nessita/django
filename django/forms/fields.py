@@ -10,7 +10,6 @@ import operator
 import os
 import re
 import uuid
-import warnings
 from decimal import Decimal, DecimalException
 from io import BytesIO
 from urllib.parse import urlsplit, urlunsplit
@@ -44,7 +43,7 @@ from django.forms.widgets import (
 from django.utils import formats
 from django.utils.choices import normalize_choices
 from django.utils.dateparse import parse_datetime, parse_duration
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 from django.utils.duration import duration_string
 from django.utils.ipv6 import clean_ipv6_address
 from django.utils.regex_helper import _lazy_re_compile
@@ -774,7 +773,7 @@ class URLField(CharField):
             if settings.FORMS_URLFIELD_ASSUME_HTTPS:
                 assume_scheme = "https"
             else:
-                warnings.warn(
+                emit_warning(
                     "The default scheme will be changed from 'http' to 'https' in "
                     "Django 6.0. Pass the forms.URLField.assume_scheme argument to "
                     "silence this warning, or set the FORMS_URLFIELD_ASSUME_HTTPS "

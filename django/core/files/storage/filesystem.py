@@ -1,5 +1,4 @@
 import os
-import warnings
 from datetime import datetime, timezone
 from urllib.parse import urljoin
 
@@ -9,7 +8,7 @@ from django.core.files.move import file_move_safe
 from django.core.signals import setting_changed
 from django.utils._os import safe_join
 from django.utils.deconstruct import deconstructible
-from django.utils.deprecation import RemovedInDjango60Warning
+from django.utils.deprecation import RemovedInDjango60Warning, emit_warning
 from django.utils.encoding import filepath_to_uri
 from django.utils.functional import cached_property
 
@@ -44,7 +43,7 @@ class FileSystemStorage(Storage, StorageSettingsMixin):
         if self.OS_OPEN_FLAGS != os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(
             os, "O_BINARY", 0
         ):
-            warnings.warn(
+            emit_warning(
                 "Overriding OS_OPEN_FLAGS is deprecated. Use "
                 "the allow_overwrite parameter instead.",
                 RemovedInDjango60Warning,

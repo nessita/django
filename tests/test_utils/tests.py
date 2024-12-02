@@ -3,7 +3,6 @@ import sys
 import threading
 import traceback
 import unittest
-import warnings
 from io import StringIO
 from unittest import mock
 
@@ -48,6 +47,7 @@ from django.test.utils import (
     setup_test_environment,
 )
 from django.urls import NoReverseMatch, path, reverse, reverse_lazy
+from django.utils.deprecation import emit_warning
 from django.utils.html import VOID_ELEMENTS
 from django.utils.version import PY311
 
@@ -1255,23 +1255,23 @@ class AssertRaisesMsgTest(SimpleTestCase):
 class AssertWarnsMessageTests(SimpleTestCase):
     def test_context_manager(self):
         with self.assertWarnsMessage(UserWarning, "Expected message"):
-            warnings.warn("Expected message", UserWarning)
+            emit_warning("Expected message", UserWarning)
 
     def test_context_manager_failure(self):
         msg = "Expected message' not found in 'Unexpected message'"
         with self.assertRaisesMessage(AssertionError, msg):
             with self.assertWarnsMessage(UserWarning, "Expected message"):
-                warnings.warn("Unexpected message", UserWarning)
+                emit_warning("Unexpected message", UserWarning)
 
     def test_callable(self):
         def func():
-            warnings.warn("Expected message", UserWarning)
+            emit_warning("Expected message", UserWarning)
 
         self.assertWarnsMessage(UserWarning, "Expected message", func)
 
     def test_special_re_chars(self):
         def func1():
-            warnings.warn("[.*x+]y?", UserWarning)
+            emit_warning("[.*x+]y?", UserWarning)
 
         with self.assertWarnsMessage(UserWarning, "[.*x+]y?"):
             func1()

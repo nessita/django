@@ -1,12 +1,12 @@
 import gzip
 import os
-import warnings
 
 from django.apps import apps
 from django.core import serializers
 from django.core.management.base import BaseCommand, CommandError
 from django.core.management.utils import parse_apps_and_model_labels
 from django.db import DEFAULT_DB_ALIAS, connections, router
+from django.utils.deprecation import emit_warning
 
 try:
     import bz2
@@ -203,7 +203,7 @@ class Command(BaseCommand):
                 if model in excluded_models:
                     continue
                 if model._meta.proxy and model._meta.proxy_for_model not in models:
-                    warnings.warn(
+                    emit_warning(
                         "%s is a proxy model and won't be serialized."
                         % model._meta.label,
                         category=ProxyModelWarning,
@@ -257,7 +257,7 @@ class Command(BaseCommand):
                     open_method, kwargs, file_path = (open, {}, output)
                 if file_path != output:
                     file_name = os.path.basename(file_path)
-                    warnings.warn(
+                    emit_warning(
                         f"Unsupported file extension ({file_ext}). "
                         f"Fixtures saved in '{file_name}'.",
                         RuntimeWarning,

@@ -3,7 +3,6 @@ import glob
 import gzip
 import os
 import sys
-import warnings
 import zipfile
 from itertools import product
 
@@ -22,6 +21,7 @@ from django.db import (
     router,
     transaction,
 )
+from django.utils.deprecation import emit_warning
 from django.utils.functional import cached_property
 
 try:
@@ -273,7 +273,7 @@ class Command(BaseCommand):
             self.fixture_object_count += objects_in_fixture
             # Warn if the fixture we loaded contains 0 objects.
             if objects_in_fixture == 0:
-                warnings.warn(
+                emit_warning(
                     "No fixture data found for '%s'. (File format may be "
                     "invalid.)" % fixture_name,
                     RuntimeWarning,

@@ -1,8 +1,8 @@
 import collections.abc
 import inspect
-import warnings
 from math import ceil
 
+from django.utils.deprecation import emit_warning
 from django.utils.functional import cached_property
 from django.utils.inspect import method_has_no_args
 from django.utils.translation import gettext_lazy as _
@@ -139,7 +139,7 @@ class Paginator:
                 if hasattr(self.object_list, "model")
                 else "{!r}".format(self.object_list)
             )
-            warnings.warn(
+            emit_warning(
                 "Pagination may yield inconsistent results with an unordered "
                 "object_list: {}.".format(obj_list_repr),
                 UnorderedObjectListWarning,

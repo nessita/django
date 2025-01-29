@@ -3,6 +3,7 @@ import re
 import urllib.parse
 from unittest import mock
 
+from django import forms
 from django.contrib.auth.forms import (
     AdminPasswordChangeForm,
     AdminUserCreationForm,
@@ -24,7 +25,6 @@ from django.contrib.sites.models import Site
 from django.core import mail
 from django.core.exceptions import ValidationError
 from django.core.mail import EmailMultiAlternatives
-from django.forms import forms
 from django.forms.fields import CharField, Field, IntegerField
 from django.test import SimpleTestCase, TestCase, override_settings
 from django.urls import reverse
@@ -411,6 +411,25 @@ class CustomUserCreationFormTest(TestDataMixin, TestCase):
         self.assertIs(form.is_valid(), True)
         user = form.save(commit=True)
         self.assertSequenceEqual(user.orgs.all(), [organization])
+
+    def test_custom_form_with_non_required_password(self):
+
+        class CustomUserCreationForm(BaseUserCreationForm):
+
+            another_field = forms.CharField(required=True)
+
+            def __init__(self, *args, **kwargs):
+                super().__init__(*args, **kwargs)
+                # Set password fields as optional.
+                self.fields["password1"].required = False
+                self.fields["password2"].required = False
+
+        data = {
+            "username": "testclientnew",
+            "another_field": "Content",
+        }
+        form = CustomUserCreationForm(data)
+        self.assertIs(form.is_valid(), True, form.errors)
 
 
 class UserCreationFormTest(BaseUserCreationFormTest):

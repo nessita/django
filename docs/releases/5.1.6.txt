@@ -12,3 +12,8 @@ Bugfixes
 * Fixed a regression in Django 5.1.5 that caused ``validate_ipv6_address()``
   and ``validate_ipv46_address()`` to crash when handling non-string values
   (:ticket:`36098`).
+
+* Fixed a regression in Django 5.1 where password fields in forms derived from
+  :class:`~django.contrib.auth.forms.BaseUserCreationForm`, when configured
+  with ``required=False``, were incorrectly treated as required
+  (:ticket:`36140`).

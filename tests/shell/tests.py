@@ -1,3 +1,5 @@
+import os
+import subprocess
 import sys
 import unittest
 from unittest import mock
@@ -23,24 +25,56 @@ class ShellCommandTestCase(SimpleTestCase):
 
     def test_command_option(self):
         with self.assertLogs("test", "INFO") as cm:
-            call_command(
-                "shell",
-                command=(
-                    "import django; from logging import getLogger; "
-                    'getLogger("test").info(django.__version__)'
-                ),
-            )
+            with captured_stdout():
+                call_command(
+                    "shell",
+                    command=(
+                        "import django; from logging import getLogger; "
+                        'getLogger("test").info(django.__version__)'
+                    ),
+                )
         self.assertEqual(cm.records[0].getMessage(), __version__)
 
     def test_command_option_globals(self):
         with captured_stdout() as stdout:
-            call_command("shell", command=self.script_globals)
+            call_command("shell", command=self.script_globals, verbosity=0)
         self.assertEqual(stdout.getvalue().strip(), "True")
 
     def test_command_option_inline_function_call(self):
         with captured_stdout() as stdout:
-            call_command("shell", command=self.script_with_inline_function)
+            call_command("shell", command=self.script_with_inline_function, verbosity=0)
         self.assertEqual(stdout.getvalue().strip(), __version__)
+
+    def test_no_settings_defined(self):
+        test_environ = os.environ.copy()
+        if "DJANGO_SETTINGS_MODULE" in test_environ:
+            test_environ.pop("DJANGO_SETTINGS_MODULE")
+        expected = (
+            "One or more errors were found while importing objects:\n\n"
+            "  Models could not be imported because they are not ready yet.\n"
+            "  DJANGO_SETTINGS_MODULE value is None.\n"
+            "  HINT: Ensure that the settings module is configured and set.\n\n"
+            "0 objects imported automatically.\n\n"
+        )
+        for verbosity, expected_stdout in [("0", ""), ("1", expected), ("2", expected)]:
+            with self.subTest(verbosity=verbosity):
+                p = subprocess.run(
+                    [
+                        sys.executable,
+                        "-m",
+                        "django",
+                        "shell",
+                        "-c",
+                        self.script_with_inline_function,
+                        "-v",
+                        verbosity,
+                    ],
+                    capture_output=True,
+                    env=test_environ,
+                    text=True,
+                    umask=-1,
+                )
+                self.assertEqual(p.stdout.strip(), expected_stdout + __version__)
 
     @unittest.skipIf(
         sys.platform == "win32", "Windows select() doesn't support file descriptors."
@@ -50,7 +84,7 @@ class ShellCommandTestCase(SimpleTestCase):
         with captured_stdin() as stdin, captured_stdout() as stdout:
             stdin.write("print(100)\n")
             stdin.seek(0)
-            call_command("shell")
+            call_command("shell", verbosity=0)
         self.assertEqual(stdout.getvalue().strip(), "100")
 
     @unittest.skipIf(
@@ -62,7 +96,7 @@ class ShellCommandTestCase(SimpleTestCase):
         with captured_stdin() as stdin, captured_stdout() as stdout:
             stdin.write(self.script_globals)
             stdin.seek(0)
-            call_command("shell")
+            call_command("shell", verbosity=0)
         self.assertEqual(stdout.getvalue().strip(), "True")
 
     @unittest.skipIf(
@@ -74,7 +108,7 @@ class ShellCommandTestCase(SimpleTestCase):
         with captured_stdin() as stdin, captured_stdout() as stdout:
             stdin.write(self.script_with_inline_function)
             stdin.seek(0)
-            call_command("shell")
+            call_command("shell", verbosity=0)
         self.assertEqual(stdout.getvalue().strip(), __version__)
 
     def test_ipython(self):
@@ -387,6 +421,24 @@ class ShellCommandAutoImportsTestCase(SimpleTestCase):
             "2 objects could not be automatically imported:\n\n"
             "  does.not.exist\n"
             "  doesntexisteither\n\n"
+            "0 objects imported automatically.\n\n"
+        )
+        for verbosity, expected in [(0, ""), (1, expected), (2, expected)]:
+            with self.subTest(verbosity=verbosity):
+                with captured_stdout() as stdout:
+                    TestCommand().get_namespace(verbosity=verbosity)
+                    self.assertEqual(stdout.getvalue(), expected)
+
+    def test_override_get_auto_imports_other_errors(self):
+        class TestCommand(shell.Command):
+            def get_auto_imports(self):
+                1 / 0
+
+        fqn = self.id() + ".<locals>.TestCommand.get_auto_imports"
+        expected = (
+            "One or more errors were found while importing objects:\n\n"
+            "  ZeroDivisionError: division by zero\n"
+            f"  HINT: Verify the {fqn} method.\n\n"
             "0 objects imported automatically.\n\n"
         )
         for verbosity, expected in [(0, ""), (1, expected), (2, expected)]:

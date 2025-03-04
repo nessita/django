@@ -6,6 +6,7 @@ from collections import defaultdict
 from importlib import import_module
 
 from django.apps import apps
+from django.core.exceptions import AppRegistryNotReady
 from django.core.management import BaseCommand, CommandError
 from django.utils.datastructures import OrderedSet
 from django.utils.module_loading import import_string as import_dotted_path
@@ -150,7 +151,26 @@ class Command(BaseCommand):
         if options and options.get("no_imports"):
             return {}
 
-        path_imports = self.get_auto_imports()
+        path_imports = []
+        general_errors = []
+
+        try:
+            path_imports = self.get_auto_imports()
+        except AppRegistryNotReady:
+            settings_env_var = os.getenv("DJANGO_SETTINGS_MODULE")
+            general_errors = [
+                "Models could not be imported because they are not ready yet.",
+                f"DJANGO_SETTINGS_MODULE value is {settings_env_var!r}.",
+                "HINT: Ensure that the settings module is configured and set.",
+            ]
+        except Exception as e:
+            command_module = self.__class__.__module__
+            command_full_name = self.get_auto_imports.__qualname__
+            general_errors = [
+                f"{e.__class__.__name__}: {e}",
+                f"HINT: Verify the {command_module}.{command_full_name} method.",
+            ]
+
         if path_imports is None:
             return {}
 
@@ -178,6 +198,14 @@ class Command(BaseCommand):
         verbosity = options["verbosity"] if options else 0
         if verbosity < 1:
             return namespace
+
+        if general_errors:
+            msg = "\n".join(f"  {e}" for e in general_errors)
+            self.stdout.write(
+                f"One or more errors were found while importing objects:\n\n{msg}",
+                self.style.ERROR,
+                ending="\n\n",
+            )
 
         errors = len(import_errors)
         if errors:
@@ -228,7 +256,7 @@ class Command(BaseCommand):
     def handle(self, **options):
         # Execute the command and exit.
         if options["command"]:
-            exec(options["command"], {**globals(), **self.get_namespace()})
+            exec(options["command"], {**globals(), **self.get_namespace(**options)})
             return
 
         # Execute stdin if it has anything to read and exit.
@@ -238,7 +266,7 @@ class Command(BaseCommand):
             and not sys.stdin.isatty()
             and select.select([sys.stdin], [], [], 0)[0]
         ):
-            exec(sys.stdin.read(), {**globals(), **self.get_namespace()})
+            exec(sys.stdin.read(), {**globals(), **self.get_namespace(**options)})
             return
 
         available_shells = (

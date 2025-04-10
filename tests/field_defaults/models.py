@@ -68,3 +68,7 @@ class DBDefaultsFK(models.Model):
     language_code = models.ForeignKey(
         DBDefaultsPK, db_default="fr", on_delete=models.CASCADE
     )
+
+
+class DBDefaultUUIDPK(models.Model):
+    id = models.UUIDPrimaryKeyField()

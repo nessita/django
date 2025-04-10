@@ -792,3 +792,7 @@ class BaseDatabaseOperations:
     def format_debug_sql(self, sql):
         # Hook for backends (e.g. NoSQL) to customize formatting.
         return sqlparse.format(sql, reindent=True, keyword_case="upper")
+
+    def generate_uuid_sql(self):
+        """Return an SQL directive that generates a random UUID value."""
+        raise NotSupportedError("This backend does not support UUID generation.")

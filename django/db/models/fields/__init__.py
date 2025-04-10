@@ -69,6 +69,7 @@ __all__ = [
     "TimeField",
     "URLField",
     "UUIDField",
+    "UUIDPrimaryKeyField",
 ]
 
 
@@ -2780,6 +2781,35 @@ class UUIDField(Field):
                 **kwargs,
             }
         )
+
+
+class UUIDPrimaryKeyField(UUIDField):
+    db_returning = True
+
+    def __init__(self, *args, **kwargs):
+        kwargs["primary_key"] = True
+        kwargs["blank"] = True
+        kwargs["editable"] = False
+        kwargs["db_default"] = None
+        kwargs["default"] = None
+        super().__init__(**kwargs)
+
+    # def get_db_prep_value(self, value, connection, prepared=False):
+    #     if not value and not prepared:
+    #         if connection.features.has_native_uuid_generator:
+    #             value = connection.ops.generate_uuid_value()
+    #         else:
+    #             value = uuid.uuid4()
+    #     return super().get_db_prep_value(value, connection, prepared)
+
+    def get_pk_value_on_save(self, instance):
+        value = super().get_pk_value_on_save(instance)
+        if value is not None:
+            return value
+
+        from django.db.models.expressions import GeneratedUUIDIsh
+
+        return GeneratedUUIDIsh()
 
 
 class AutoFieldMixin:

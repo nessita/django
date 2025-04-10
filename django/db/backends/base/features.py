@@ -80,6 +80,9 @@ class BaseDatabaseFeatures:
     # Is there a true datatype for uuid?
     has_native_uuid_field = False
 
+    # Is there a proper UUID generator?
+    has_native_uuid_generator = False
+
     # Is there a true datatype for timedeltas?
     has_native_duration_field = False
 

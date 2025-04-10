@@ -2,6 +2,7 @@ import copy
 import datetime
 import functools
 import inspect
+import uuid
 from collections import defaultdict
 from decimal import Decimal
 from enum import Enum
@@ -2143,3 +2144,18 @@ class ValueRange(WindowFrame):
 
     def window_frame_start_end(self, connection, start, end):
         return connection.ops.window_frame_range_start_end(start, end)
+
+
+class GeneratedUUIDIsh(Expression):
+    """Internal expression to generate a DB-native UUID when available."""
+
+    def as_sql(self, compiler, connection):
+        if connection.features.has_native_uuid_generator:
+            result = connection.ops.generate_uuid_sql()
+        else:
+            # For other backends, use Python's uuid4
+            result = "%s", [str(uuid.uuid4())]
+        return result
+
+    def resolve_expression(self, *args, **kwargs):
+        return self

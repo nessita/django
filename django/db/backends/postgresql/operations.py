@@ -420,3 +420,7 @@ class DatabaseOperations(BaseDatabaseOperations):
             rhs_expr = Cast(rhs_expr, lhs_field)
 
         return lhs_expr, rhs_expr
+
+    def generate_uuid_sql(self):
+        """Return an SQL directive that generates a random UUID value."""
+        return "GEN_RANDOM_UUID()", ()

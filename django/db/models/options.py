@@ -7,13 +7,7 @@ from django.conf import settings
 from django.core.exceptions import FieldDoesNotExist, ImproperlyConfigured
 from django.core.signals import setting_changed
 from django.db import connections
-from django.db.models import (
-    AutoField,
-    CompositePrimaryKey,
-    Manager,
-    OrderWrt,
-    UniqueConstraint,
-)
+from django.db.models import CompositePrimaryKey, Manager, OrderWrt, UniqueConstraint
 from django.db.models.fields import composite
 from django.db.models.query_utils import PathInfo
 from django.utils.datastructures import ImmutableList, OrderedSet
@@ -275,12 +269,7 @@ class Options:
                 f"not be imported."
             )
             raise ImproperlyConfigured(msg) from e
-        if not issubclass(pk_class, AutoField):
-            raise ValueError(
-                f"Primary key '{pk_class_path}' referred by {source} must "
-                f"subclass AutoField."
-            )
-        return pk_class
+        return pk_class_path, pk_class
 
     def _prepare(self, model):
         if self.order_with_respect_to:
@@ -322,8 +311,13 @@ class Options:
                 field.primary_key = True
                 self.setup_pk(field)
             else:
-                pk_class = self._get_default_pk_class()
+                pk_class_path, pk_class = self._get_default_pk_class()
                 auto = pk_class(verbose_name="ID", primary_key=True, auto_created=True)
+                if not auto.db_returning:
+                    raise ValueError(
+                        f"Primary key '{pk_class_path}' must be a Field where "
+                        "db_returning evaluates to True."
+                    )
                 model.add_to_class("id", auto)
 
     def add_manager(self, manager):

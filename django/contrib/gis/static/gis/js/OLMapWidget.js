@@ -266,8 +266,10 @@ function initMapWidgetInSection(section) {
         if (wrapper.id.includes('__prefix__')) {
             return;
         }
-        const options = JSON.parse(wrapper.querySelector("#mapwidget-options").textContent);
-        options.id = wrapper.querySelector("textarea").id;
+        const widget_id = wrapper.querySelector("textarea").id;
+        const options_script = wrapper.querySelector("script#" + widget_id + "-mapwidget-options");
+        const options = JSON.parse(options_script.textContent);
+        options.id = widget_id;
         options.map_id = wrapper.querySelector(".dj_map").id;
         maps.push(new MapWidget(options));
     });

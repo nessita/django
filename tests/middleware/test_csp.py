@@ -1,9 +1,15 @@
+import time
+
 from django.conf.constants import CSP
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.http import HttpRequest, HttpResponse
 from django.middleware.csp import ContentSecurityPolicyMiddleware, LazyNonce
 from django.test import SimpleTestCase
-from django.test.utils import override_settings
+from django.test.selenium import SeleniumTestCase
+from django.test.utils import modify_settings, override_settings
 from django.utils.functional import empty
+
+from .views import csp_reports
 
 HEADER = "Content-Security-Policy"
 HEADER_REPORT_ONLY = "Content-Security-Policy-Report-Only"
@@ -295,3 +301,34 @@ class LazyNonceTests(SimpleTestCase):
         second = str(nonce)
 
         self.assertEqual(first, second)
+
+
+@override_settings(
+    ROOT_URLCONF="middleware.urls",
+    SECURE_CSP_REPORT_ONLY={
+        "default-src": [CSP.NONE],
+        "img-src": [CSP.SELF],
+        "script-src": [CSP.SELF],
+        "style-src": [CSP.SELF],
+        "report-uri": "/csp-report/",
+    },
+)
+@modify_settings(
+    MIDDLEWARE={"append": "django.middleware.csp.ContentSecurityPolicyMiddleware"}
+)
+class CSPSeleniumTestCase(SeleniumTestCase, StaticLiveServerTestCase):
+    available_apps = ["middleware"]
+
+    def setUp(self):
+        self.addCleanup(csp_reports.clear)
+        super().setUp()
+
+    def test_reports_are_generated(self):
+        url = self.live_server_url + "/csp-failure/"
+        self.selenium.get(url)
+        time.sleep(1)  # Allow time for the CSP report to be sent.
+        reports = sorted(
+            (r["csp-report"]["document-uri"], r["csp-report"]["violated-directive"])
+            for r in csp_reports
+        )
+        self.assertEqual(reports, [(url, "img-src"), (url, "style-src-elem")])

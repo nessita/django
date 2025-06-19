@@ -77,7 +77,11 @@ class SeleniumTestCaseBase(type(LiveServerTestCase)):
     def get_capability(cls, browser):
         from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-        return getattr(DesiredCapabilities, browser.upper())
+        caps = getattr(DesiredCapabilities, browser.upper())
+        if browser == "chrome":
+            caps["goog:loggingPrefs"] = {"browser": "ALL"}
+
+        return caps
 
     def create_options(self):
         options = self.import_options(self.browser)()
@@ -85,6 +89,7 @@ class SeleniumTestCaseBase(type(LiveServerTestCase)):
             # Disable Google Password Manager "Data Breach" alert pop-ups.
             options.add_argument("--guest")
             options.add_argument("--disable-infobars")
+            options.add_argument("--disable-gpu")
         if self.headless:
             match self.browser:
                 case "chrome" | "edge":
@@ -236,6 +241,15 @@ class SeleniumTestCase(LiveServerTestCase, metaclass=SeleniumTestCaseBase):
         path = Path.cwd() / "screenshots" / filename
         path.parent.mkdir(exist_ok=True, parents=True)
         self.selenium.save_screenshot(path)
+
+    def get_browser_logs(self, source=None, level="ALL"):
+        """Return browser console logs filtered by level and optionally source."""
+        return [
+            log
+            for log in self.selenium.get_log("browser")
+            if (level == "ALL" or log["level"] == level)
+            and (source is None or log["source"] == source)
+        ]
 
     @classmethod
     def _quit_selenium(cls):

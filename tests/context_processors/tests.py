@@ -2,7 +2,7 @@
 Tests for Django's bundled context processors.
 """
 
-from django.middleware.constants import CSP
+from django.conf.constants import CSP
 from django.test import SimpleTestCase, TestCase, override_settings
 
 HEADER = "Content-Security-Policy"

@@ -1,5 +1,5 @@
+from django.conf.constants import CSP
 from django.http import HttpRequest, HttpResponse
-from django.middleware.constants import CSP
 from django.middleware.csp import ContentSecurityPolicyMiddleware, LazyNonce
 from django.test import SimpleTestCase
 from django.test.utils import override_settings

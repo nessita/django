@@ -1,4 +1,4 @@
-from django.middleware.constants import CSP
+from django.conf.constants import CSP
 from django.test import SimpleTestCase
 
 

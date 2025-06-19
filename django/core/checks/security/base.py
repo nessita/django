@@ -141,7 +141,7 @@ E024 = Error(
 W025 = Warning(SECRET_KEY_WARNING_MSG, id="security.W025")
 
 E026 = Error(
-    "The Content Security Policy setting '%s' must be a dictionary.",
+    "The Content Security Policy setting '%s' must be a dictionary (got %r instead).",
     id="security.E026",
 )
 
@@ -294,13 +294,10 @@ def check_csp_settings(app_configs, **kwargs):
 
     Ensures both SECURE_CSP and SECURE_CSP_REPORT_ONLY are dictionaries.
     """
-    errors = []
-
-    for setting_name in ("SECURE_CSP", "SECURE_CSP_REPORT_ONLY"):
-        setting_value = getattr(settings, setting_name, None)
-
-        # CSP Setting must be a dictionary or None.
-        if setting_value is not None and not isinstance(setting_value, dict):
-            errors.append(Error(E026.msg % setting_name, id=E026.id))
-
-    return errors
+    # CSP settings must be a dictionary or None.
+    return [
+        Error(E026.msg % (name, value), id=E026.id)
+        for name in ("SECURE_CSP", "SECURE_CSP_REPORT_ONLY")
+        if (value := getattr(settings, name, None)) is not None
+        and not isinstance(value, dict)
+    ]

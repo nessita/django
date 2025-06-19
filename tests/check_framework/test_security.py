@@ -1,3 +1,5 @@
+import itertools
+
 from django.conf import settings
 from django.core.checks.messages import Error, Warning
 from django.core.checks.security import base, csrf, sessions
@@ -683,53 +685,49 @@ class CheckCrossOriginOpenerPolicyTest(SimpleTestCase):
 class CSPCheckTests(SimpleTestCase):
     """Tests for the CSP settings check function."""
 
-    @override_settings(SECURE_CSP=None, SECURE_CSP_REPORT_ONLY=None)
-    def test_secure_csp_none(self):
-        """Check should pass when both CSP settings are None."""
-        errors = base.check_csp_settings(None)
-        self.assertEqual(errors, [])
+    def test_secure_csp_allowed_values(self):
+        """Check should pass when both CSP settings are None or dicts."""
+        allowed_values = (None, {}, {"key": "value"})
+        combinations = itertools.product(allowed_values, repeat=2)
+        for csp_value, csp_report_only_value in combinations:
+            with (
+                self.subTest(
+                    csp_value=csp_value, csp_report_only_value=csp_report_only_value
+                ),
+                self.settings(
+                    SECURE_CSP=csp_value, SECURE_CSP_REPORT_ONLY=csp_report_only_value
+                ),
+            ):
+                errors = base.check_csp_settings(None)
+                self.assertEqual(errors, [])
 
-    @override_settings(SECURE_CSP={}, SECURE_CSP_REPORT_ONLY={})
-    def test_secure_csp_empty_dict(self):
-        """Check should pass when both CSP settings are an empty dict."""
-        errors = base.check_csp_settings(None)
-        self.assertEqual(errors, [])
-
-    def test_secure_csp_mixed_settings(self):
-        """Check should pass when only one setting is used but it's valid."""
-        with self.settings(SECURE_CSP={"key": "value"}, SECURE_CSP_REPORT_ONLY=None):
-            errors = base.check_csp_settings(None)
-            self.assertEqual(errors, [])
-
-        with self.settings(SECURE_CSP=None, SECURE_CSP_REPORT_ONLY={"key": "value"}):
-            errors = base.check_csp_settings(None)
-            self.assertEqual(errors, [])
-
-    def test_secure_csp_not_dict(self):
+    def test_secure_csp_invalid_values(self):
         """Check should fail when either CSP setting is not a dict."""
-        with self.settings(SECURE_CSP="not-a-dict", SECURE_CSP_REPORT_ONLY=None):
-            errors = base.check_csp_settings(None)
-            self.assertEqual(
-                errors, [Error(base.E026.msg % "SECURE_CSP", id=base.E026.id)]
-            )
-
-        with self.settings(SECURE_CSP=None, SECURE_CSP_REPORT_ONLY="not-a-dict"):
-            errors = base.check_csp_settings(None)
-            self.assertEqual(
-                errors,
-                [Error(base.E026.msg % "SECURE_CSP_REPORT_ONLY", id=base.E026.id)],
-            )
-
-    def test_secure_csp_both_not_dict(self):
-        """Check should fail when both CSP settings are not dicts."""
-        with self.settings(
-            SECURE_CSP="not-a-dict", SECURE_CSP_REPORT_ONLY="not-a-dict"
+        for value in (
+            False,
+            True,
+            0,
+            42,
+            "",
+            "not-a-dict",
+            set(),
+            {"a", "b"},
+            [],
+            [1, 2, 3, 4],
         ):
-            errors = base.check_csp_settings(None)
-            self.assertEqual(
-                errors,
-                [
-                    Error(base.E026.msg % "SECURE_CSP", id=base.E026.id),
-                    Error(base.E026.msg % "SECURE_CSP_REPORT_ONLY", id=base.E026.id),
-                ],
-            )
+            with self.subTest(value=value):
+                csp_error = Error(
+                    base.E026.msg % ("SECURE_CSP", value), id=base.E026.id
+                )
+                with self.settings(SECURE_CSP=value):
+                    errors = base.check_csp_settings(None)
+                    self.assertEqual(errors, [csp_error])
+                csp_report_only_error = Error(
+                    base.E026.msg % ("SECURE_CSP_REPORT_ONLY", value), id=base.E026.id
+                )
+                with self.settings(SECURE_CSP_REPORT_ONLY=value):
+                    errors = base.check_csp_settings(None)
+                    self.assertEqual(errors, [csp_report_only_error])
+                with self.settings(SECURE_CSP=value, SECURE_CSP_REPORT_ONLY=value):
+                    errors = base.check_csp_settings(None)
+                    self.assertEqual(errors, [csp_error, csp_report_only_error])

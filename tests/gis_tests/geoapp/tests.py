@@ -577,12 +577,18 @@ class GeoLookupTest(TestCase):
 
         # Testing within relation mask.
         ks = State.objects.get(name="Kansas")
-        self.assertSequenceEqual(
-            ["Lawrence"],
-            City.objects.filter(point__relate=(ks.poly, within_mask)).values_list(
-                "name", flat=True
-            ),
-        )
+        with self.subTest(query="working"):
+            self.assertEqual(
+                "Lawrence",
+                City.objects.filter(name="Lawrence")
+                .get(point__relate=(ks.poly, within_mask))
+                .name,
+            )
+
+        with self.subTest(query="failing"):
+            self.assertEqual(
+                "Lawrence", City.objects.get(point__relate=(ks.poly, within_mask)).name
+            )
 
         # Testing intersection relation mask.
         if not connection.ops.oracle:

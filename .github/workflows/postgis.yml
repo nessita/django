@@ -17,7 +17,7 @@ jobs:
   postgis-latest:
     if: contains(github.event.pull_request.labels.*.name, 'geodjango')
     runs-on: ubuntu-latest
-    name: Latest PostGIS
+    name: Latest PostGIS (debian-based)
     services:
       postgres:
         image: postgis/postgis:latest
@@ -63,7 +63,7 @@ jobs:
   postgis-alpine:
     if: contains(github.event.pull_request.labels.*.name, 'geodjango')
     runs-on: ubuntu-latest
-    name: Latest PostGIS
+    name: Latest PostGIS (alpine-based)
     services:
       postgres:
         image: postgis/postgis:17-3.5-alpine

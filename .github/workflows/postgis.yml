@@ -104,4 +104,4 @@ jobs:
       - name: Create PostgreSQL settings file
         run: mv ./.github/workflows/data/test_postgis.py.tpl ./tests/test_postgis.py
       - name: Run PostGIS tests
-        run: python -Wall tests/runtests.py -v2 --settings=test_postgis gis_tests.geoapp.tests.GeoLookupTest.test_relate_lookup --debug-sql
+        run: python -Wall tests/runtests.py -v2 --settings=test_postgis gis_tests.geoapp.tests.GeoLookupTest.test_relate_lookup_debug --debug-sql

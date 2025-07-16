@@ -578,7 +578,10 @@ class GeoLookupTest(TestCase):
         # Testing within relation mask.
         ks = State.objects.get(name="Kansas")
         self.assertEqual(
-            "Lawrence", City.objects.get(point__relate=(ks.poly, within_mask)).name
+            "Lawrence",
+            City.objects.filter(name="Lawrence")
+            .get(point__relate=(ks.poly, within_mask))
+            .name,
         )
 
         # Testing intersection relation mask.
@@ -603,6 +606,27 @@ class GeoLookupTest(TestCase):
                 point__relate=(functions.Union("point", "point"), mask)
             )
         )
+
+    @skipUnlessDBFeature("supports_relate_lookup")
+    def test_relate_lookup_debug(self):
+        within_mask = "T*F**F***"
+
+        # Testing within relation mask.
+        ks = State.objects.get(name="Kansas")
+        with self.subTest(query="working"):
+            print("\n\n\n\n\n\n\n\n\n**************** PASSING")
+            self.assertEqual(
+                "Lawrence",
+                City.objects.filter(name="Lawrence")
+                .get(point__relate=(ks.poly, within_mask))
+                .name,
+            )
+
+        with self.subTest(query="failing"):
+            print("\n\n\n\n\n\n\n\n\n**************** FAILING")
+            self.assertEqual(
+                "Lawrence", City.objects.get(point__relate=(ks.poly, within_mask)).name
+            )
 
     def test_gis_lookups_with_complex_expressions(self):
         multiple_arg_lookups = {

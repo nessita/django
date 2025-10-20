@@ -55,7 +55,8 @@ jobs:
         run: sudo apt install -y binutils libproj-dev gdal-bin
       - name: Create databases
         run: |
-          PGPASSWORD=$POSTGRES_PASSWORD psql -U $POSTGRES_USER -h localhost -c "CREATE DATABASE geodjango; CREATE DATABASE geodjango2;"
+          PGPASSWORD=$POSTGRES_PASSWORD psql -U $POSTGRES_USER -h localhost -c "CREATE DATABASE geodjango;"
+          PGPASSWORD=$POSTGRES_PASSWORD psql -U $POSTGRES_USER -h localhost -c "CREATE DATABASE geodjango2;"
       - name: Print PostGIS versions
         run: |
           PGPASSWORD=$POSTGRES_PASSWORD psql -U $POSTGRES_USER -h localhost -c "SELECT PostGIS_full_version();"

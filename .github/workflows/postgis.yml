@@ -17,6 +17,9 @@ jobs:
   postgis:
     if: contains(github.event.pull_request.labels.*.name, 'geodjango')
     runs-on: ubuntu-latest
+    env:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: postgres
     strategy:
       fail-fast: false
       matrix:
@@ -26,7 +29,6 @@ jobs:
       postgres:
         image: postgis/postgis:${{ matrix.postgis-version }}
         env:
-          POSTGRES_DB: geodjango
           POSTGRES_USER: user
           POSTGRES_PASSWORD: postgres
         ports:
@@ -51,13 +53,12 @@ jobs:
         run: sudo apt install -y libmemcached-dev
       - name: Install geospatial dependencies
         run: sudo apt install -y binutils libproj-dev gdal-bin
-      - name: Print PostGIS versions
-        env:
-          POSTGRES_DB: geodjango
-          POSTGRES_USER: user
-          POSTGRES_PASSWORD: postgres
+      - name: Create databases
         run: |
-          PGPASSWORD=$POSTGRES_PASSWORD psql -U $POSTGRES_USER -d $POSTGRES_DB -h localhost -c "SELECT PostGIS_full_version();"
+          PGPASSWORD=$POSTGRES_PASSWORD psql -U $POSTGRES_USER -h localhost -c "CREATE DATABASE geodjango; CREATE DATABASE geodjango2;"
+      - name: Print PostGIS versions
+        run: |
+          PGPASSWORD=$POSTGRES_PASSWORD psql -U $POSTGRES_USER -h localhost -c "SELECT PostGIS_full_version();"
       - name: Install and upgrade packaging tools
         run: python -m pip install --upgrade pip wheel
       - run: python -m pip install -r tests/requirements/py3.txt -r tests/requirements/postgres.txt -e .

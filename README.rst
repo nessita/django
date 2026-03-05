@@ -33,7 +33,8 @@ To get more help:
 
 * Join the community on the `Django Forum <https://forum.djangoproject.com/>`_.
 
-* Subscribe to the `Django mailing lists <https://docs.djangoproject.com/en/dev/internals/mailing-lists/>`_.
+* Subscribe to the `Django mailing lists
+  <https://docs.djangoproject.com/en/dev/internals/mailing-lists/>`_.
 
 To contribute to Django:
 

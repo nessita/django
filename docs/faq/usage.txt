@@ -1,6 +1,6 @@
-=================
+================
 FAQ: Using Django
-=================
+================
 
 Why do I get an error about importing :envvar:`DJANGO_SETTINGS_MODULE`?
 =======================================================================

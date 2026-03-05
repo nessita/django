@@ -32,7 +32,7 @@ def capfirst(x):
     return x[0].upper() + x[1:]
 
 
-# Set up regular expressions
+# Compiled regular expressions used across this module.
 re_newlines = _lazy_re_compile(r"\r\n|\r")  # Used in normalize_newlines
 re_camel_case = _lazy_re_compile(r"(((?<=[a-z])[A-Z])|([A-Z](?![A-Z]|$)))")
 

@@ -1067,3 +1067,17 @@ class WithNonceFilterTestCase(SimpleTestCase):
         result = t.render(Context({"media": media, "nonce": "abc123"}))
         self.assertIn("<script", result)
         self.assertNotIn("&lt;", result)
+
+    def test_with_nonce_csp_nonce_not_in_context_renders_without_nonce(self):
+        media = Media(
+            css={"all": ["/path/to/css"]},
+            js=["/path/to/js"],
+        )
+        t = Template("{% load media %}{{ media|with_nonce:csp_nonce }}")
+        result = t.render(Context({"media": media}))
+        self.assertNotIn("nonce", result)
+        self.assertHTMLEqual(
+            result,
+            '<link href="/path/to/css" media="all" rel="stylesheet">\n'
+            '<script src="/path/to/js"></script>',
+        )

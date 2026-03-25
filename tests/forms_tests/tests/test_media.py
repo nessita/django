@@ -90,6 +90,27 @@ class ScriptTestCase(SimpleTestCase):
             '<script src="http://media.example.com/static/path/to/js" async></script>',
         )
 
+    def test_render(self):
+        self.assertHTMLEqual(
+            Script("path/to/js").render(),
+            '<script src="http://media.example.com/static/path/to/js"></script>',
+        )
+
+    def test_render_with_attrs(self):
+        self.assertHTMLEqual(
+            Script("path/to/js").render(attrs={"nonce": "abc123"}),
+            '<script src="http://media.example.com/static/path/to/js"'
+            ' nonce="abc123"></script>',
+        )
+
+    def test_render_instance_attrs_take_precedence(self):
+        script = Script("path/to/js", nonce="instance-nonce")
+        self.assertHTMLEqual(
+            script.render(attrs={"nonce": "render-nonce"}),
+            '<script src="http://media.example.com/static/path/to/js"'
+            ' nonce="instance-nonce"></script>',
+        )
+
 
 @override_settings(
     STATIC_URL="http://media.example.com/static/",
@@ -905,3 +926,144 @@ class FormsMediaObjectTestCase(SimpleTestCase):
             '<link href="/path/to/css1" media="all" rel="stylesheet">\n'
             '<script src="/path/to/js1"></script>',
         )
+
+
+@override_settings(STATIC_URL="http://media.example.com/static/")
+class MediaRenderWithAttrsTestCase(SimpleTestCase):
+    def test_render_js_plain_string_with_attrs(self):
+        media = Media(js=["/path/to/js"])
+        self.assertHTMLEqual(
+            media.render_js(attrs={"nonce": "abc123"})[0],
+            '<script src="/path/to/js" nonce="abc123"></script>',
+        )
+
+    def test_render_css_plain_string_with_attrs(self):
+        media = Media(css={"all": ["/path/to/css"]})
+        result = list(media.render_css(attrs={"nonce": "abc123"}))
+        self.assertHTMLEqual(
+            result[0],
+            '<link href="/path/to/css" media="all" nonce="abc123" rel="stylesheet">',
+        )
+
+    def test_render_js_script_object_with_attrs(self):
+        media = Media(js=[Script("/path/to/js")])
+        self.assertHTMLEqual(
+            media.render_js(attrs={"nonce": "abc123"})[0],
+            '<script src="/path/to/js" nonce="abc123"></script>',
+        )
+
+    def test_render_css_asset_object_with_attrs(self):
+        media = Media(css={"all": [CSS("/path/to/css", media="all")]})
+        result = list(media.render_css(attrs={"nonce": "abc123"}))
+        self.assertHTMLEqual(
+            result[0],
+            '<link href="/path/to/css" media="all" nonce="abc123" rel="stylesheet">',
+        )
+
+    def test_render_propagates_attrs_to_js_and_css(self):
+        media = Media(
+            css={"all": ["/path/to/css"]},
+            js=["/path/to/js"],
+        )
+        result = media.render(attrs={"nonce": "abc123"})
+        self.assertHTMLEqual(
+            result,
+            '<link href="/path/to/css" media="all" nonce="abc123" rel="stylesheet">\n'
+            '<script src="/path/to/js" nonce="abc123"></script>',
+        )
+
+    def test_render_html_safe_objects_not_affected_by_attrs(self):
+
+        @html_safe
+        class CustomJS:
+            def __str__(self):
+                return '<script src="/custom.js"></script>'
+
+        media = Media(js=[CustomJS()])
+        self.assertEqual(
+            media.render_js(attrs={"nonce": "abc123"})[0],
+            '<script src="/custom.js"></script>',
+        )
+
+    def test_render_script_instance_attrs_take_precedence(self):
+        media = Media(js=[Script("/path/to/js", nonce="instance-nonce")])
+        result = media.render_js(attrs={"nonce": "render-nonce"})[0]
+        self.assertHTMLEqual(
+            result,
+            '<script src="/path/to/js" nonce="instance-nonce"></script>',
+        )
+
+    def test_render_without_attrs(self):
+        media = Media(
+            css={"all": ["/path/to/css"]},
+            js=["/path/to/js"],
+        )
+        self.assertHTMLEqual(
+            media.render(),
+            '<link href="/path/to/css" media="all" rel="stylesheet">\n'
+            '<script src="/path/to/js"></script>',
+        )
+
+
+@override_settings(STATIC_URL="http://media.example.com/static/")
+class WithNonceFilterTestCase(SimpleTestCase):
+    def test_with_nonce_applied_to_js(self):
+        media = Media(js=["/path/to/js"])
+        t = Template("{% load media %}{{ media|with_nonce:nonce }}")
+        result = t.render(Context({"media": media, "nonce": "abc123"}))
+        self.assertHTMLEqual(
+            result,
+            '<script src="/path/to/js" nonce="abc123"></script>',
+        )
+
+    def test_with_nonce_applied_to_css(self):
+        media = Media(css={"all": ["/path/to/css"]})
+        t = Template("{% load media %}{{ media|with_nonce:nonce }}")
+        result = t.render(Context({"media": media, "nonce": "abc123"}))
+        self.assertHTMLEqual(
+            result,
+            '<link href="/path/to/css" media="all" nonce="abc123" rel="stylesheet">',
+        )
+
+    def test_with_nonce_applied_to_js_and_css(self):
+        media = Media(
+            css={"all": ["/path/to/css"]},
+            js=["/path/to/js"],
+        )
+        t = Template("{% load media %}{{ media|with_nonce:nonce }}")
+        result = t.render(Context({"media": media, "nonce": "abc123"}))
+        self.assertHTMLEqual(
+            result,
+            '<link href="/path/to/css" media="all" nonce="abc123" rel="stylesheet">\n'
+            '<script src="/path/to/js" nonce="abc123"></script>',
+        )
+
+    def test_with_nonce_applied_to_script_object(self):
+        media = Media(js=[Script("/path/to/js")])
+        t = Template("{% load media %}{{ media|with_nonce:nonce }}")
+        result = t.render(Context({"media": media, "nonce": "abc123"}))
+        self.assertHTMLEqual(
+            result,
+            '<script src="/path/to/js" nonce="abc123"></script>',
+        )
+
+    def test_with_nonce_empty_string_renders_without_nonce(self):
+        media = Media(
+            css={"all": ["/path/to/css"]},
+            js=["/path/to/js"],
+        )
+        t = Template("{% load media %}{{ media|with_nonce:nonce }}")
+        result = t.render(Context({"media": media, "nonce": ""}))
+        self.assertNotIn("nonce", result)
+        self.assertHTMLEqual(
+            result,
+            '<link href="/path/to/css" media="all" rel="stylesheet">\n'
+            '<script src="/path/to/js"></script>',
+        )
+
+    def test_with_nonce_output_is_safe(self):
+        media = Media(js=["/path/to/js"])
+        t = Template("{% load media %}{{ media|with_nonce:nonce }}")
+        result = t.render(Context({"media": media, "nonce": "abc123"}))
+        self.assertIn("<script", result)
+        self.assertNotIn("&lt;", result)

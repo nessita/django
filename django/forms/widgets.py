@@ -181,10 +181,10 @@ class Media:
                         path.__html__()
                         if hasattr(path, "__html__")
                         else format_html(
-                            '<link href="{}" media="{}" {} rel="stylesheet">',
+                            '<link href="{}" media="{}"{} rel="stylesheet">',
                             self.absolute_path(path),
                             medium,
-                            flatatt(attrs or {}),
+                            flatatt(attrs) if attrs else "",
                         )
                     )
                 )

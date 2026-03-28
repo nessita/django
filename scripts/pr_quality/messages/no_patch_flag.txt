@@ -1,0 +1,12 @@
+The referenced ticket **ticket-{ticket_id}** does not have the **Has patch**
+flag set in Trac. This flag must be checked before a pull request can be
+reviewed.
+
+**What to do:**
+
+1. Open the ticket at https://code.djangoproject.com/ticket/{ticket_id}.
+2. Check the **Has patch** checkbox on the ticket.
+3. Save the ticket, then reopen this PR.
+
+For more information see
+https://docs.djangoproject.com/en/dev/internals/contributing/triaging-tickets/#has-patch.

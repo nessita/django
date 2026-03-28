@@ -1,0 +1,26 @@
+### AI Tool Usage Not Described
+
+You indicated that AI tools were used in preparing this PR, but you have not
+provided a description of which tools you used or how you used them. At least 5
+words of description are required.
+
+**What to do:**
+
+Add a brief description below the checked AI disclosure checkbox in
+your PR description. For example:
+
+```
+- [x] **If AI tools were used**, I have disclosed which ones, and fully reviewed and verified their output.
+
+Used GitHub Copilot for initial code generation. All output was manually reviewed, tested, and verified for correctness.
+```
+
+Your description should cover:
+
+- Which AI tool(s) and versions you used (e.g. GitHub Copilot, ChatGPT, Claude)
+- How you used them (e.g. code generation, writing tests, drafting
+  commit messages)
+- How you reviewed the generated result
+
+Please note that you are fully responsible for the correctness and quality of
+all content in this PR, regardless of how it was generated.

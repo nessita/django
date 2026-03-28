@@ -1,0 +1,5 @@
+If you believe this PR was closed in error, or if you have questions about
+these requirements, please see the [Django contribution
+guide](https://docs.djangoproject.com/en/dev/internals/contributing/) or ask on
+the [Django Forum](https://forum.djangoproject.com/c/internals/mentorship/10).
+

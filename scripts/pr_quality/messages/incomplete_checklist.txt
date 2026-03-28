@@ -1,0 +1,11 @@
+The first 5 items in the **Checklist** section must all be checked before this
+PR can be accepted. These items confirm that you have read and followed the
+Django contribution guidelines.
+
+**What to do:**
+
+Review each item and change `[ ]` to `[x]` once you have completed it.
+
+If you are unsure about any of these requirements, please read the [Django
+contribution guide](https://docs.djangoproject.com/en/stable/internals/contributing/writing-code/submitting-patches/)
+before proceeding.

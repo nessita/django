@@ -1,0 +1,14 @@
+Your PR description must be substantive and meaningful. The placeholder text
+"Provide a concise overview of the issue or rationale behind the proposed
+changes." is not acceptable.
+
+**What to do:**
+
+Write a description that contains at least 5 words and addresses:
+
+- What problem does this PR solve?
+- Why is this change necessary?
+- What approach did you take?
+
+A meaningful description helps reviewers understand the intent of your change
+quickly and increases the likelihood that your PR will be reviewed promptly.

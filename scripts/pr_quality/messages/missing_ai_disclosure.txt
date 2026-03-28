@@ -1,0 +1,20 @@
+You must select exactly one checkbox in the AI Assistance Disclosure section of
+your PR description.
+
+**Required Action:**
+
+Change `[ ]` to `[x]` for either:
+
+1. "**No AI tools were used** in preparing this PR."
+
+OR
+
+2. "**If AI tools were used**, I have disclosed which ones, and fully
+   reviewed and verified their output."
+
+**Key Requirements:**
+
+- Select only one option
+- Do not check both boxes
+- Do not leave both unchecked
+- If selecting the second option, provide details of which AI tools were used

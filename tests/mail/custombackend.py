@@ -1,6 +1,8 @@
 """A custom backend for testing."""
 
 from django.core.mail.backends.base import BaseEmailBackend
+from django.test import ignore_warnings
+from django.utils.deprecation import RemovedInDjango70Warning
 
 
 class EmailBackend(BaseEmailBackend):
@@ -37,7 +39,9 @@ class OptionsCapturingBackend(BaseEmailBackend):
 
     def __init__(self, **kwargs):
         self.init_kwargs.append(kwargs.copy())
-        super().__init__(**kwargs)
+        msg = r".*BaseEmailBackend will raise a TypeError for unknown keyword arguments"
+        with ignore_warnings(category=RemovedInDjango70Warning, message=msg):
+            super().__init__(**kwargs)
 
     def send_messages(self, email_messages):
         self.sent_messages.extend(email_messages)

@@ -1,5 +1,6 @@
 """A custom backend for testing."""
 
+from django.core.mail.backends import dummy
 from django.core.mail.backends.base import BaseEmailBackend
 from django.test import ignore_warnings
 from django.utils.deprecation import RemovedInDjango70Warning
@@ -68,3 +69,16 @@ class FailingEmailBackend(OptionsCapturingBackend):
         if self.fail_silently:
             return 0
         raise ValueError("FailingEmailBackend is doomed to fail.")
+
+
+class InitCheckBackend(dummy.EmailBackend):
+
+    init_kwargs = None
+
+    def __init__(self, **kwargs):
+        # Pass only the 'alias' kwarg to super, and only if present in kwargs.
+        alias_kwargs = {
+            param: value for param, value in kwargs.items() if param == "alias"
+        }
+        super().__init__(**alias_kwargs)
+        self.__class__.init_kwargs = kwargs

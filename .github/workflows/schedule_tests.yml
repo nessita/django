@@ -199,3 +199,15 @@ jobs:
       - name: Run tests
         working-directory: ./tests/
         run: python -Wall runtests.py --settings=test_postgres --verbosity=2
+
+  scripts-tests:
+    runs-on: ubuntu-latest
+    name: Scripts tests
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - run: python -m unittest discover -v -s scripts/
+      - run: python -m unittest discover -v -s scripts/pr_quality/

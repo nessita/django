@@ -38,7 +38,11 @@ from django.test.utils import ignore_warnings, requires_tz_support
 from django.utils.deprecation import RemovedInDjango70Warning
 from django.utils.translation import gettext_lazy
 
-from . import custombackend
+from . import (
+    custombackend,
+    ignore_no_default_email_provider_warning,
+    override_deprecated_email_settings,
+)
 from .custombackend import OptionsCapturingBackend
 
 # Check whether python/cpython#128110 has been fixed by seeing if space between
@@ -243,7 +247,7 @@ class MailTestsMixin:
         if hasattr(settings, "EMAIL_PROVIDERS"):
             return self.settings(EMAIL_PROVIDERS={"default": {"BACKEND": backend}})
         else:
-            return self.settings(EMAIL_BACKEND=backend)
+            return override_deprecated_email_settings(EMAIL_BACKEND=backend)
 
 
 class EmailMessageTests(MailTestsMixin, SimpleTestCase):
@@ -2480,6 +2484,7 @@ class MailAdminsAndManagersTestsWithEmailProviders(MailAdminsAndManagersTests):
                 self.assertEqual(mail.outbox[0].sent_using, "custom")
 
 
+@ignore_warnings(category=RemovedInDjango70Warning)
 class GetConnectionTests(SimpleTestCase):
     """Tests for django.core.mail.get_connection()."""
 
@@ -2794,6 +2799,10 @@ class DeprecatedInternalsTests(SimpleTestCase):
 # RemovedInDjango70Warning.
 class MailDeprecatedPositionalArgsTests(SimpleTestCase):
 
+    def get_connection(self, *args, **kwargs):
+        with ignore_no_default_email_provider_warning():
+            return mail.get_connection(*args, **kwargs)
+
     def assertDeprecatedIn70(self, params, name):
         return self.assertWarnsMessage(
             RemovedInDjango70Warning,
@@ -2802,7 +2811,7 @@ class MailDeprecatedPositionalArgsTests(SimpleTestCase):
 
     def test_get_connection(self):
         with self.assertDeprecatedIn70("'fail_silently'", "get_connection"):
-            mail.get_connection(
+            self.get_connection(
                 "django.core.mail.backends.dummy.EmailBackend",
                 # Deprecated positional arg:
                 True,
@@ -2823,7 +2832,7 @@ class MailDeprecatedPositionalArgsTests(SimpleTestCase):
                 None,
                 None,
                 None,
-                mail.get_connection(),
+                self.get_connection(),
                 "html message",
             )
 
@@ -2838,7 +2847,7 @@ class MailDeprecatedPositionalArgsTests(SimpleTestCase):
                 None,
                 None,
                 None,
-                mail.get_connection(),
+                self.get_connection(),
             )
 
     def test_mail_admins(self):
@@ -2850,7 +2859,7 @@ class MailDeprecatedPositionalArgsTests(SimpleTestCase):
                 "message",
                 # Deprecated positional args:
                 None,
-                mail.get_connection(),
+                self.get_connection(),
                 "html message",
             )
 
@@ -2863,7 +2872,7 @@ class MailDeprecatedPositionalArgsTests(SimpleTestCase):
                 "message",
                 # Deprecated positional args:
                 None,
-                mail.get_connection(),
+                self.get_connection(),
                 "html message",
             )
 
@@ -2879,7 +2888,7 @@ class MailDeprecatedPositionalArgsTests(SimpleTestCase):
                 ["to@example.com"],
                 # Deprecated positional args:
                 ["bcc@example.com"],
-                mail.get_connection(),
+                self.get_connection(),
                 [EmailAttachment("file.txt", "attachment\n", "text/plain")],
                 {"X-Header": "custom header"},
                 ["cc@example.com"],
@@ -2899,7 +2908,7 @@ class MailDeprecatedPositionalArgsTests(SimpleTestCase):
                 ["to@example.com"],
                 # Deprecated positional args:
                 ["bcc@example.com"],
-                mail.get_connection(),
+                self.get_connection(),
                 [EmailAttachment("file.txt", "attachment\n", "text/plain")],
                 {"X-Header": "custom header"},
                 [EmailAlternative("html body", "text/html")],

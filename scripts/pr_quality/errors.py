@@ -54,18 +54,20 @@ INCOMPLETE_CHECKLIST = (
 )
 
 INVALID_TRAC_STATUS = (
-    "Invalid Trac Ticket Status",
-    "The referenced ticket **ticket-{ticket_id}** is currently in the "
-    "**{stage}** stage. Only tickets in the **Accepted** stage are eligible for a "
-    "pull request.\n\n"
+    "Trac Ticket Not Ready for a Pull Request",
+    "The referenced ticket **ticket-{ticket_id}** is not ready for a pull request. "
+    "A ticket must be in the *Accepted* stage, *assigned* status, and have no "
+    "resolution.\n\n"
+    "**Current state:** {current_state}\n\n"
     "**What to do:**\n\n"
     f"1. Check the ticket at {TRAC_URL}/ticket/{{ticket_id}}.\n"
-    "2. If the ticket is **Unreviewed**, wait for a community member to review and "
-    "accept it before submitting a PR. A ticket cannot be accepted by the reporter.\n"
-    "3. If the ticket is **Ready for Checkin**, there is already a solution for it.\n"
-    "4. If the ticket is **Someday/Maybe**, please discuss the situation on the "
+    "2. If *Unreviewed*, wait for a community member to accept it. "
+    "A ticket cannot be accepted by its reporter.\n"
+    "3. If *Ready for Checkin*, there is already a solution for it.\n"
+    "4. If *Someday/Maybe*, discuss on the "
     f"[Django Forum]({FORUM_URL}/c/internals/5) before proceeding.\n"
-    "5. Only once the ticket is in the **Accepted** stage, submit a PR for it.\n\n"
+    "5. If resolved or closed, it is not eligible for a PR.\n"
+    "6. If not *assigned*, claim it by setting yourself as the owner.\n\n"
     f"For more information on the Django triage process see {TRIAGING_URL}.",
 )
 
@@ -125,12 +127,12 @@ MISSING_DESCRIPTION = (
 
 MISSING_HAS_PATCH_FLAG = (
     "Incorrect Trac Ticket Flag",
-    "The referenced ticket **ticket-{ticket_id}** does not have the **Has patch** "
+    "The referenced ticket **ticket-{ticket_id}** does not have the *Has patch* "
     "flag set in Trac. This flag must be checked before a pull request can be "
     "reviewed.\n\n"
     "**What to do:**\n\n"
     f"1. Open the ticket at {TRAC_URL}/ticket/{{ticket_id}}.\n"
-    "2. Scroll down and check the **Has patch** checkbox on the ticket.\n"
+    "2. Scroll down and check the *Has patch* checkbox on the ticket.\n"
     "3. Save the ticket.\n\n"
     f"For more information see {TRIAGING_URL}#has-patch.",
 )
@@ -141,8 +143,7 @@ MISSING_TICKET_IN_PR_TITLE = (
     "it allows Trac to automatically link this pull request to the ticket.\n\n"
     "**What to do:**\n\n"
     "Edit the PR title to follow the commit message format, for example:\n\n"
-    "`Fixed #{ticket_id} -- <description>.`\n\n"
-    f"For more information see {SUBMITTING_URL}.",
+    "`Fixed #{ticket_id} -- <description>.`",
 )
 
 MISSING_TRAC_TICKET = (

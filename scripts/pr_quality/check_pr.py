@@ -215,22 +215,35 @@ def check_trac_ticket(pr_body, total_changes, threshold=LARGE_PR_THRESHOLD):
 
 
 def check_trac_status(ticket_id, ticket_data):
-    """The referenced Trac ticket must be in the 'Accepted' stage.
+    """The referenced Trac ticket must be Accepted, unresolved, and assigned.
 
     ticket_data is the dict returned by fetch_trac_ticket(). Passing None
     skips the check (non-fatal fetch error). Passing TICKET_NOT_FOUND fails
-    with a "ticket not found" message.
+    with a generic not-ready message.
     """
     if ticket_data is None:
         return None  # Non-fatal fetch error; skip.
     if ticket_data is TICKET_NOT_FOUND:
         return Message(
-            *INVALID_TRAC_STATUS, ticket_id=ticket_id, stage="(ticket not found)"
+            *INVALID_TRAC_STATUS,
+            ticket_id=ticket_id,
+            current_state="ticket not found in Trac",
         )
     stage = ticket_data.get("custom", {}).get("stage", "").strip()
-    if stage == "Accepted":
+    resolution = (ticket_data.get("resolution") or "").strip()
+    status = ticket_data.get("status", "").strip()
+    if stage == "Accepted" and not resolution and status == "assigned":
         return None
-    return Message(*INVALID_TRAC_STATUS, ticket_id=ticket_id, stage=stage)
+    current_state = [
+        f"{stage=}" if stage != "Accepted" else "",
+        f"{resolution=}" if resolution else "",
+        f"{status=}" if status != "assigned" else "",
+    ]
+    return Message(
+        *INVALID_TRAC_STATUS,
+        ticket_id=ticket_id,
+        current_state=", ".join(s for s in current_state if s),
+    )
 
 
 def check_trac_has_patch(ticket_id, initial_data, poll_interval=1, poll_timeout=10):

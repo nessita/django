@@ -90,6 +90,8 @@ VALID_PR_TITLE = "Fixed #36991 -- Fix template rendering regression."
 def make_trac_json(
     ticket_id="36991",
     stage="Accepted",
+    status="assigned",
+    resolution="",
     has_patch="0",
     needs_docs="0",
     needs_tests="0",
@@ -98,7 +100,8 @@ def make_trac_json(
     return {
         "id": int(ticket_id),
         "summary": "Some summary",
-        "status": "new",
+        "status": status,
+        "resolution": resolution,
         "custom": {
             "stage": stage,
             "has_patch": has_patch,
@@ -310,31 +313,57 @@ class TestCheckTracTicket(BaseTestCase):
 
 
 class TestCheckTracStatus(BaseTestCase):
-    def test_accepted_passes(self):
-        data = make_trac_json(stage="Accepted")
+    def test_accepted_assigned_unresolved_passes(self):
+        # The Trac API returns null (None) for open tickets.
+        data = make_trac_json(stage="Accepted", status="assigned", resolution=None)
         self.assertIsNone(check_pr.check_trac_status("36991", data))
 
-    def test_non_accepted_stages_fail(self):
+    def test_non_accepted_stage_fails(self):
         for stage in ["Unreviewed", "Ready for Checkin", "Someday/Maybe"]:
             with self.subTest(stage=stage):
                 data = make_trac_json(stage=stage)
                 self.assertIsNotNone(check_pr.check_trac_status("36991", data))
 
+    def test_resolved_ticket_fails(self):
+        for resolution in [
+            "fixed",
+            "wontfix",
+            "duplicate",
+            "invalid",
+            "worksforme",
+            "needsinfo",
+            "needsnewfeatureprocess",
+        ]:
+            with self.subTest(resolution=resolution):
+                data = make_trac_json(
+                    stage="Accepted", status="assigned", resolution=resolution
+                )
+                self.assertIsNotNone(check_pr.check_trac_status("36991", data))
+
+    def test_unassigned_ticket_fails(self):
+        for status in ["new", "closed", ""]:
+            with self.subTest(status=status):
+                data = make_trac_json(stage="Accepted", status=status, resolution="")
+                self.assertIsNotNone(check_pr.check_trac_status("36991", data))
+
     def test_failure_message_contains_ticket_id(self):
-        data = make_trac_json(ticket_id="12345", stage="Unreviewed")
+        data = make_trac_json(stage="Unreviewed")
         result = check_pr.check_trac_status("12345", data)
         self.assertIsInstance(result, Message)
         self.assertEqual(result.kwargs["ticket_id"], "12345")
 
-    def test_failure_message_contains_current_stage(self):
-        data = make_trac_json(stage="Unreviewed")
+    def test_failure_message_contains_current_state(self):
+        data = make_trac_json(stage="Unreviewed", status="new", resolution="duplicate")
         result = check_pr.check_trac_status("36991", data)
         self.assertIsInstance(result, Message)
-        self.assertEqual(result.kwargs["stage"], "Unreviewed")
+        self.assertIn("stage='Unreviewed'", result.kwargs["current_state"])
+        self.assertIn("resolution='duplicate'", result.kwargs["current_state"])
+        self.assertIn("status='new'", result.kwargs["current_state"])
 
-    def test_ticket_not_found_fails(self):
+    def test_ticket_not_found_current_state(self):
         result = check_pr.check_trac_status("99999", check_pr.TICKET_NOT_FOUND)
-        self.assertIsNotNone(result)
+        self.assertIsInstance(result, Message)
+        self.assertIn("not found", result.kwargs["current_state"])
 
     def test_none_data_skips_check(self):
         self.assertIsNone(check_pr.check_trac_status("36991", None))

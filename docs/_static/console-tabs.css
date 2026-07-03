@@ -1,0 +1,77 @@
+/* Tab icons are Font Awesome Free 6.7.2 brand SVGs (CC BY 4.0); attribution is
+   inline in each file under fontawesome/. See https://fontawesome.com/license/free */
+
+.console-block {
+    text-align: right;
+}
+
+.console-block *:before,
+.console-block *:after {
+    box-sizing: border-box;
+}
+
+.console-block > section {
+    display: none;
+    text-align: left;
+}
+
+.console-block > input.c-tab-unix,
+.console-block > input.c-tab-win {
+    display: none;
+}
+
+.console-block > label {
+    display: inline-block;
+    padding: 4px 8px;
+    text-align: center;
+    color: var(--color-foreground-muted, #6b6b6b);
+    border: 1px solid transparent;
+    font-size: 0; /* Hide the console directive's icon placeholder text. */
+}
+
+/* Render the OS icons as masks so they inherit the label color (and adapt to
+   dark mode): Linux and Apple for the Unix tab, Windows for the Windows tab. */
+.console-block > label[for$="-unix"]:before,
+.console-block > label[for$="-unix"]:after,
+.console-block > label[for$="-win"]:before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    background-color: currentColor;
+    -webkit-mask: no-repeat center / contain;
+    mask: no-repeat center / contain;
+}
+
+.console-block > label[for$="-unix"]:before {
+    -webkit-mask-image: url("fontawesome/linux.svg");
+    mask-image: url("fontawesome/linux.svg");
+}
+
+.console-block > label[for$="-unix"]:after {
+    margin-left: 5px;
+    -webkit-mask-image: url("fontawesome/apple.svg");
+    mask-image: url("fontawesome/apple.svg");
+}
+
+.console-block > label[for$="-win"]:before {
+    -webkit-mask-image: url("fontawesome/windows.svg");
+    mask-image: url("fontawesome/windows.svg");
+}
+
+.console-block > input:checked + label {
+    color: var(--color-foreground-primary, #000);
+    border: 1px solid var(--color-background-border, #ddd);
+    border-top: 2px solid var(--color-brand-primary, #ab5603);
+    border-bottom: 1px solid var(--color-background-primary, #fff);
+}
+
+.console-block > .c-tab-unix:checked ~ .c-content-unix,
+.console-block > .c-tab-win:checked ~ .c-content-win {
+    display: block;
+}
+
+.console-block pre {
+    margin-top: 0px;
+}

@@ -204,7 +204,7 @@ suppress_warnings = ["app.add_directive", "epub.duplicated_toc_entry"]
 
 # The theme to use for HTML and HTML Help pages. See the documentation for
 # a list of builtin themes.
-html_theme = "djangodocs"
+html_theme = "furo"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further. For a list of options available for each theme, see the
@@ -233,7 +233,11 @@ html_theme_path = ["_theme"]
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-# html_static_path = ["_static"]
+html_static_path = ["_static"]
+
+# Stylesheet for the console directive's OS tabs. Loaded on every page; the
+# rules only take effect where the directive is actually used.
+html_css_files = ["console-tabs.css"]
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.

@@ -1,0 +1,50 @@
+/*
+ * Styling for the console directive's Unix/Windows tabbed code blocks.
+ *
+ * Tab switching is pure CSS: the radio inputs are hidden and each label
+ * reveals its matching panel via the :checked sibling selector.
+ */
+
+.console-block > section {
+    display: none;
+    text-align: left;
+}
+
+.console-block > input.c-tab-unix,
+.console-block > input.c-tab-win {
+    display: none;
+}
+
+.console-block > label {
+    display: inline-block;
+    padding: 4px 8px;
+    cursor: pointer;
+    color: var(--color-foreground-muted);
+    font-size: 0; /* Hide the directive's Font Awesome glyph placeholders. */
+}
+
+.console-block > label:before {
+    content: attr(title); /* "Linux/macOS" or "Windows". */
+    font-size: 0.8rem;
+}
+
+.console-block > input:checked + label {
+    color: var(--color-foreground-primary);
+    background: var(--color-background-secondary);
+    font-weight: bold;
+}
+
+.console-block > .c-tab-unix:checked ~ .c-content-unix,
+.console-block > .c-tab-win:checked ~ .c-content-win {
+    display: block;
+}
+
+/* Drop Furo's margin on the Unix wrapper so both panels align. */
+.console-block .highlight-console {
+    margin: 0;
+}
+
+/* Paint the code the same surface as the selected tab. */
+.console-block .highlight {
+    background: var(--color-background-secondary);
+}

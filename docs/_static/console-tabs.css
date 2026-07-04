@@ -23,9 +23,31 @@
     font-size: 0; /* Hide the directive's Font Awesome glyph placeholders. */
 }
 
-.console-block > label:before {
-    content: attr(title); /* "Linux/macOS" or "Windows". */
-    font-size: 0.8rem;
+/* Tab icons (Font Awesome brand SVGs as background images). */
+.console-block > label[for$="-unix"]:before,
+.console-block > label[for$="-unix"]:after,
+.console-block > label[for$="-win"]:before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.console-block > label[for$="-unix"]:before {
+    background-image: url("icons/linux.svg");
+}
+
+.console-block > label[for$="-unix"]:after {
+    margin-left: 5px;
+    background-image: url("icons/apple.svg");
+}
+
+.console-block > label[for$="-win"]:before {
+    background-image: url("icons/windows.svg");
 }
 
 .console-block > input:checked + label {

@@ -212,6 +212,8 @@ html_theme = "furo"
 # html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
+# Now only used for the epub theme (see epub_theme below); the HTML build uses
+# the packaged Furo theme.
 html_theme_path = ["_theme"]
 
 # The name for this set of Sphinx documents. If None, it defaults to

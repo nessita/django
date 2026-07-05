@@ -60,7 +60,6 @@ def setup(app):
         texinfo=(visit_console_dummy, depart_console_dummy),
     )
     app.add_directive("console", ConsoleDirective)
-    app.connect("html-page-context", html_page_context_hook)
     app.add_role("default-role-error", default_role_error)
     return {"parallel_read_safe": True}
 
@@ -353,15 +352,6 @@ class ConsoleDirective(CodeBlock):
         # Replace the literal_node object returned by Sphinx's CodeBlock with
         # the ConsoleNode wrapper.
         return [ConsoleNode(lit_blk_obj)]
-
-
-def html_page_context_hook(app, pagename, templatename, context, doctree):
-    # Put a bool on the context used to render the template. It's used to
-    # control inclusion of console-tabs.css. This way it's included only from
-    # HTML files rendered from reST files where the ConsoleDirective is used.
-    context["include_console_assets"] = getattr(
-        doctree, "_console_directive_used_flag", False
-    )
 
 
 def default_role_error(

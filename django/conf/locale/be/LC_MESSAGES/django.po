@@ -2,16 +2,16 @@
 #
 # Translators:
 # Viktar Palstsiuk <vipals@gmail.com>, 2014-2015
-# znotdead <zhirafchik@gmail.com>, 2016-2017,2019-2021,2023-2025
+# znotdead <zhirafchik@gmail.com>, 2016-2017,2019-2021,2023-2026
 # Bobsans <mr.bobsans@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-17 18:23-0300\n"
-"PO-Revision-Date: 2026-03-09 06:49+0000\n"
+"POT-Creation-Date: 2026-07-22 16:14-0400\n"
+"PO-Revision-Date: 2013-04-25 06:49+0000\n"
 "Last-Translator: znotdead <zhirafchik@gmail.com>, "
-"2016-2017,2019-2021,2023-2025\n"
+"2016-2017,2019-2021,2023-2026\n"
 "Language-Team: Belarusian (http://app.transifex.com/django/django/language/"
 "be/)\n"
 "MIME-Version: 1.0\n"
@@ -511,6 +511,9 @@ msgstr "%(model_name)s з такім %(field_labels)s ужо існуе."
 msgid "Constraint “%(name)s” is violated."
 msgstr "Абмежаванне \"%(name)s\" парушана."
 
+msgid "- Select an option -"
+msgstr "- Абярыце можнасьць -"
+
 #, python-format
 msgid "Value %(value)r is not a valid choice."
 msgstr "Значэнне %(value)r не з'яўляецца правільным выбарам."
@@ -580,8 +583,8 @@ msgstr "Дата (бяз часу)"
 
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
-"HH:MM[:ss[.uuuuuu]][TZ] format."
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
 msgstr ""
 "Значэнне “%(value)s” мае няправільны фармат. Яно павінна быць у фармаце ГГГГ-"
 "ММ-ДД ГГ:ХХ[:сс[.мммммм]][ЧА], дзе ЧА — часавы абсяг."
@@ -606,8 +609,8 @@ msgstr "Дзесятковы лік"
 
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] "
-"[[HH:]MM:]ss[.uuuuuu] format."
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
 msgstr ""
 "Значэньне “%(value)s” мае няправільны фармат. Яно павінна быць у фармаце "
 "[ДД] [ГГ:[ХХ:]]сс[.мммммм]."
@@ -675,8 +678,8 @@ msgid ""
 "“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
 "format."
 msgstr ""
-"Значэньне “%(value)s” мае няправільны фармат. Яно павінна быць у фармаце "
-"ГГ:ХХ[:сс[.мммммм]]."
+"Значэньне “%(value)s” мае няправільны фармат. Яно павінна быць у фармаце ГГ:"
+"ХХ[:сс[.мммммм]]."
 
 #, python-format
 msgid ""
@@ -694,6 +697,10 @@ msgstr "Сеціўная спасылка"
 
 msgid "Raw binary data"
 msgstr "Неапрацаваныя бінарныя зьвесткі"
+
+#, python-format
+msgid "“%(value)s” is not a valid binary value."
+msgstr "\"%(value)s\" не з'яўляецца дапушчальным двайковым значэннем."
 
 #, python-format
 msgid "“%(value)s” is not a valid UUID."
@@ -910,6 +917,12 @@ msgstr "Так"
 
 msgid "No"
 msgstr "Не"
+
+#. Translators: %s is the name of a model, e.g. "No City matches the
+#. given query."
+#, python-format
+msgid "No %s matches the given query."
+msgstr "Няма %s адпаведнікаў дадзенаму запыту."
 
 msgctxt "Task"
 msgid "Ready"
@@ -1329,11 +1342,11 @@ msgstr "Няма доступу да %(verbose_name_plural)s"
 
 #, python-format
 msgid ""
-"Future %(verbose_name_plural)s not available because "
-"%(class_name)s.allow_future is False."
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
 msgstr ""
-"Няма доступу да %(verbose_name_plural)s, якія будуць, бо "
-"«%(class_name)s.allow_future» мае значэньне «не сапраўдна»."
+"Няма доступу да %(verbose_name_plural)s, якія будуць, бо «%(class_name)s."
+"allow_future» мае значэньне «не сапраўдна»."
 
 #, python-format
 msgid "Invalid date string “%(datestr)s” given format “%(format)s”"

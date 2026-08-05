@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-17 18:23-0300\n"
-"PO-Revision-Date: 2026-06-01 06:49+0000\n"
+"POT-Creation-Date: 2026-07-22 16:14-0400\n"
+"PO-Revision-Date: 2013-04-25 06:49+0000\n"
 "Last-Translator: Illia Volochii <illia.volochii@gmail.com>, "
 "2019,2021-2023,2025-2026\n"
 "Language-Team: Ukrainian (http://app.transifex.com/django/django/language/"
@@ -532,6 +532,9 @@ msgstr "%(model_name)s з таким %(field_labels)s вже існує."
 msgid "Constraint “%(name)s” is violated."
 msgstr "Порушено обмеження \"%(name)s\"."
 
+msgid "- Select an option -"
+msgstr ""
+
 #, python-format
 msgid "Value %(value)r is not a valid choice."
 msgstr "Значення %(value)r не є дозволеним вибором."
@@ -597,8 +600,8 @@ msgstr "Дата (без часу)"
 
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
-"HH:MM[:ss[.uuuuuu]][TZ] format."
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
 msgstr ""
 "Значення \"%(value)s\" має невірний формат. Воно повинне бути у форматі YYYY-"
 "MM-DD HH:MM[:ss[.uuuuuu]][TZ]."
@@ -621,8 +624,8 @@ msgstr "Десяткове число"
 
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] "
-"[[HH:]MM:]ss[.uuuuuu] format."
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
 msgstr ""
 
 msgid "Duration"
@@ -688,8 +691,8 @@ msgid ""
 "“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
 "format."
 msgstr ""
-"Значення \"%(value)s\" має невірний формат. Воно повинне бути у форматі "
-"HH:MM[:ss[.uuuuuu]]."
+"Значення \"%(value)s\" має невірний формат. Воно повинне бути у форматі HH:"
+"MM[:ss[.uuuuuu]]."
 
 #, python-format
 msgid ""
@@ -705,6 +708,10 @@ msgstr "URL"
 
 msgid "Raw binary data"
 msgstr "Необроблені двійкові дані"
+
+#, python-format
+msgid "“%(value)s” is not a valid binary value."
+msgstr ""
 
 #, python-format
 msgid "“%(value)s” is not a valid UUID."
@@ -918,6 +925,12 @@ msgstr "Так"
 
 msgid "No"
 msgstr "Ні"
+
+#. Translators: %s is the name of a model, e.g. "No City matches the
+#. given query."
+#, python-format
+msgid "No %s matches the given query."
+msgstr ""
 
 msgctxt "Task"
 msgid "Ready"
@@ -1327,11 +1340,11 @@ msgstr "%(verbose_name_plural)s недоступні"
 
 #, python-format
 msgid ""
-"Future %(verbose_name_plural)s not available because "
-"%(class_name)s.allow_future is False."
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
 msgstr ""
-"Майбутні %(verbose_name_plural)s недоступні, тому що "
-"%(class_name)s.allow_future має нульове значення."
+"Майбутні %(verbose_name_plural)s недоступні, тому що %(class_name)s."
+"allow_future має нульове значення."
 
 #, python-format
 msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
@@ -1381,10 +1394,10 @@ msgid ""
 "rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
 "configured any URLs."
 msgstr ""
-"Ви бачите цю сторінку тому що змінна <a href=\"https://"
-"docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
-"target=\"_blank\" rel=\"noopener\">DEBUG</a> встановлена на <i>True</i> у "
-"вашому файлі конфігурації і ви не налаштували жодного URL."
+"Ви бачите цю сторінку тому що змінна <a href=\"https://docs.djangoproject."
+"com/en/%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG</a> встановлена на <i>True</i> у вашому файлі "
+"конфігурації і ви не налаштували жодного URL."
 
 msgid "Django Documentation"
 msgstr "Документація Django"

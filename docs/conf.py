@@ -13,6 +13,7 @@
 
 import sys
 from os.path import abspath, dirname, join
+from pathlib import Path
 
 from sphinx import version_info as sphinx_version
 
@@ -435,8 +436,10 @@ epub_cover = ("", "epub-cover.html")
 # The format is a list of tuples containing the path and title.
 # epub_post_files = []
 
-# A list of files that should not be packed into the epub file.
-epub_exclude_files = ["_static/console-tabs.css"]
+# A list of files (OS path strs) that should not be packed into the epub file.
+epub_exclude_files = [
+    str(Path("_static") / "console-tabs.css"),
+]
 
 # Empty, rather than defaulting to html_css_files, because its only entry is
 # the console-tabs.css excluded above. Any epub compatible addition to

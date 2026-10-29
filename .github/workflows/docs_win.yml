@@ -57,6 +57,80 @@ jobs:
             mingw-w64-ucrt-x86_64-aspell
             mingw-w64-ucrt-x86_64-aspell-en
       - run: python -m pip install -r requirements.txt
+
+      # ==================================================================
+      # WIP PROBES -- remove before merging.
+      # ==================================================================
+      - name: Probe - which enchant provider and dictionary are in use
+        continue-on-error: true
+        shell: bash
+        run: |
+          python - <<'PY'
+          import enchant
+          broker = enchant.Broker()
+          print("enchant version:", enchant.get_enchant_version())
+          print("providers:")
+          for prov in broker.describe():
+              print("   ", prov.name, "|", prov.desc, "|", prov.file)
+          print("dictionaries:", sorted(tag for tag, _ in broker.list_dicts()))
+          d = enchant.Dict("en_US")
+          print("en_US provider:", d.provider.name, "|", d.provider.file)
+          print("check('documentation') ->", d.check("documentation"))
+          print("check('xyzzyplugh')    ->", d.check("xyzzyplugh"))
+          PY
+
+      - name: Probe - inject a lint-only failure
+        shell: bash
+        run: |
+          cp glossary.txt glossary.txt.bak
+          sed -i 's/^    view$/    view   /' glossary.txt
+          grep -n 'view   $' glossary.txt
+
+      # Expect failure. Success means `check` swallowed the lint failure.
+      - name: Probe - make.bat check with lint failing
+        id: checkprobe
+        continue-on-error: true
+        shell: cmd  # zizmor: ignore[misfeature]
+        run: .\make.bat check
+
+      - name: Probe - restore, then inject a spelling-only failure
+        shell: bash
+        run: |
+          cp glossary.txt.bak glossary.txt
+          sed -i 's/rendering a page\./rendering a xyzzyplugh page./' glossary.txt
+          grep -n 'xyzzyplugh' glossary.txt
+
+      # Expect failure. Success means the Spelling step cannot fail at all.
+      - name: Probe - make.bat spelling with a misspelling
+        id: spellprobe
+        continue-on-error: true
+        shell: cmd  # zizmor: ignore[misfeature]
+        run: .\make.bat spelling
+        env:
+          SPHINXOPTS: -q -W
+
+      - name: Probe - restore glossary.txt
+        if: always()
+        shell: bash
+        run: cp glossary.txt.bak glossary.txt
+
+      - name: Probe report
+        if: always()
+        shell: bash
+        env:
+          CHECK_OUTCOME: ${{ steps.checkprobe.outcome }}
+          SPELL_OUTCOME: ${{ steps.spellprobe.outcome }}
+        run: |
+          echo "make.bat check, lint failing   -> $CHECK_OUTCOME"
+          echo "make.bat spelling, misspelling -> $SPELL_OUTCOME"
+          [ "$CHECK_OUTCOME" = failure ] \
+            || echo "CONFIRMED: make.bat check swallowed the lint failure."
+          [ "$SPELL_OUTCOME" = failure ] \
+            || echo "CONFIRMED: the Windows Spelling step cannot fail."
+      # ==================================================================
+      # end WIP probes
+      # ==================================================================
+
       # Batch file exit status is ignored with PowerShell or bash. `shell: cmd`
       # is the workaround -- see https://github.com/actions/runner/issues/351.
       - name: Lint

@@ -23,23 +23,39 @@ jobs:
           printf '\tcmd /c exit 3\r\n' >> stub.bat
           printf '\tif errorlevel 1 exit /b 1\r\n' >> stub.bat
           printf ':end\r\n' >> stub.bat
-          cat -A stub.bat
 
-      - name: A. shell cmd (what the PR does)
+      - name: A. shell cmd, batch (what the PR does)
         id: a
         continue-on-error: true
         shell: cmd  # zizmor: ignore[misfeature]
         run: .\stub.bat lint
 
-      - name: B. default pwsh with cmd /c
+      - name: B. pwsh, cmd /c batch
         id: b
         continue-on-error: true
         run: cmd /c stub.bat lint
 
-      - name: C. default pwsh, batch invoked directly
+      - name: C. pwsh, batch directly
         id: c
         continue-on-error: true
         run: .\stub.bat lint
+
+      - name: D. pwsh, native exe only (no batch)
+        id: d
+        continue-on-error: true
+        run: cmd /c exit 3
+
+      - name: E. pwsh, python (mirrors sphinx-extension-tests)
+        id: e
+        continue-on-error: true
+        run: python -c "raise SystemExit(3)"
+
+      - name: F. pwsh, batch with explicit exit
+        id: f
+        continue-on-error: true
+        run: |
+          .\stub.bat lint
+          exit $LASTEXITCODE
 
       - name: Report
         if: always()
@@ -48,10 +64,17 @@ jobs:
           A_OUTCOME: ${{ steps.a.outcome }}
           B_OUTCOME: ${{ steps.b.outcome }}
           C_OUTCOME: ${{ steps.c.outcome }}
+          D_OUTCOME: ${{ steps.d.outcome }}
+          E_OUTCOME: ${{ steps.e.outcome }}
+          F_OUTCOME: ${{ steps.f.outcome }}
         run: |
-          echo "A shell cmd      -> $A_OUTCOME"
-          echo "B pwsh + cmd /c  -> $B_OUTCOME"
-          echo "C pwsh direct    -> $C_OUTCOME"
-          [ "$A_OUTCOME" = failure ] || { echo "A did not propagate"; exit 1; }
-          [ "$B_OUTCOME" = failure ] || { echo "B did not propagate"; exit 1; }
-          echo "Both A and B propagate the failure."
+          echo "A shell cmd, batch        -> $A_OUTCOME"
+          echo "B pwsh, cmd /c batch      -> $B_OUTCOME"
+          echo "C pwsh, batch direct      -> $C_OUTCOME"
+          echo "D pwsh, native exe        -> $D_OUTCOME"
+          echo "E pwsh, python            -> $E_OUTCOME"
+          echo "F pwsh, explicit exit     -> $F_OUTCOME"
+          echo
+          echo "Expected if pwsh is fine with non-batch: D and E are failure."
+          [ "$E_OUTCOME" = failure ] \
+            || echo "WARNING: sphinx-extension-tests on Windows cannot fail."

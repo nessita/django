@@ -6,7 +6,7 @@ on:
   pull_request:
     paths:
       - 'docs/make.bat'
-      - 'docs/*.py'
+      - 'docs/**.py'
       - 'docs/requirements.txt'
       - 'docs/spelling_wordlist'
       - 'tests/sphinx_tests/**'
@@ -16,7 +16,7 @@ on:
       - main
     paths:
       - 'docs/make.bat'
-      - 'docs/*.py'
+      - 'docs/**.py'
       - 'docs/requirements.txt'
       - 'docs/spelling_wordlist'
       - 'tests/sphinx_tests/**'

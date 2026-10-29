@@ -1,0 +1,57 @@
+name: Shell exit code probe
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: windows-latest
+    steps:
+      - name: Write a make.bat-shaped stub that fails
+        shell: bash
+        run: |
+          printf '@ECHO OFF\r\n' > stub.bat
+          printf 'if "%%1" == "lint" (\r\n' >> stub.bat
+          printf '\tcall :run_lint\r\n' >> stub.bat
+          printf '\tgoto end\r\n' >> stub.bat
+          printf ')\r\n' >> stub.bat
+          printf ':run_lint\r\n' >> stub.bat
+          printf '\tcmd /c exit 3\r\n' >> stub.bat
+          printf '\tif errorlevel 1 exit /b 1\r\n' >> stub.bat
+          printf ':end\r\n' >> stub.bat
+          cat -A stub.bat
+
+      - name: A. shell cmd (what the PR does)
+        id: a
+        continue-on-error: true
+        shell: cmd  # zizmor: ignore[misfeature]
+        run: .\stub.bat lint
+
+      - name: B. default pwsh with cmd /c
+        id: b
+        continue-on-error: true
+        run: cmd /c stub.bat lint
+
+      - name: C. default pwsh, batch invoked directly
+        id: c
+        continue-on-error: true
+        run: .\stub.bat lint
+
+      - name: Report
+        if: always()
+        shell: bash
+        env:
+          A_OUTCOME: ${{ steps.a.outcome }}
+          B_OUTCOME: ${{ steps.b.outcome }}
+          C_OUTCOME: ${{ steps.c.outcome }}
+        run: |
+          echo "A shell cmd      -> $A_OUTCOME"
+          echo "B pwsh + cmd /c  -> $B_OUTCOME"
+          echo "C pwsh direct    -> $C_OUTCOME"
+          [ "$A_OUTCOME" = failure ] || { echo "A did not propagate"; exit 1; }
+          [ "$B_OUTCOME" = failure ] || { echo "B did not propagate"; exit 1; }
+          echo "Both A and B propagate the failure."

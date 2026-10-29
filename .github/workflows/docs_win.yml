@@ -62,6 +62,17 @@ jobs:
         run: .\make.bat epubcheck
         env:
           SPHINXOPTS: -q
+      - name: WIP probe, do not merge, make.bat check aggregation
+        shell: cmd  # zizmor: ignore[misfeature]
+        run: |
+          echo === clean run, expect success ===
+          call .\make.bat check
+          if errorlevel 1 (echo PROBE FAILED: a clean check should pass & exit /b 1)
+          echo === inject trailing whitespace, expect failure ===
+          python -c "open('glossary.txt', 'a').write('\nprobe \n')"
+          call .\make.bat check
+          if not errorlevel 1 (echo PROBE FAILED: check should have reported failure & exit /b 1)
+          echo PROBE PASSED
 
   sphinx-extension-tests:
     runs-on: windows-latest
